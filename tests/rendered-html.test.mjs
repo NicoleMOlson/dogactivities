@@ -37,8 +37,22 @@ test("newsletter component uses the RPC and safe user-facing states", async () =
   assert.match(component, /disabled=\{isLoading\}/);
   assert.match(component, /You’re in the pack\. We’ll be in touch soon\./);
   assert.match(component, /role="alert"/);
-  assert.doesNotMatch(component, /error\.message|error\.details|service[_-]?role/i);
+  assert.match(component, /console\.error\("newsletter_signup failed"/);
+  assert.match(component, /import\.meta\.env\.DEV/);
+  assert.doesNotMatch(component, /service[_-]?role/i);
   assert.doesNotMatch(component, /practice list|preview only|no subscriber database/i);
+});
+
+test("Supabase client uses Cloudflare-compatible Vite environment variables", async () => {
+  const [client, viteConfig] = await Promise.all([
+    readFile(new URL("../app/lib/supabase.ts", import.meta.url), "utf8"),
+    readFile(new URL("../vite.config.ts", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(client, /import\.meta\.env\.NEXT_PUBLIC_SUPABASE_URL/);
+  assert.match(client, /import\.meta\.env\.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY/);
+  assert.match(viteConfig, /envPrefix:\s*\["VITE_", "NEXT_PUBLIC_"\]/);
+  assert.doesNotMatch(client, /service[_-]?role/i);
 });
 
 test("migration exposes only the newsletter RPC to anonymous visitors", async () => {

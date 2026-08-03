@@ -10,6 +10,31 @@ const ERROR_MESSAGE = "We couldn’t add you just now. Please try again in a mom
 
 export function EmailSignup() {
   const [submissionState, setSubmissionState] = useState<SubmissionState>("idle");
+  const [errorMessage, setErrorMessage] = useState(ERROR_MESSAGE);
+
+  function showSubmissionError(error: unknown) {
+    const diagnostic = error instanceof Error
+      ? error.message
+      : typeof error === "object" && error !== null && "message" in error
+        ? String(error.message)
+        : "Unknown newsletter signup error";
+
+    console.error("newsletter_signup failed", {
+      message: diagnostic,
+      code: typeof error === "object" && error !== null && "code" in error
+        ? String(error.code)
+        : undefined,
+      details: typeof error === "object" && error !== null && "details" in error
+        ? String(error.details)
+        : undefined,
+      hint: typeof error === "object" && error !== null && "hint" in error
+        ? String(error.hint)
+        : undefined,
+    });
+
+    setErrorMessage(import.meta.env.DEV ? `${ERROR_MESSAGE} (${diagnostic})` : ERROR_MESSAGE);
+    setSubmissionState("error");
+  }
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -20,7 +45,7 @@ export function EmailSignup() {
     const email = new FormData(form).get("email");
 
     if (typeof email !== "string") {
-      setSubmissionState("error");
+      showSubmissionError(new Error("Email form value is missing."));
       return;
     }
 
@@ -33,14 +58,14 @@ export function EmailSignup() {
       });
 
       if (error) {
-        setSubmissionState("error");
+        showSubmissionError(error);
         return;
       }
 
       form.reset();
       setSubmissionState("success");
-    } catch {
-      setSubmissionState("error");
+    } catch (error) {
+      showSubmissionError(error);
     }
   }
 
@@ -71,7 +96,7 @@ export function EmailSignup() {
         <p className="form-message" role="status">{SUCCESS_MESSAGE}</p>
       )}
       {submissionState === "error" && (
-        <p className="form-message form-error" role="alert">{ERROR_MESSAGE}</p>
+        <p className="form-message form-error" role="alert">{errorMessage}</p>
       )}
     </div>
   );
