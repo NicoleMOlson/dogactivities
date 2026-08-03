@@ -59,6 +59,9 @@ test("about page shows the team profiles without the former inspector photo", as
   assert.match(html, /mysza-long-hike\.jpeg/);
   assert.match(html, /german shepherd dog sitting on a gravel bike path in a native grassland prarie with forest surrounding/);
   assert.match(html, /Mysza loves going on long hikes with her humans/);
+  assert.match(html, /nicole-and-mysza\.png/);
+  assert.match(html, /girl with long hair and glasses sitting with german shepherd dog/);
+  assert.match(html, /Mysza is never far away from her favorite people/);
   assert.doesNotMatch(html, /Chief route inspector/);
   assert.doesNotMatch(html, /A relaxed dog outside in soft sunlight/);
 });

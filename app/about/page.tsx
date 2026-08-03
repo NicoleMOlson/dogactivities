@@ -48,9 +48,13 @@ export default function AboutPage() {
             stress free.
           </p>
         </div>
-        <div className="about-photo" aria-label="Image placeholder for Nicole Olson">
-          Image placeholder
-        </div>
+        <figure className="about-photo">
+          <img
+            src="/nicole-and-mysza.png"
+            alt="girl with long hair and glasses sitting with german shepherd dog"
+          />
+          <figcaption>Mysza is never far away from her favorite people</figcaption>
+        </figure>
       </section>
       <section className="paper-card about-profile">
         <div className="about-copy">
