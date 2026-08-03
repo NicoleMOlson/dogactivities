@@ -73,6 +73,15 @@ test("public configuration endpoint returns Worker runtime values", async () => 
   });
 });
 
+test("generated Wrangler deployment configuration preserves dashboard variables", async () => {
+  const wranglerConfig = JSON.parse(await readFile(
+    new URL("../dist/server/wrangler.json", import.meta.url),
+    "utf8",
+  ));
+
+  assert.equal(wranglerConfig.keep_vars, true);
+});
+
 test("migration exposes only the newsletter RPC to anonymous visitors", async () => {
   const migration = await readFile(
     new URL("../supabase/migrations/20260802170000_newsletter_subscribers.sql", import.meta.url),
