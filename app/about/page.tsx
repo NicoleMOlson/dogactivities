@@ -19,7 +19,7 @@ export default function AboutPage() {
       <section className="paper-card about-profile">
         <div className="about-copy">
           <h1>Natalie Tromp</h1>
-          <h2>Founder, Writer, &amp; Dog Mom</h2>
+          <h2>Founder, Writer &amp; Dog Mom</h2>
           <p>
             Newlywed bringing home her family&apos;s first puppy - Natalie is
             embracing all things dog mom. From curating the perfect set up to
@@ -39,7 +39,7 @@ export default function AboutPage() {
       <section className="paper-card about-profile">
         <div className="about-copy">
           <h1>Nicole Olson</h1>
-          <h2>Web Developer, Editor, &amp; German Shepherd Wrangler</h2>
+          <h2>Web Developer, Editor &amp; German Shepherd Wrangler</h2>
           <p>
             Midwestern mom of three fell in love with a German Shepherd before
             the kids were in the picture. The goal? Simply making sure her kids
