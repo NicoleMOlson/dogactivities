@@ -7,7 +7,7 @@ export const metadata: Metadata = { title: "About" };
 export default function AboutPage() {
   return (
     <main className="page-shell about-page">
-      <section className="about-hero">
+      <section className="about-hero about-intro">
         <div className="paper-card about-copy">
           <p className="eyebrow">About this notebook</p>
           <h1>Good days don’t need a complicated itinerary.</h1>
@@ -15,10 +15,103 @@ export default function AboutPage() {
           <p>The advice here comes from paying attention, changing the plan when needed, and treating the dog’s experience as part of the destination.</p>
           <Link className="button button-dark" href="/">Browse the field notes</Link>
         </div>
-        <figure className="polaroid about-photo">
-          <img src="https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=1200&q=85" alt="A relaxed dog outside in soft sunlight" />
-          <figcaption>Chief route inspector</figcaption>
-        </figure>
+      </section>
+      <section className="paper-card about-profile">
+        <div className="about-copy">
+          <h1>Natalie Tromp</h1>
+          <h2>Founder, Writer, &amp; Dog Mom</h2>
+          <p>
+            Newlywed bringing home her family&apos;s first puppy - Natalie is
+            embracing all things dog mom. From curating the perfect set up to
+            make the transition easier at home, to discovering dog-friendly
+            hidden gems with Archie - she&apos;s excited to take dog fans
+            everywhere out on their next adventure with their best friends.
+          </p>
+        </div>
+        <div className="about-photo" aria-label="Image placeholder for Natalie Tromp">
+          Image placeholder
+        </div>
+      </section>
+      <section className="paper-card about-profile">
+        <div className="about-copy">
+          <h1>Nicole Olson</h1>
+          <h2>Web Developer, Editor, &amp; German Shepherd Wrangler</h2>
+          <p>
+            Midwestern mom of three fell in love with a German Shepherd before
+            the kids were in the picture. The goal? Simply making sure her kids
+            got to grow up with a family dog. Nicole&apos;s job is to make this
+            site easy and fun to use, so planning your family free time is
+            stress free.
+          </p>
+        </div>
+        <div className="about-photo" aria-label="Image placeholder for Nicole Olson">
+          Image placeholder
+        </div>
+      </section>
+      <section className="paper-card about-profile">
+        <div className="about-copy">
+          <h1>Archie</h1>
+          <h2>Cook County &amp; Lake County, Illinois Ambassador</h2>
+          <h3>
+            Elk Grove Village, Chicago, Schaumburg, and surrounding communities
+          </h3>
+          <h3>Breed: Mini Bernadoodle</h3>
+          <p>
+            Archie&apos;s the youngest member of the pack, he&apos;s still
+            catching up on all his shots and training - but is excited to get
+            his paws on the pavement exploring. His favorite activities include
+            playing with his blue duck and snuggling his mama.
+          </p>
+        </div>
+        <div className="about-photo" aria-label="Image placeholder for Archie">
+          Image placeholder
+        </div>
+      </section>
+      <section className="paper-card about-profile">
+        <div className="about-copy">
+          <h1>Mysza</h1>
+          <h2>Fox Valley, Kendall County, &amp; Kane County Illinois Ambassador</h2>
+          <h3>
+            Aurora, Yorkville, Oswego, Montgomery, Plano, and surrounding
+            communities
+          </h3>
+          <h3>Breed: German Shepherd</h3>
+          <p>
+            Mysza is down for just about anything - except trips to the vet. She
+            can spend the entire day outside - rain, snow or shine. Nothing
+            stops her from having a good time, and she&apos;ll do just about
+            anything to make sure her group stays together. Will chase any ball
+            as far as it goes, but refuses to eat kibble without a topper. Mysza
+            loves making new friends big or small, but has a hard time reading
+            the room - especially when it comes to Chihuahuas.
+          </p>
+        </div>
+        <div className="about-photo" aria-label="Image placeholder for Mysza">
+          Image placeholder
+        </div>
+      </section>
+      <section className="paper-card about-profile">
+        <div className="about-copy">
+          <h1>Bella</h1>
+          <h2>Kenosha County, Wisconsin</h2>
+          <h3>
+            Kenosha, Pleasant Prairie, Somers, Bristol, Salem Lakes, Twin Lakes,
+            and every scenic stop in between
+          </h3>
+          <h3>Breed: Yorkshire Terrier</h3>
+          <p>
+            The ultimate passenger princess, Bella loves to commute by bike and
+            car to just about any destination. A huge fan of the beach, big
+            hills, and Stella and Chewy&apos;s freeze dried patties - Bella knows
+            how to have fun and look good while doing it. Prim and proper to the
+            max, you can find Bella relaxing with her humans on the couch or
+            sunbathing in her favorite spot in the backyard. She doesn&apos;t let
+            the sun set without going for a walk around the neighborhood.
+          </p>
+        </div>
+        <div className="about-photo" aria-label="Image placeholder for Bella">
+          Image placeholder
+        </div>
       </section>
       <section className="values-row">
         <div><span>01</span><h2>Useful over perfect</h2><p>Plans that work in real life, including the muddy and slightly late parts.</p></div>

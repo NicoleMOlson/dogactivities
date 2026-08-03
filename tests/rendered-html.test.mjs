@@ -35,6 +35,29 @@ test("server-renders the dogactivities homepage and newsletter form", async () =
   assert.doesNotMatch(html, /service[_-]?role/i);
 });
 
+test("about page shows the team profiles without the former inspector photo", async () => {
+  const response = await render("/about");
+  const html = await response.text();
+
+  assert.match(html, /Natalie Tromp/);
+  assert.match(html, /Nicole Olson/);
+  assert.match(html, /Cook County &amp; Lake County, Illinois Ambassador/);
+  assert.match(html, /Elk Grove Village, Chicago, Schaumburg/);
+  assert.match(html, /Breed: Mini Bernadoodle/);
+  assert.match(html, /Mysza/);
+  assert.match(html, /Fox Valley, Kendall County, &amp; Kane County Illinois Ambassador/);
+  assert.match(html, /Aurora, Yorkville, Oswego, Montgomery, Plano/);
+  assert.match(html, /Breed: German Shepherd/);
+  assert.match(html, /Bella/);
+  assert.match(html, /Kenosha County, Wisconsin/);
+  assert.match(html, /every scenic stop in between/);
+  assert.match(html, /Breed: Yorkshire Terrier/);
+  assert.match(html, /Image placeholder for Natalie Tromp/);
+  assert.match(html, /Image placeholder for Bella/);
+  assert.doesNotMatch(html, /Chief route inspector/);
+  assert.doesNotMatch(html, /A relaxed dog outside in soft sunlight/);
+});
+
 test("newsletter component uses the RPC and safe user-facing states", async () => {
   const component = await readFile(new URL("../app/components/EmailSignup.tsx", import.meta.url), "utf8");
 
