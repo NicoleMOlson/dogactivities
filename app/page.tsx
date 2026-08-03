@@ -50,11 +50,13 @@ export default function Home() {
 
       <section className="page-shell intro-grid">
         <div className="about-note paper-card">
-          <p className="eyebrow">The human behind the leash</p>
-          <h2>Hi, I’m the one carrying the treats.</h2>
+          <p className="eyebrow">THE HUMANS BEHIND THE LEASH</p>
+          <h2>Hi! Join us, we have treats.</h2>
           <p>
-            This is a growing notebook of dog-friendly places, doable plans,
-            and things learned after taking the scenic route.
+            We&apos;ve taken our pups all over to find the best places to spend
+            time traveling with your furry friend. From walking trails right
+            in your neighborhood to your new favorite patio, we&apos;ve made the
+            plans so you don&apos;t have to stress.
           </p>
           <Link className="text-link" href="/about">A little more about us →</Link>
         </div>
