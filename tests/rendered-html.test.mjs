@@ -55,7 +55,9 @@ test("about page shows the team profiles without the former inspector photo", as
   assert.match(html, /natalie-archie-gotcha-day\.jpeg/);
   assert.match(html, /girl in sunglasses holding up a white, gray, tan puppy inside of a car/);
   assert.match(html, /Archie&#x27;s Gotcha Day in Pittsburgh, PA/);
-  assert.match(html, /Image placeholder for Bella/);
+  assert.match(html, /bella-walk\.jpeg/);
+  assert.match(html, /yorkie dog on a pink leash walking in the grassy on a windy day/);
+  assert.match(html, /Bella loves walks with her humans\./);
   assert.match(html, /mysza-long-hike\.jpeg/);
   assert.match(html, /german shepherd dog sitting on a gravel bike path in a native grassland prarie with forest surrounding/);
   assert.match(html, /Mysza loves going on long hikes with her humans/);

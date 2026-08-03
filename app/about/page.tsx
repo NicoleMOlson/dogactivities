@@ -121,9 +121,13 @@ export default function AboutPage() {
             the sun set without going for a walk around the neighborhood.
           </p>
         </div>
-        <div className="about-photo" aria-label="Image placeholder for Bella">
-          Image placeholder
-        </div>
+        <figure className="about-photo">
+          <img
+            src="/bella-walk.jpeg"
+            alt="yorkie dog on a pink leash walking in the grassy on a windy day"
+          />
+          <figcaption>Bella loves walks with her humans.</figcaption>
+        </figure>
       </section>
       <section className="values-row">
         <div><span>01</span><h2>Useful over perfect</h2><p>Plans that work in real life, including the muddy and slightly late parts.</p></div>
