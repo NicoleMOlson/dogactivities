@@ -2,14 +2,17 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
-async function render(path = "/") {
+async function render(path = "/", env = {}) {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
   workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}-${path}`);
   const { default: worker } = await import(workerUrl.href);
 
   return worker.fetch(
     new Request(`http://localhost${path}`, { headers: { accept: "text/html" } }),
-    { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } },
+    {
+      ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) },
+      ...env,
+    },
     { waitUntil() {}, passThroughOnException() {} },
   );
 }
@@ -43,16 +46,31 @@ test("newsletter component uses the RPC and safe user-facing states", async () =
   assert.doesNotMatch(component, /practice list|preview only|no subscriber database/i);
 });
 
-test("Supabase client uses Cloudflare-compatible Vite environment variables", async () => {
-  const [client, viteConfig] = await Promise.all([
+test("Supabase client loads public configuration from Worker runtime bindings", async () => {
+  const [client, worker] = await Promise.all([
     readFile(new URL("../app/lib/supabase.ts", import.meta.url), "utf8"),
-    readFile(new URL("../vite.config.ts", import.meta.url), "utf8"),
+    readFile(new URL("../worker/index.ts", import.meta.url), "utf8"),
   ]);
 
-  assert.match(client, /import\.meta\.env\.NEXT_PUBLIC_SUPABASE_URL/);
-  assert.match(client, /import\.meta\.env\.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY/);
-  assert.match(viteConfig, /envPrefix:\s*\["VITE_", "NEXT_PUBLIC_"\]/);
+  assert.match(client, /fetch\("\/api\/public-config"/);
+  assert.match(worker, /env\.NEXT_PUBLIC_SUPABASE_URL/);
+  assert.match(worker, /env\.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY/);
+  assert.match(worker, /supabasePublishableKey/);
+  assert.doesNotMatch(client, /import\.meta\.env\.NEXT_PUBLIC_SUPABASE/);
   assert.doesNotMatch(client, /service[_-]?role/i);
+});
+
+test("public configuration endpoint returns Worker runtime values", async () => {
+  const response = await render("/api/public-config", {
+    NEXT_PUBLIC_SUPABASE_URL: "https://example.supabase.co",
+    NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: "sb_publishable_test",
+  });
+
+  assert.equal(response.status, 200);
+  assert.deepEqual(await response.json(), {
+    supabaseUrl: "https://example.supabase.co",
+    supabasePublishableKey: "sb_publishable_test",
+  });
 });
 
 test("migration exposes only the newsletter RPC to anonymous visitors", async () => {

@@ -1,24 +1,49 @@
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 
 let browserClient: SupabaseClient | undefined;
+let browserClientPromise: Promise<SupabaseClient> | undefined;
 
-export function getSupabaseClient(): SupabaseClient {
-  if (browserClient) return browserClient;
+interface PublicConfig {
+  supabaseUrl: string;
+  supabasePublishableKey: string;
+}
 
-  const supabaseUrl = import.meta.env.NEXT_PUBLIC_SUPABASE_URL;
-  const publishableKey = import.meta.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
+async function loadPublicConfig(): Promise<PublicConfig> {
+  const response = await fetch("/api/public-config", {
+    headers: { Accept: "application/json" },
+  });
 
-  if (!supabaseUrl || !publishableKey) {
+  if (!response.ok) {
     throw new Error("Dogactivities Supabase public configuration is missing.");
   }
 
-  browserClient = createClient(supabaseUrl, publishableKey, {
-    auth: {
-      autoRefreshToken: false,
-      detectSessionInUrl: false,
-      persistSession: false,
-    },
+  const config = await response.json() as Partial<PublicConfig>;
+
+  if (!config.supabaseUrl || !config.supabasePublishableKey) {
+    throw new Error("Dogactivities Supabase public configuration is missing.");
+  }
+
+  return config as PublicConfig;
+}
+
+export async function getSupabaseClient(): Promise<SupabaseClient> {
+  if (browserClient) return browserClient;
+  if (browserClientPromise) return browserClientPromise;
+
+  browserClientPromise = loadPublicConfig().then(({ supabaseUrl, supabasePublishableKey }) => {
+    browserClient = createClient(supabaseUrl, supabasePublishableKey, {
+      auth: {
+        autoRefreshToken: false,
+        detectSessionInUrl: false,
+        persistSession: false,
+      },
+    });
+
+    return browserClient;
+  }).catch((error) => {
+    browserClientPromise = undefined;
+    throw error;
   });
 
-  return browserClient;
+  return browserClientPromise;
 }

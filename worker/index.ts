@@ -4,6 +4,8 @@ import handler from "vinext/server/app-router-entry";
 
 interface Env {
   ASSETS: Fetcher;
+  NEXT_PUBLIC_SUPABASE_URL?: string;
+  NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY?: string;
   DB: D1Database;
   IMAGES: {
     input(stream: ReadableStream): {
@@ -28,6 +30,26 @@ interface ExecutionContext {
 const worker = {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
+
+    if (url.pathname === "/api/public-config") {
+      if (
+        !env.NEXT_PUBLIC_SUPABASE_URL ||
+        !env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
+      ) {
+        return Response.json(
+          { error: "Public Supabase configuration is unavailable." },
+          { status: 503, headers: { "Cache-Control": "no-store" } },
+        );
+      }
+
+      return Response.json(
+        {
+          supabaseUrl: env.NEXT_PUBLIC_SUPABASE_URL,
+          supabasePublishableKey: env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY,
+        },
+        { headers: { "Cache-Control": "public, max-age=300" } },
+      );
+    }
 
     if (url.pathname === "/_vinext/image") {
       const allowedWidths = [...DEFAULT_DEVICE_SIZES, ...DEFAULT_IMAGE_SIZES];

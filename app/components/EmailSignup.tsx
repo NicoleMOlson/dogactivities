@@ -52,7 +52,8 @@ export function EmailSignup() {
     setSubmissionState("loading");
 
     try {
-      const { error } = await getSupabaseClient().rpc("newsletter_signup", {
+      const supabase = await getSupabaseClient();
+      const { error } = await supabase.rpc("newsletter_signup", {
         signup_email: email,
         signup_source: "dogactivities_homepage",
       });
