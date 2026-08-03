@@ -76,8 +76,8 @@ export function EmailSignup() {
     <div className="signup-card" id="newsletter">
       <span className="clip" aria-hidden="true" />
       <p className="eyebrow">Occasional trail mail</p>
-      <h2>New notes, no barking inbox.</h2>
-      <p>Get fresh outings and useful ideas when there’s something worth sharing.</p>
+      <h2>Join the pack.</h2>
+      <p>Find new places to explore with your best friend and favorite humans.</p>
       <form onSubmit={submit} aria-busy={isLoading}>
         <label className="sr-only" htmlFor="email">Email address</label>
         <input
@@ -90,7 +90,7 @@ export function EmailSignup() {
           disabled={isLoading}
         />
         <button type="submit" disabled={isLoading}>
-          {isLoading ? "Joining…" : "Join the list"}
+          {isLoading ? "Joining…" : "Woof"}
         </button>
       </form>
       {submissionState === "success" && (

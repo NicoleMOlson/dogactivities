@@ -26,7 +26,9 @@ test("server-renders the dogactivities homepage and newsletter form", async () =
   assert.match(html, /Out &amp; About/);
   assert.match(html, /name="email"/);
   assert.match(html, /type="email"/);
-  assert.match(html, /Join the list/);
+  assert.match(html, /Join the pack\./);
+  assert.match(html, /Find new places to explore with your best friend and favorite humans\./);
+  assert.match(html, />Woof</);
   assert.doesNotMatch(html, /service[_-]?role/i);
 });
 
