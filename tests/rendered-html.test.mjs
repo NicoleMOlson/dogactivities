@@ -52,7 +52,9 @@ test("about page shows the team profiles without the former inspector photo", as
   assert.match(html, /Kenosha County, Wisconsin/);
   assert.match(html, /every scenic stop in between/);
   assert.match(html, /Breed: Yorkshire Terrier/);
-  assert.match(html, /Image placeholder for Natalie Tromp/);
+  assert.match(html, /natalie-archie-gotcha-day\.jpeg/);
+  assert.match(html, /girl in sunglasses holding up a white, gray, tan puppy inside of a car/);
+  assert.match(html, /Archie&#x27;s Gotcha Day in Pittsburgh, PA/);
   assert.match(html, /Image placeholder for Bella/);
   assert.doesNotMatch(html, /Chief route inspector/);
   assert.doesNotMatch(html, /A relaxed dog outside in soft sunlight/);

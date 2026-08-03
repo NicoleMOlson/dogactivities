@@ -28,9 +28,13 @@ export default function AboutPage() {
             everywhere out on their next adventure with their best friends.
           </p>
         </div>
-        <div className="about-photo" aria-label="Image placeholder for Natalie Tromp">
-          Image placeholder
-        </div>
+        <figure className="about-photo">
+          <img
+            src="/natalie-archie-gotcha-day.jpeg"
+            alt="girl in sunglasses holding up a white, gray, tan puppy inside of a car"
+          />
+          <figcaption>Archie&apos;s Gotcha Day in Pittsburgh, PA</figcaption>
+        </figure>
       </section>
       <section className="paper-card about-profile">
         <div className="about-copy">
