@@ -19,4 +19,4 @@ npm run dev
 
 This separation allows the static query helpers to be replaced later by a Supabase-backed content repository. A future private `/admin` can add Supabase Authentication, Storage, and tables for posts, categories, tags, and their relationships without restructuring the public pages.
 
-The newsletter form is intentionally a non-persistent preview and is not connected to any subscriber database.
+The newsletter form calls the secured `newsletter_signup` RPC in the dog blog's separate Supabase project. Browser code uses only the public project URL and publishable key; subscriber records remain protected by table privileges and Row Level Security.

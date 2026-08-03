@@ -38,6 +38,7 @@ test("newsletter component uses the RPC and safe user-facing states", async () =
   assert.match(component, /You’re in the pack\. We’ll be in touch soon\./);
   assert.match(component, /role="alert"/);
   assert.doesNotMatch(component, /error\.message|error\.details|service[_-]?role/i);
+  assert.doesNotMatch(component, /practice list|preview only|no subscriber database/i);
 });
 
 test("migration exposes only the newsletter RPC to anonymous visitors", async () => {
