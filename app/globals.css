@@ -102,6 +102,8 @@ h1, h2, h3 { font-family: var(--font-serif), serif; font-weight: 620; letter-spa
 .signup-card button { border: 2px solid var(--ink); border-left: 0; background: var(--ink); color: white; padding: 0 18px; font: 800 .75rem var(--font-sans); text-transform: uppercase; letter-spacing: .06em; cursor: pointer; }
 .signup-card small { font-size: .65rem; opacity: .76; }
 .form-message { font-weight: 700; font-size: .78rem; }
+.form-error { color: #7c261f; }
+.signup-card input:disabled, .signup-card button:disabled { cursor: wait; opacity: .72; }
 
 .site-footer { color: white; min-height: 200px; border-top: 1px solid rgba(255,255,255,.35); display: grid; grid-template-columns: 1fr 1.5fr 1fr; align-items: center; gap: 30px; font-size: .8rem; }
 .site-footer > p { line-height: 1.6; }

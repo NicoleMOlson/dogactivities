@@ -1,91 +1,82 @@
 import assert from "node:assert/strict";
-import { access, readFile, readdir } from "node:fs/promises";
+import { readFile } from "node:fs/promises";
 import test from "node:test";
 
-const developmentPreviewMeta =
-  /<meta(?=[^>]*\bname=["']codex-preview["'])(?=[^>]*\bcontent=["']development["'])[^>]*>/i;
-const templateRoot = new URL("../", import.meta.url);
-const previewRoot = new URL("../app/_sites-preview/", import.meta.url);
-
-async function render() {
+async function render(path = "/") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
-  workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
+  workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}-${path}`);
   const { default: worker } = await import(workerUrl.href);
 
   return worker.fetch(
-    new Request("http://localhost/", {
-      headers: { accept: "text/html" },
-    }),
-    {
-      ASSETS: {
-        fetch: async () => new Response("Not found", { status: 404 }),
-      },
-    },
-    {
-      waitUntil() {},
-      passThroughOnException() {},
-    },
+    new Request(`http://localhost${path}`, { headers: { accept: "text/html" } }),
+    { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } },
+    { waitUntil() {}, passThroughOnException() {} },
   );
 }
 
-test("server-renders the starter loading skeleton", async () => {
+test("server-renders the dogactivities homepage and newsletter form", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, developmentPreviewMeta);
-  assert.match(html, /<title>Your site is taking shape<\/title>/i);
-  assert.match(html, /Building your site/);
-  assert.match(html, /Your site is taking shape/);
-  assert.match(
-    html,
-    /Your first version will appear here automatically when it’s ready\./,
-  );
-  assert.doesNotMatch(html, /Codex/);
-  assert.match(html, /react-loading-skeleton/);
-  assert.match(html, /role="status"/);
+  assert.match(html, /Out &amp; About/);
+  assert.match(html, /name="email"/);
+  assert.match(html, /type="email"/);
+  assert.match(html, /Join the list/);
+  assert.doesNotMatch(html, /service[_-]?role/i);
 });
 
-test("keeps the loading skeleton scoped and disposable", async () => {
-  const [preview, css, page, layout, packageJson, files] = await Promise.all([
-    readFile(new URL("SkeletonPreview.tsx", previewRoot), "utf8"),
-    readFile(new URL("preview.css", previewRoot), "utf8"),
-    readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
-    readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
-    readFile(new URL("../package.json", import.meta.url), "utf8"),
-    readdir(previewRoot),
-  ]);
+test("newsletter component uses the RPC and safe user-facing states", async () => {
+  const component = await readFile(new URL("../app/components/EmailSignup.tsx", import.meta.url), "utf8");
 
-  assert.deepEqual(files.sort(), ["SkeletonPreview.tsx", "preview.css"]);
-  assert.match(preview, /from "react-loading-skeleton"/);
-  assert.match(preview, /baseColor="#eceae7"/);
-  assert.match(preview, /highlightColor="#f9f8f6"/);
-  assert.match(preview, /duration=\{2\.8\}/);
-  assert.match(preview, /sites-skeleton-search-placeholder/);
-  assert.match(packageJson, /"react-loading-skeleton": "3\.5\.0"/);
+  assert.match(component, /\.rpc\("newsletter_signup"/);
+  assert.match(component, /signup_email:\s*email/);
+  assert.match(component, /signup_source:\s*"dogactivities_homepage"/);
+  assert.match(component, /submissionState === "loading"/);
+  assert.match(component, /disabled=\{isLoading\}/);
+  assert.match(component, /You’re in the pack\. We’ll be in touch soon\./);
+  assert.match(component, /role="alert"/);
+  assert.doesNotMatch(component, /error\.message|error\.details|service[_-]?role/i);
+});
 
-  const shellIndex = preview.indexOf('className="sites-skeleton-shell"');
-  const statusIndex = preview.indexOf('className="sites-skeleton-status"');
-  assert.ok(shellIndex >= 0 && statusIndex > shellIndex);
-  assert.match(css, /position:\s*fixed/);
-  assert.match(css, /inset:\s*0/);
-  assert.match(css, /opacity:\s*0\.52/);
-  assert.match(css, /prefers-reduced-motion:\s*reduce/);
-  assert.doesNotMatch(css, /#020617|canvas|pets|progress/i);
-  assert.doesNotMatch(
-    preview,
-    /loading-spinner|status-mark|status-progress|canvas|cookie|random/i,
+test("migration exposes only the newsletter RPC to anonymous visitors", async () => {
+  const migration = await readFile(
+    new URL("../supabase/migrations/20260802170000_newsletter_subscribers.sql", import.meta.url),
+    "utf8",
   );
 
-  assert.match(page, /export const metadata:\s*Metadata/);
-  assert.match(page, /"codex-preview": "development"/);
-  assert.match(page, /<SkeletonPreview \/>/);
-  assert.match(layout, /title:\s*"Starter Project"/);
-  assert.doesNotMatch(layout, /codex-preview|_sites-preview|themeColor|\bViewport\b/);
-  assert.doesNotMatch(css, /(^|\s)(html|body)\s*\{/m);
+  assert.match(migration, /enable row level security/i);
+  assert.match(migration, /revoke all on table public\.newsletter_subscribers from anon, authenticated/i);
+  assert.match(migration, /security definer/i);
+  assert.match(migration, /grant execute on function public\.newsletter_signup\(text\) to anon, authenticated/i);
+  assert.match(migration, /lower\(btrim\(p_email\)\)/i);
+  assert.match(migration, /on conflict \(email\) do nothing/i);
+  assert.match(migration, /dogactivities_homepage/);
+  assert.doesNotMatch(migration, /create policy/i);
+});
 
-  await assert.rejects(
-    access(new URL("public/_sites-preview", templateRoot)),
+test("additive RPC migration accepts the explicit email and source arguments", async () => {
+  const migration = await readFile(
+    new URL("../supabase/migrations/20260802173000_newsletter_signup_arguments.sql", import.meta.url),
+    "utf8",
   );
+
+  assert.match(migration, /signup_email text/);
+  assert.match(migration, /signup_source text/);
+  assert.match(migration, /lower\(btrim\(signup_email\)\)/i);
+  assert.match(migration, /signup_source is distinct from 'dogactivities_homepage'/i);
+  assert.match(migration, /security definer/i);
+  assert.match(migration, /grant execute on function public\.newsletter_signup\(text, text\) to anon, authenticated/i);
+  assert.match(migration, /on conflict \(email\) do nothing/i);
+  assert.doesNotMatch(migration, /grant (select|insert|update|delete).*newsletter_subscribers/i);
+});
+
+test("example environment file contains blank public placeholders only", async () => {
+  const envExample = await readFile(new URL("../.env.example", import.meta.url), "utf8");
+  assert.equal(
+    envExample,
+    "NEXT_PUBLIC_SUPABASE_URL=\nNEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=\n",
+  );
+  assert.doesNotMatch(envExample, /https?:\/\/|eyJ|service[_-]?role/i);
 });
