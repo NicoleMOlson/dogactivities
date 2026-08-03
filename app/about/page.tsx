@@ -90,9 +90,13 @@ export default function AboutPage() {
             the room - especially when it comes to Chihuahuas.
           </p>
         </div>
-        <div className="about-photo" aria-label="Image placeholder for Mysza">
-          Image placeholder
-        </div>
+        <figure className="about-photo">
+          <img
+            src="/mysza-long-hike.jpeg"
+            alt="german shepherd dog sitting on a gravel bike path in a native grassland prarie with forest surrounding"
+          />
+          <figcaption>Mysza loves going on long hikes with her humans</figcaption>
+        </figure>
       </section>
       <section className="paper-card about-profile">
         <div className="about-copy">
