@@ -71,9 +71,12 @@ export default function AboutPage() {
             playing with his blue duck and snuggling his mama.
           </p>
         </div>
-        <div className="about-photo" aria-label="Image placeholder for Archie">
-          Image placeholder
-        </div>
+        <figure className="about-photo">
+          <img src="/archie-coffee.jpeg" alt="puppy sniffing a cup of coffee" />
+          <figcaption>
+            Archie loves visiting new spots and making sure mama&apos;s coffee is made just right.
+          </figcaption>
+        </figure>
       </section>
       <section className="paper-card about-profile">
         <div className="about-copy">
