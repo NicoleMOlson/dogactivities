@@ -87,6 +87,10 @@ export default function AboutPage() {
             <h3>Aurora, Yorkville, Oswego, Montgomery, Plano, and surrounding communities</h3>
             <h3>Breed: German Shepherd</h3>
             <p>Myszka is down for just about anything - except trips to the vet. She can spend the entire day outside - rain, snow or shine. Nothing stops her from having a good time, and she&apos;ll do just about anything to make sure her group stays together. Will chase any ball as far as it goes, but refuses to eat kibble without a topper. Myszka loves making new friends big or small, but has a hard time reading the room - especially when it comes to Chihuahuas.</p>
+            <a className="profile-social-link" href="https://www.instagram.com/maamaoro/" target="_blank" rel="noreferrer" aria-label="Follow Myszka on Instagram">
+              <span className="instagram-mark" aria-hidden="true" />
+              <span>follow along</span>
+            </a>
           </div>
         </article>
         <article className="dog-profile">

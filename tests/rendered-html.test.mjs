@@ -74,6 +74,8 @@ test("about page shows the team profiles without the former inspector photo", as
   assert.match(html, /mysza-long-hike\.jpeg/);
   assert.match(html, /german shepherd dog sitting on a gravel bike path in a native grassland prarie with forest surrounding/);
   assert.match(html, /Myszka loves going on long hikes with her humans/);
+  assert.match(html, /https:\/\/www\.instagram\.com\/maamaoro\//);
+  assert.match(html, /aria-label="Follow Myszka on Instagram"/);
   assert.match(html, /nicole-and-mysza\.png/);
   assert.match(html, /girl with long hair and glasses sitting with german shepherd dog/);
   assert.match(html, /Myszka is never far away from her favorite people/);
