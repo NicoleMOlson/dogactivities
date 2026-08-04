@@ -70,6 +70,16 @@ export default function AboutPage() {
             his paws on the pavement exploring. His favorite activities include
             playing with his blue duck and snuggling his mama.
           </p>
+          <a
+            className="profile-social-link"
+            href="https://www.instagram.com/archibald_the_bernedoodle"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Follow Archie on Instagram"
+          >
+            <span className="instagram-mark" aria-hidden="true" />
+            <span>follow along</span>
+          </a>
         </div>
         <figure className="about-photo">
           <img src="/archie-coffee.jpeg" alt="puppy sniffing a cup of coffee" />

@@ -52,6 +52,9 @@ test("about page shows the team profiles without the former inspector photo", as
   assert.match(html, /archie-coffee\.jpeg/);
   assert.match(html, /puppy sniffing a cup of coffee/);
   assert.match(html, /Archie loves visiting new spots and making sure mama&#x27;s coffee is made just right\./);
+  assert.match(html, /https:\/\/www\.instagram\.com\/archibald_the_bernedoodle/);
+  assert.match(html, /aria-label="Follow Archie on Instagram"/);
+  assert.match(html, /follow along/);
   assert.match(html, /Mysza/);
   assert.match(html, /Fox Valley, Kendall County, &amp; Kane County Illinois Ambassador/);
   assert.match(html, /Aurora, Yorkville, Oswego, Montgomery, Plano/);

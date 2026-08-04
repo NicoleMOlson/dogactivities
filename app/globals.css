@@ -120,6 +120,12 @@ h1, h2, h3 { font-family: var(--font-serif), serif; font-weight: 620; letter-spa
 .about-profile h2 { font-size: clamp(1.35rem, 2.4vw, 2rem); margin: 0 0 14px; }
 .about-profile h3 { font-size: 1rem; line-height: 1.55; margin: 8px 0; }
 .about-copy p { line-height: 1.7; }
+.profile-social-link { align-items: center; color: #000; display: inline-flex; font-weight: 700; gap: .45em; margin-top: 10px; text-decoration: none; }
+.profile-social-link:hover { text-decoration: underline; }
+.profile-social-link:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+.instagram-mark { border: .1em solid currentColor; border-radius: .28em; box-sizing: border-box; display: inline-block; flex: 0 0 1em; height: 1em; position: relative; width: 1em; }
+.instagram-mark::before { border: .09em solid currentColor; border-radius: 50%; box-sizing: border-box; content: ""; height: .4em; left: 50%; position: absolute; top: 50%; transform: translate(-50%, -50%); width: .4em; }
+.instagram-mark::after { background: currentColor; border-radius: 50%; content: ""; height: .11em; position: absolute; right: .13em; top: .13em; width: .11em; }
 .large-copy { font-size: 1.2rem; }
 .about-copy .button { margin-top: 18px; }
 .about-photo { background: rgba(255,255,255,.72); border: 12px solid white; box-shadow: var(--shadow); display: grid; margin: 0; min-height: 320px; place-items: center; transform: rotate(2deg); }
