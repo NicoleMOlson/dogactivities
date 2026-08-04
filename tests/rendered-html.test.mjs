@@ -52,6 +52,8 @@ test("about page shows the team profiles without the former inspector photo", as
   assert.match(html, /archie-coffee\.jpeg/);
   assert.match(html, /puppy sniffing a cup of coffee/);
   assert.match(html, /Archie loves visiting new spots and making sure mama&#x27;s coffee is made just right\./);
+  assert.match(html, /cross country flight from Pittsburg, PA to Chicago, IL/);
+  assert.match(html, /whether it&#x27;s in his own backyard or on the trail near his home/);
   assert.match(html, /https:\/\/www\.instagram\.com\/archibald_the_bernedoodle/);
   assert.match(html, /aria-label="Follow Archie on Instagram"/);
   assert.match(html, /follow along/);

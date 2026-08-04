@@ -132,7 +132,7 @@ h1, h2, h3 { font-family: var(--font-serif), serif; font-weight: 620; letter-spa
 .human-profile:nth-child(1) { transform: rotate(-.45deg); }
 .human-profile:nth-child(2) { transform: rotate(.45deg); }
 .human-profile .about-photo { min-height: 0; transform: none; }
-.human-profile .about-photo img { aspect-ratio: 4/3; }
+.human-profile .about-photo img { aspect-ratio: 4/5; }
 .human-profile .about-copy { padding: 32px 10px 4px; transform: none; }
 .human-profile .about-copy h1 { font-size: clamp(2.8rem, 5vw, 4.7rem); margin-bottom: 18px; }
 .human-profile h2 { font-size: clamp(1.25rem, 2vw, 1.7rem); margin: 0 0 14px; }

@@ -69,7 +69,7 @@ export default function AboutPage() {
             <h2>Cook County &amp; Lake County, Illinois Ambassador</h2>
             <h3>Elk Grove Village, Chicago, Schaumburg, and surrounding communities</h3>
             <h3>Breed: Mini Bernadoodle</h3>
-            <p>Archie&apos;s the youngest member of the pack, he&apos;s still catching up on all his shots and training - but is excited to get his paws on the pavement exploring. His favorite activities include playing with his blue duck and snuggling his mama.</p>
+            <p>Archie&apos;s the youngest member of the pack, he&apos;s still catching up on all his shots and training - but is excited to get his paws on the pavement exploring. His favorite activities include playing with his blue duck and snuggling his mama. This pup&apos;s been an adventurer since day 1 - his gotcha day included a cross country flight from Pittsburg, PA to Chicago, IL. He&apos;s a playful pup that loves to be outside - whether it&apos;s in his own backyard or on the trail near his home.</p>
             <a className="profile-social-link" href="https://www.instagram.com/archibald_the_bernedoodle" target="_blank" rel="noreferrer" aria-label="Follow Archie on Instagram">
               <span className="instagram-mark" aria-hidden="true" />
               <span>follow along</span>
