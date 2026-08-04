@@ -23,7 +23,8 @@ test("server-renders the dogactivities homepage and newsletter form", async () =
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /Out &amp; About/);
+  assert.match(html, /Paws Welcome/);
+  assert.doesNotMatch(html, /Out &amp; About|with the dog|O\+A/);
   assert.match(html, /name="email"/);
   assert.match(html, /type="email"/);
   assert.match(html, /Join the pack\./);

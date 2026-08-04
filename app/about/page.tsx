@@ -11,7 +11,7 @@ export default function AboutPage() {
         <div className="paper-card about-copy">
           <p className="eyebrow">About this notebook</p>
           <h1>Good days don’t need a complicated itinerary.</h1>
-          <p className="large-copy">Out &amp; About is a place for realistic dog adventures: a nearby trail, a quieter park, a rainy-day idea, or a better-packed bag.</p>
+          <p className="large-copy">Paws Welcome is a place for realistic dog adventures: a nearby trail, a quieter park, a rainy-day idea, or a better-packed bag.</p>
           <p>The advice here comes from paying attention, changing the plan when needed, and treating the dog’s experience as part of the destination.</p>
           <Link className="button button-dark" href="/">Browse the field notes</Link>
         </div>

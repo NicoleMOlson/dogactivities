@@ -8,13 +8,13 @@ const serif = Fraunces({ variable: "--font-serif", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
-  title: { default: "Out & About", template: "%s | Out & About" },
+  title: { default: "Paws Welcome", template: "%s | Paws Welcome" },
   description: "Field notes for better days outside with your dog.",
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
   openGraph: {
-    title: "Out & About — with the dog",
+    title: "Paws Welcome",
     description: "More sniffing. Better weekends.",
-    images: [{ url: "/og.png", width: 1732, height: 909, alt: "Out & About on a paper field note over grass" }],
+    images: [{ url: "/og.png", width: 1732, height: 909, alt: "Paws Welcome on a paper field note over grass" }],
   },
   twitter: { card: "summary_large_image", images: ["/og.png"] },
 };
@@ -24,9 +24,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en">
       <body className={`${sans.variable} ${serif.variable}`}>
         <header className="site-header page-shell">
-          <Link className="brand" href="/" aria-label="Out and About home">
-            <span className="brand-mark">O+A</span>
-            <span><strong>Out &amp; About</strong><small>with the dog</small></span>
+          <Link className="brand" href="/" aria-label="Paws Welcome home">
+            <span className="brand-mark">PW</span>
+            <span><strong>Paws Welcome</strong></span>
           </Link>
           <nav aria-label="Main navigation">
             <Link href="/">Field notes</Link>
@@ -37,11 +37,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {children}
         <footer className="site-footer page-shell">
           <div className="brand footer-brand">
-            <span className="brand-mark">O+A</span>
-            <span><strong>Out &amp; About</strong><small>with the dog</small></span>
+            <span className="brand-mark">PW</span>
+            <span><strong>Paws Welcome</strong></span>
           </div>
           <p>Made for fresh air, loose plans, and dogs who stop to smell everything.</p>
-          <p className="copyright">© {new Date().getFullYear()} Out &amp; About</p>
+          <p className="copyright">© {new Date().getFullYear()} Paws Welcome</p>
         </footer>
       </body>
     </html>

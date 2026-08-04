@@ -1,4 +1,4 @@
-# Out & About
+# Paws Welcome
 
 A public dog-activity blog with reusable post, category, and tag data. This repository is independent from the Nicole Olson board project and does not share its hosting, authentication, database, subscribers, credentials, or content.
 
