@@ -77,6 +77,11 @@ test("about page shows the team profiles without the former inspector photo", as
   assert.match(html, /Mysza is never far away from her favorite people/);
   assert.doesNotMatch(html, /Chief route inspector/);
   assert.doesNotMatch(html, /A relaxed dog outside in soft sunlight/);
+  assert.match(html, /class="human-profile-grid"/);
+  assert.match(html, /class="dog-profile-grid"/);
+  assert.ok(html.indexOf("Archie</h1>") < html.indexOf("Mysza</h1>"));
+  assert.ok(html.indexOf("Mysza</h1>") < html.indexOf("Bella</h1>"));
+  assert.ok(html.indexOf("archie-coffee.jpeg") < html.indexOf("Archie</h1>"));
 });
 
 test("newsletter component uses the RPC and safe user-facing states", async () => {
