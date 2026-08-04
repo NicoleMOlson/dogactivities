@@ -10,9 +10,9 @@ export default function AboutPage() {
       <section className="about-hero about-intro">
         <div className="paper-card about-copy">
           <p className="eyebrow">About this notebook</p>
-          <h1>Good days don’t need a complicated itinerary.</h1>
-          <p className="large-copy">Paws Welcome is a place for realistic dog adventures: a nearby trail, a quieter park, a rainy-day idea, or a better-packed bag.</p>
-          <p>The advice here comes from paying attention, changing the plan when needed, and treating the dog’s experience as part of the destination.</p>
+          <h1>Good days with your best friend.</h1>
+          <p className="large-copy">Paws Welcome helps dog owners find their new favorite: trail, park, patio - while being prepared for everything.</p>
+          <p>Adventure doesn&apos;t have to mean going far, and you can bring your dog along for the fun.</p>
           <Link className="button button-dark" href="/">Browse the field notes</Link>
         </div>
       </section>

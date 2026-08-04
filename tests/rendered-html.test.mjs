@@ -41,6 +41,10 @@ test("about page shows the team profiles without the former inspector photo", as
   const html = await response.text();
 
   assert.match(html, /Natalie Tromp/);
+  assert.match(html, /About this notebook/);
+  assert.match(html, /Good days with your best friend\./);
+  assert.match(html, /Paws Welcome helps dog owners find their new favorite/);
+  assert.match(html, /Adventure doesn&#x27;t have to mean going far/);
   assert.match(html, /Nicole Olson/);
   assert.match(html, /Cook County &amp; Lake County, Illinois Ambassador/);
   assert.match(html, /Elk Grove Village, Chicago, Schaumburg/);
