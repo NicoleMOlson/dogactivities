@@ -43,7 +43,7 @@ export default function AboutPage() {
               src="/nicole-and-mysza.png"
               alt="girl with long hair and glasses sitting with german shepherd dog"
             />
-            <figcaption>Mysza is never far away from her favorite people</figcaption>
+            <figcaption>Myszka is never far away from her favorite people</figcaption>
           </figure>
           <div className="about-copy">
             <h1>Nicole Olson</h1>
@@ -79,14 +79,14 @@ export default function AboutPage() {
         <article className="dog-profile">
           <figure className="dog-photo">
             <img src="/mysza-long-hike.jpeg" alt="german shepherd dog sitting on a gravel bike path in a native grassland prarie with forest surrounding" />
-            <figcaption>Mysza loves going on long hikes with her humans</figcaption>
+            <figcaption>Myszka loves going on long hikes with her humans</figcaption>
           </figure>
           <div className="dog-copy">
-            <h1>Mysza</h1>
+            <h1>Myszka</h1>
             <h2>Fox Valley, Kendall County, &amp; Kane County Illinois Ambassador</h2>
             <h3>Aurora, Yorkville, Oswego, Montgomery, Plano, and surrounding communities</h3>
             <h3>Breed: German Shepherd</h3>
-            <p>Mysza is down for just about anything - except trips to the vet. She can spend the entire day outside - rain, snow or shine. Nothing stops her from having a good time, and she&apos;ll do just about anything to make sure her group stays together. Will chase any ball as far as it goes, but refuses to eat kibble without a topper. Mysza loves making new friends big or small, but has a hard time reading the room - especially when it comes to Chihuahuas.</p>
+            <p>Myszka is down for just about anything - except trips to the vet. She can spend the entire day outside - rain, snow or shine. Nothing stops her from having a good time, and she&apos;ll do just about anything to make sure her group stays together. Will chase any ball as far as it goes, but refuses to eat kibble without a topper. Myszka loves making new friends big or small, but has a hard time reading the room - especially when it comes to Chihuahuas.</p>
           </div>
         </article>
         <article className="dog-profile">

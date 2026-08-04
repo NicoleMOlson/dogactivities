@@ -55,7 +55,7 @@ test("about page shows the team profiles without the former inspector photo", as
   assert.match(html, /https:\/\/www\.instagram\.com\/archibald_the_bernedoodle/);
   assert.match(html, /aria-label="Follow Archie on Instagram"/);
   assert.match(html, /follow along/);
-  assert.match(html, /Mysza/);
+  assert.match(html, /Myszka/);
   assert.match(html, /Fox Valley, Kendall County, &amp; Kane County Illinois Ambassador/);
   assert.match(html, /Aurora, Yorkville, Oswego, Montgomery, Plano/);
   assert.match(html, /Breed: German Shepherd/);
@@ -71,16 +71,16 @@ test("about page shows the team profiles without the former inspector photo", as
   assert.match(html, /Beach days to hiking trails, Bella&#x27;s got a streak for adventure\./);
   assert.match(html, /mysza-long-hike\.jpeg/);
   assert.match(html, /german shepherd dog sitting on a gravel bike path in a native grassland prarie with forest surrounding/);
-  assert.match(html, /Mysza loves going on long hikes with her humans/);
+  assert.match(html, /Myszka loves going on long hikes with her humans/);
   assert.match(html, /nicole-and-mysza\.png/);
   assert.match(html, /girl with long hair and glasses sitting with german shepherd dog/);
-  assert.match(html, /Mysza is never far away from her favorite people/);
+  assert.match(html, /Myszka is never far away from her favorite people/);
   assert.doesNotMatch(html, /Chief route inspector/);
   assert.doesNotMatch(html, /A relaxed dog outside in soft sunlight/);
   assert.match(html, /class="human-profile-grid"/);
   assert.match(html, /class="dog-profile-grid"/);
-  assert.ok(html.indexOf("Archie</h1>") < html.indexOf("Mysza</h1>"));
-  assert.ok(html.indexOf("Mysza</h1>") < html.indexOf("Bella</h1>"));
+  assert.ok(html.indexOf("Archie</h1>") < html.indexOf("Myszka</h1>"));
+  assert.ok(html.indexOf("Myszka</h1>") < html.indexOf("Bella</h1>"));
   assert.ok(html.indexOf("archie-coffee.jpeg") < html.indexOf("Archie</h1>"));
 });
 
