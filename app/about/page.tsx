@@ -129,7 +129,7 @@ export default function AboutPage() {
             src="/bella-walk.jpeg"
             alt="yorkie dog on a pink leash walking in the grassy on a windy day"
           />
-          <figcaption>Bella loves walks with her humans.</figcaption>
+          <figcaption>Beach days to hiking trails, Bella&apos;s got a streak for adventure.</figcaption>
         </figure>
       </section>
       <section className="values-row">

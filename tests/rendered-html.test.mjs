@@ -60,7 +60,7 @@ test("about page shows the team profiles without the former inspector photo", as
   assert.match(html, /Archie&#x27;s Gotcha Day in Pittsburgh, PA/);
   assert.match(html, /bella-walk\.jpeg/);
   assert.match(html, /yorkie dog on a pink leash walking in the grassy on a windy day/);
-  assert.match(html, /Bella loves walks with her humans\./);
+  assert.match(html, /Beach days to hiking trails, Bella&#x27;s got a streak for adventure\./);
   assert.match(html, /mysza-long-hike\.jpeg/);
   assert.match(html, /german shepherd dog sitting on a gravel bike path in a native grassland prarie with forest surrounding/);
   assert.match(html, /Mysza loves going on long hikes with her humans/);
