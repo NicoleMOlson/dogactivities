@@ -277,8 +277,8 @@ h1, h2, h3 { font-family: var(--font-heading), sans-serif; font-weight: 900; let
 .share-post-card {
   align-items: center;
   background: var(--cream);
-  border: 1px solid rgba(37,62,42,.13);
-  box-shadow: var(--shadow);
+  border: 4px dashed var(--orange);
+  box-shadow: 0 0 0 6px var(--sun), var(--shadow);
   display: grid;
   gap: 18px 30px;
   grid-template-columns: minmax(0, 1fr) auto;
@@ -286,6 +286,7 @@ h1, h2, h3 { font-family: var(--font-heading), sans-serif; font-weight: 900; let
   padding: clamp(28px, 4vw, 46px);
   width: min(900px, 100%);
 }
+.post-body .share-post-card { margin: 3.2em auto 3.6em; }
 .share-post-card h2 { font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1; margin: 0; }
 .share-post-card .eyebrow { margin-bottom: 10px; }
 .share-post-status { font-weight: 700; grid-column: 1 / -1; margin: 0; min-height: 1.4em; }

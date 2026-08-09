@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Fragment } from "react";
 import { EmailSignup } from "../../components/EmailSignup";
 import { SharePostButton } from "../../components/SharePostButton";
 import { getPostBySlug, publishedPosts } from "../../data/posts";
@@ -96,6 +97,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   const post = getPostBySlug((await params).slug);
   if (!post) notFound();
   const date = new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric" }).format(new Date(post.published_at!));
+  const hasProductLinks = post.body.some((block) => block.type === "links");
 
   return (
     <main className="page-shell post-page">
@@ -123,10 +125,15 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           {post.featured_image_caption && <figcaption className="polaroid-caption"><LinkedText text={post.featured_image_caption} links={post.inline_links ?? []} /></figcaption>}
         </figure>
         <div className="post-body paper-card">
-          {post.body.map((block, index) => <Block block={block} links={post.inline_links ?? []} ambassador={post.featured_ambassador} key={`${block.type}-${index}`} />)}
+          {post.body.map((block, index) => (
+            <Fragment key={`${block.type}-${index}`}>
+              {block.type === "links" && <SharePostButton />}
+              <Block block={block} links={post.inline_links ?? []} ambassador={post.featured_ambassador} />
+            </Fragment>
+          ))}
         </div>
       </article>
-      <SharePostButton />
+      {!hasProductLinks && <SharePostButton />}
       <EmailSignup />
     </main>
   );

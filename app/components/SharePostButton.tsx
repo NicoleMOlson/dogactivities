@@ -21,11 +21,11 @@ export function SharePostButton() {
   return (
     <section className="share-post-card" aria-labelledby="share-post-heading">
       <div>
-        <p className="eyebrow">Pass the good sniff along</p>
+        <p className="eyebrow">Share this field note</p>
         <h2 id="share-post-heading">Know someone who would love this?</h2>
       </div>
       <button className="button button-dark" type="button" onClick={copyPostLink}>
-        Get a link to share this post
+        Pass the sniff along
       </button>
       <p className="share-post-status" aria-live="polite">{message}</p>
     </section>
