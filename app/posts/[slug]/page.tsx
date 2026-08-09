@@ -68,11 +68,21 @@ function Block({ block, links, ambassador }: { block: ContentBlock; links: Inlin
             <p className="eyebrow">Featured Ambassador</p>
             <img src={ambassador.photo} alt={ambassador.photo_alt} />
             <h2 id="featured-ambassador-name">{ambassador.name}</h2>
-            <p>{ambassador.caption}</p>
-            <a className="profile-social-link" href={ambassador.instagram_url} target="_blank" rel="noreferrer" aria-label={`Follow ${ambassador.name} on Instagram`}>
-              <span className="instagram-mark" aria-hidden="true" />
-              <span>follow along on Instagram</span>
-            </a>
+            <p>
+              {ambassador.caption.split(ambassador.owner.name)[0]}
+              <Link href={ambassador.owner.href}>{ambassador.owner.name}</Link>
+              {ambassador.caption.split(ambassador.owner.name)[1]}
+            </p>
+            <div className="ambassador-links">
+              <a className="profile-social-link" href={ambassador.instagram_url} target="_blank" rel="noreferrer" aria-label={`Follow ${ambassador.name} on Instagram`}>
+                <span className="instagram-mark" aria-hidden="true" />
+                <span>follow along on Instagram</span>
+              </a>
+              <span className="profile-social-link ambassador-future-link" aria-label={`Read more about ${ambassador.name}; coming soon`}>
+                <span className="paw-mark" aria-hidden="true"><i /><i /><i /><i /></span>
+                <span>read more about {ambassador.name}</span>
+              </span>
+            </div>
           </aside>
         )}
       </div>

@@ -157,10 +157,16 @@ test("publishes the Archie puppy-preparation post with accessible photos and sho
   assert.match(html, /Items in This Post/);
   assert.match(html, /Products in This Post/);
   assert.match(html, /Featured Ambassador/);
-  assert.match(html, /Archie’s New Here and is adjusting very well to his new home\./);
+  assert.match(html, /Archie’s New Here and his owner/);
+  assert.match(html, /put a lot of thought into preparing his place in their home\./);
+  assert.match(html, /href="\/about#natalie-tromp"[^>]*>Natalie<\/a>/);
   assert.match(html, /archie-coffee\.jpeg/);
   assert.match(html, /href="https:\/\/www\.instagram\.com\/archibald_the_bernedoodle"/);
   assert.match(html, /follow along on Instagram/);
+  assert.match(html, /class="paw-mark"/);
+  assert.match(html, /read more about/);
+  assert.match(html, />Archie<\/span>/);
+  assert.doesNotMatch(html, /<a[^>]*>\s*<span class="paw-mark"/);
   assert.match(html, /class="product-rail"/);
   assert.match(html, /\/products\/dog-crate\.jpeg/);
   assert.match(html, /\/products\/country-club-polo\.jpeg/);

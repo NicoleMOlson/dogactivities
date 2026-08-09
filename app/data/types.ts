@@ -27,6 +27,7 @@ export type FeaturedAmbassador = {
   photo: string;
   photo_alt: string;
   caption: string;
+  owner: { name: string; href: string };
   instagram_url: string;
 };
 
