@@ -158,6 +158,19 @@ test("publishes the Archie puppy-preparation post with accessible photos and sho
   assert.ok(html.indexOf("Products in This Post") < html.indexOf("Items in This Post"));
 });
 
+test("super-tag pages list every published blog carrying that tag", async () => {
+  const response = await render("/tags/puppy");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+
+  assert.match(html, /Super tag/);
+  assert.match(html, /More Puppy blogs/);
+  assert.match(html, /published/);
+  assert.match(html, /Puppy tag/);
+  assert.match(html, /Preparing for the Arrival of Archie: My Mini Bernadoodle Puppy/);
+  assert.match(html, /href="\/tags\/puppy"[^>]*>Puppy<\/a>/);
+});
+
 test("newsletter component uses the RPC and safe user-facing states", async () => {
   const component = await readFile(new URL("../app/components/EmailSignup.tsx", import.meta.url), "utf8");
 

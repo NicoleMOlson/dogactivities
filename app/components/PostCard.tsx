@@ -13,7 +13,12 @@ export function PostCard({ post, index = 0 }: { post: Post; index?: number }) {
       </Link>
       <div className="post-card-body">
         <div className="card-meta">
-          <Link className="category-label" href={`/categories/${post.category.slug}`}>{post.category.name}</Link>
+          <div className="post-labels">
+            <Link className="category-label" href={`/categories/${post.category.slug}`}>{post.category.name}</Link>
+            {post.tags
+              .filter((item) => post.highlighted_tag_slugs?.includes(item.slug))
+              .map((item) => <Link className="category-label" href={`/tags/${item.slug}`} key={item.id}>{item.name}</Link>)}
+          </div>
           <time dateTime={post.published_at ?? undefined}>{formatDate(post.published_at)}</time>
         </div>
         <h3><Link href={`/posts/${post.slug}`}>{post.title}</Link></h3>
