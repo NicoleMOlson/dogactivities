@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { EmailSignup } from "../../components/EmailSignup";
 import { getPostBySlug, publishedPosts } from "../../data/posts";
-import type { ContentBlock } from "../../data/types";
+import type { ContentBlock, InlineLink } from "../../data/types";
 
 export function generateStaticParams() { return publishedPosts.map((post) => ({ slug: post.slug })); }
 
@@ -12,16 +12,31 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return post ? { title: post.title, description: post.excerpt } : {};
 }
 
-function Block({ block }: { block: ContentBlock }) {
+function LinkedText({ text, links }: { text: string; links: InlineLink[] }) {
+  if (!links.length) return text;
+  const escaped = links
+    .map((link) => link.text)
+    .sort((a, b) => b.length - a.length)
+    .map((value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+  const pieces = text.split(new RegExp(`(${escaped.join("|")})`, "gi"));
+  return pieces.map((piece, index) => {
+    const link = links.find((item) => item.text.toLocaleLowerCase() === piece.toLocaleLowerCase());
+    return link
+      ? <a className="inline-retailer-link" href={link.href} target="_blank" rel="noreferrer" key={`${piece}-${index}`}>{piece}</a>
+      : piece;
+  });
+}
+
+function Block({ block, links }: { block: ContentBlock; links: InlineLink[] }) {
   if (block.type === "heading") return block.level === 3
-    ? <h3>{block.text}</h3>
-    : <h2 className={block.compact ? "compact-heading" : undefined}>{block.text}</h2>;
-  if (block.type === "quote") return <blockquote>{block.text}</blockquote>;
-  if (block.type === "list") return <ul>{block.items.map((item) => <li key={item}>{item}</li>)}</ul>;
+    ? <h3><LinkedText text={block.text} links={links} /></h3>
+    : <h2 className={block.compact ? "compact-heading" : undefined}><LinkedText text={block.text} links={links} /></h2>;
+  if (block.type === "quote") return <blockquote><LinkedText text={block.text} links={links} /></blockquote>;
+  if (block.type === "list") return <ul>{block.items.map((item) => <li key={item}><LinkedText text={item} links={links} /></li>)}</ul>;
   if (block.type === "image") return (
     <figure className="post-inline-image">
       <img src={block.image.src} alt={block.image.alt} />
-      <figcaption>{block.image.caption}</figcaption>
+      <figcaption><LinkedText text={block.image.caption} links={links} /></figcaption>
     </figure>
   );
   if (block.type === "links") return (
@@ -49,7 +64,7 @@ function Block({ block }: { block: ContentBlock }) {
       </aside>
     </>
   );
-  return <p>{block.text}</p>;
+  return <p><LinkedText text={block.text} links={links} /></p>;
 }
 
 export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -75,10 +90,10 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         </header>
         <figure className="post-featured polaroid">
           <img src={post.featured_image ?? ""} alt={post.featured_image_alt ?? ""} />
-          {post.featured_image_caption && <figcaption className="polaroid-caption">{post.featured_image_caption}</figcaption>}
+          {post.featured_image_caption && <figcaption className="polaroid-caption"><LinkedText text={post.featured_image_caption} links={post.inline_links ?? []} /></figcaption>}
         </figure>
         <div className="post-body paper-card">
-          {post.body.map((block, index) => <Block block={block} key={`${block.type}-${index}`} />)}
+          {post.body.map((block, index) => <Block block={block} links={post.inline_links ?? []} key={`${block.type}-${index}`} />)}
         </div>
       </article>
       <EmailSignup />

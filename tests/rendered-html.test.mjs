@@ -126,6 +126,8 @@ test("publishes the Archie puppy-preparation post with accessible photos and sho
   assert.match(html, /<h2 class="compact-heading">Creating Archie’s Puppy Space<\/h2>/);
   assert.match(html, /From research, to building, to crate training - picking the right crate can be a PROCESS!/);
   assert.match(html, /Here’s everything that went into selecting the right crate for Archie\./);
+  assert.match(html, /href="https:\/\/www\.homegoods\.com\/"[^>]*>Home Goods<\/a>/);
+  assert.equal((html.match(/class="inline-retailer-link" href="https:\/\/www\.homegoods\.com\/"/g) ?? []).length, 3);
   assert.match(html, /<h3>Archie’s Crate for Puppies, Dogs, and Mid-Sized Breeds<\/h3>/);
   assert.match(html, /<h3>Shopping at Target while Preparing to Bring Home a Puppy<\/h3>/);
   assert.match(html, /archie-target-golf-collection\.jpeg/);

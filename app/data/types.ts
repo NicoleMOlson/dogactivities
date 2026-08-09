@@ -20,6 +20,8 @@ export type MediaAsset = {
   usages: { post_slug: string; placement: string }[];
 };
 
+export type InlineLink = { text: string; href: string };
+
 export type ContentBlock =
   | { type: "paragraph"; text: string }
   | { type: "heading"; text: string; level?: 2 | 3; compact?: boolean }
@@ -42,4 +44,5 @@ export type Post = {
   featured_image_alt?: string;
   featured_image_caption?: string;
   author?: { name: string; href: string };
+  inline_links?: InlineLink[];
 };

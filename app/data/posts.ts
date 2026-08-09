@@ -65,6 +65,7 @@ export const posts: Post[] = [
     category: category("supplies"),
     tags: [tag("target"), tag("home-goods"), tag("amazon"), tag("dog-toys"), tag("organization"), tag("pet-crate"), tag("dog-bed")],
     author: { name: "Natalie Tromp", href: "/about#natalie-tromp" },
+    inline_links: [{ text: "Home Goods", href: "https://www.homegoods.com/" }],
   },
   {
     id: "post-001",
