@@ -17,7 +17,7 @@ export default function AboutPage() {
         </div>
       </section>
       <div className="human-profile-grid">
-        <section className="paper-card human-profile">
+        <section className="paper-card human-profile" id="natalie-tromp">
           <figure className="about-photo">
             <img
               src="/natalie-archie-gotcha-day.jpeg"

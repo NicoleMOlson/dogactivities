@@ -9,7 +9,7 @@ export function PostCard({ post, index = 0 }: { post: Post; index?: number }) {
   return (
     <article className={`post-card card-tilt-${(index % 3) + 1}`}>
       <Link className="post-image" href={`/posts/${post.slug}`}>
-        <img src={post.featured_image ?? ""} alt="" />
+        <img src={post.featured_image ?? ""} alt={post.featured_image_alt ?? ""} />
       </Link>
       <div className="post-card-body">
         <div className="card-meta">

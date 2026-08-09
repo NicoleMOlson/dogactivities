@@ -16,6 +16,18 @@ function Block({ block }: { block: ContentBlock }) {
   if (block.type === "heading") return <h2>{block.text}</h2>;
   if (block.type === "quote") return <blockquote>{block.text}</blockquote>;
   if (block.type === "list") return <ul>{block.items.map((item) => <li key={item}>{item}</li>)}</ul>;
+  if (block.type === "image") return (
+    <figure className="post-inline-image">
+      <img src={block.image.src} alt={block.image.alt} />
+      <figcaption>{block.image.caption}</figcaption>
+    </figure>
+  );
+  if (block.type === "links") return (
+    <aside className="post-shopping" aria-labelledby="items-in-post">
+      <h2 id="items-in-post">{block.title}</h2>
+      <ul>{block.items.map((item) => <li key={item.href}><a href={item.href} target="_blank" rel="noreferrer">{item.label}<span aria-hidden="true"> ↗</span></a></li>)}</ul>
+    </aside>
+  );
   return <p>{block.text}</p>;
 }
 
@@ -35,11 +47,15 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           </div>
           <h1>{post.title}</h1>
           <p>{post.excerpt}</p>
+          {post.author && <p className="post-author">By <Link href={post.author.href}>{post.author.name}</Link></p>}
           <div className="tag-row">
             {post.tags.map((item) => <Link href={`/tags/${item.slug}`} key={item.id}>#{item.name}</Link>)}
           </div>
         </header>
-        <figure className="post-featured polaroid"><img src={post.featured_image ?? ""} alt="" /></figure>
+        <figure className="post-featured polaroid">
+          <img src={post.featured_image ?? ""} alt={post.featured_image_alt ?? ""} />
+          {post.featured_image_caption && <figcaption className="polaroid-caption">{post.featured_image_caption}</figcaption>}
+        </figure>
         <div className="post-body paper-card">
           {post.body.map((block, index) => <Block block={block} key={`${block.type}-${index}`} />)}
         </div>

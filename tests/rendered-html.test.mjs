@@ -88,6 +88,24 @@ test("about page shows the team profiles without the former inspector photo", as
   assert.ok(html.indexOf("archie-coffee.jpeg") < html.indexOf("Archie</h1>"));
 });
 
+test("publishes the Archie puppy-preparation post with accessible photos and shopping links", async () => {
+  const response = await render("/posts/preparing-for-arrival-of-archie-mini-bernedoodle-puppy");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+
+  assert.match(html, /Preparing for the Arrival of Archie: My Mini Bernadoodle Puppy/);
+  assert.match(html, /August 9, 2026/);
+  assert.match(html, /href="\/about#natalie-tromp"/);
+  assert.match(html, /archie-crate-and-bed\.jpeg/);
+  assert.match(html, /dog crate inside of a home with a dog bed/);
+  assert.match(html, /Archie’s Dog Toys and Dog Collar/);
+  assert.match(html, /archie-puppy-toys\.jpeg/);
+  assert.match(html, /Shopping at Target while Preparing to Bring Home a Puppy/);
+  assert.match(html, /archie-target-golf-collection\.jpeg/);
+  assert.match(html, /Items in This Post/);
+  assert.match(html, /target\.com\/p\/hooray-house-country-club-polo/);
+});
+
 test("newsletter component uses the RPC and safe user-facing states", async () => {
   const component = await readFile(new URL("../app/components/EmailSignup.tsx", import.meta.url), "utf8");
 

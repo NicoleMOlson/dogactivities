@@ -1,4 +1,5 @@
 import { categories, tags } from "./taxonomy";
+import { archieCratePhoto, archieTargetGolfPhoto, archieToysPhoto } from "./media";
 import type { Post } from "./types";
 
 const category = (slug: string) => categories.find((item) => item.slug === slug)!;
@@ -6,6 +7,64 @@ const tag = (slug: string) => tags.find((item) => item.slug === slug)!;
 
 // Static sample records share the same shape intended for a future Supabase post repository.
 export const posts: Post[] = [
+  {
+    id: "post-005",
+    title: "Preparing for the Arrival of Archie: My Mini Bernadoodle Puppy",
+    slug: "preparing-for-arrival-of-archie-mini-bernedoodle-puppy",
+    excerpt: "Everything I bought and organized to create a safe, comfortable, and fun home for Archie before our mini Bernadoodle puppy arrived.",
+    body: [
+      { type: "paragraph", text: "There is something about getting a puppy that turns you into a person who suddenly wants to buy everything, and believe me, I definitely went overboard. I think the excitement of getting a puppy and it becoming my new reality is something that you just can’t explain." },
+      { type: "paragraph", text: "The moment we knew Archie was coming home, I went into full puppy-prep mode. I started researching, making lists, organizing spaces, and (of course) adding way too many adorable things to my cart." },
+      { type: "paragraph", text: "But honestly? Preparing for a puppy was about more than just buying cute accessories. I wanted to create a safe, comfortable, and fun environment where Archie could feel at home from day one." },
+      { type: "paragraph", text: "From practical essentials to a few “okay, I couldn’t resist” purchases, here’s everything I bought to prepare for our newest family member." },
+      { type: "heading", text: "Creating Archie’s Puppy Space" },
+      { type: "heading", text: "Archie’s Crate for Puppies, Dogs, and Mid-Sized Breeds" },
+      { type: "paragraph", text: "One of the first things I purchased was his crate and dog bed. We recently moved into our newly remodeled house, so I knew I wanted a crate that was not only aesthetically pleasing but also functional. I also didn’t want to buy multiple puppy stages when he got bigger. I ended up purchasing one from Amazon and absolutely love it. I have a basket of his toys, a basket of treats, and his other accessories on top, and it doesn’t scream that my dog owns this corner of the house." },
+      { type: "heading", text: "Archie’s Dog Bed for Puppies, Dogs, and Mid-Sized Breeds" },
+      { type: "paragraph", text: "The crate came with a dog bed, but I knew I wanted a bed for my office on my work-from-home days. On the first night, he naturally laid in it, so now this has become his crate bed, and he absolutely loves it. I also purchased it on Amazon!" },
+      { type: "heading", text: "Archie’s Dog Toys and Dog Collar for Puppies, Dogs, and Mid-Sized Breeds" },
+      { type: "image", image: archieToysPhoto },
+      { type: "paragraph", text: "I also got a few of his toys, his collar, and a cute basket from Amazon to hold them. Amazon was also my go-to for his dog bowls, and I must say they match the aesthetic of our house perfectly. I also went to Home Goods and found some great BarkBox toys at an amazing price, along with baskets and other necessities, so definitely check out both!" },
+      { type: "paragraph", text: "Archie’s favorite toy is a tennis ball, but he also loves a cute fish toy. I got lucky and found one at Home Goods, but Chewy also sells it." },
+      { type: "heading", text: "The Best Puppy Play Area for Small Puppies and Mid-Sized Breeds" },
+      { type: "paragraph", text: "After watching many YouTube videos, I noticed that many trainers and new puppy owners set up small play areas for their dogs to contain them. Again, with us moving into our house post-construction, this was very important for me. I didn’t want a chain-link-fence-looking one, so I bought a six-panel pet yard. After being around it for two hours, Archie had already figured out how to go in and out the doggy door (it can be locked, don’t worry)—a definite mama win!" },
+      { type: "heading", text: "Shopping at Target while Preparing to Bring Home a Puppy" },
+      { type: "image", image: archieTargetGolfPhoto },
+      { type: "paragraph", text: "Target was my next stop. I knew I wanted some cute accessories, and I needed a storage container for his dog food." },
+      { type: "paragraph", text: "Before Archie came home, I wanted everything to have a place. Puppies are curious, messy, and constantly learning, so organization was key." },
+      { type: "paragraph", text: "One of my first purchases was a pet food storage container with a built-in scoop. I love that it keeps his food fresh while making feeding time quick and easy." },
+      { type: "quote", text: "Puppy parent tip: Having everything ready before your puppy arrives makes those first few chaotic days so much easier." },
+      { type: "paragraph", text: "I also grabbed a cute storage canister from Hearth & Hand with Magnolia because, let’s be honest, puppy supplies can take over your house quickly, and I wanted everything to still match our home aesthetic." },
+      { type: "paragraph", text: "I also found the cutest little collection by Hooray House and had to scoop up the golf polo, bucket hat, and golf club dog toy. If you haven’t heard, a video of Archie playing with a tennis ball is what sold my husband on getting him. I also found a poop bag dispenser shaped like a tennis ball, so this was a must-buy!" },
+      { type: "links", title: "Items in This Post", items: [
+        { label: "Furniture-style dog crate", href: "https://www.amazon.com/dp/B0CPHSBTWQ?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1" },
+        { label: "Archie’s dog bed", href: "https://www.amazon.com/dp/B08CXQY47M?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1" },
+        { label: "Dog collar", href: "https://www.amazon.com/dp/B0FH8C8YNJ?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1" },
+        { label: "Amazon dog toy 1", href: "https://www.amazon.com/dp/B09BBL8T4Z?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1" },
+        { label: "Amazon dog toy 2", href: "https://www.amazon.com/dp/B0FSPMRRSN?ref=ppx_yo2ov_dt_b_fed_asin_title" },
+        { label: "Amazon dog toy 3", href: "https://www.amazon.com/dp/B07VBW7RMK?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1" },
+        { label: "Amazon dog toy 4", href: "https://www.amazon.com/dp/B07P5PTZWT?ref=ppx_yo2ov_dt_b_fed_asin_title" },
+        { label: "Bark blowfish toy at Chewy", href: "https://www.chewy.com/bark-spike-blowfish-squeaky-plush-dog/dp/4482022" },
+        { label: "Six-panel pet yard", href: "https://www.chewy.com/mypet-indoor-outdoor-6-panel-petyard/dp/3507174" },
+        { label: "Hearth & Hand stoneware canister", href: "https://www.target.com/p/71-fl-oz-large-stoneware-canister-sour-cream---hearth---38--hand--8482--with-magnolia/-/A-94688420" },
+        { label: "Pet food storage tub with scoop", href: "https://www.target.com/p/pet-food-storage-tub-with-built-in-scoop---35lbs---up--38-up--8482-/-/A-87004694" },
+        { label: "Hooray House golf hat", href: "https://www.target.com/p/hooray-house-golf-hat---green-xs-s/-/A-95098361" },
+        { label: "Hooray House country club polo", href: "https://www.target.com/p/hooray-house-country-club-polo---green-s/-/A-95098317" },
+        { label: "Hooray House golf clubs hide toy", href: "https://www.target.com/p/hooray-house-golf-clubs-hide-toy/-/A-95098326" },
+        { label: "Hooray House tennis-ball waste bag holder", href: "https://www.target.com/p/hooray-house-waste-bag-holder-tennis-ball/-/A-95098357" },
+        { label: "Shop HomeGoods", href: "https://www.homegoods.com/" },
+        { label: "Explore BarkBox", href: "https://bark.co/pages/join-barkbox-dd-ff-d1a" },
+      ] },
+    ],
+    featured_image: archieCratePhoto.src,
+    featured_image_alt: archieCratePhoto.alt,
+    featured_image_caption: archieCratePhoto.caption,
+    published_at: "2026-08-09T09:00:00-05:00",
+    status: "published",
+    category: category("supplies"),
+    tags: [tag("target"), tag("home-goods"), tag("amazon"), tag("dog-toys"), tag("organization"), tag("pet-crate"), tag("dog-bed")],
+    author: { name: "Natalie Tromp", href: "/about#natalie-tromp" },
+  },
   {
     id: "post-001",
     title: "The unhurried guide to a first trail day",

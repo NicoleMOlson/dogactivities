@@ -22,8 +22,8 @@ export default function Home() {
         </div>
 
         <Link className="hero-photo polaroid" href={`/posts/${leadPost.slug}`}>
-          <img src={leadPost.featured_image ?? ""} alt="Golden dog resting outside" />
-          <span className="polaroid-caption">Weekend report: tails up</span>
+          <img src={leadPost.featured_image ?? ""} alt={leadPost.featured_image_alt ?? "Featured field note"} />
+          <span className="polaroid-caption">{leadPost.title}</span>
         </Link>
 
         <div className="route-marker" aria-hidden="true">
