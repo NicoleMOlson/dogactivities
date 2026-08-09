@@ -152,6 +152,7 @@ test("publishes the Archie puppy-preparation post with accessible photos and sho
   assert.match(html, /class="inline-retailer-link" href="https:\/\/amzn\.to\/3RIwl2q"[^>]*>this one<\/a>!/);
   assert.match(html, /I picked the/);
   assert.match(html, /class="inline-retailer-link" href="https:\/\/www\.amazon\.com\/dp\/B08CXQY47M\?th=1&amp;linkCode=ll2&amp;tag=archieapprove-20[^>]*>fluffiest one I could find<\/a>/);
+  assert.match(html, /class="inline-retailer-link" href="https:\/\/www\.amazon\.com\/dp\/B0CPHSBTWQ\?ref=ppx_yo2ov_dt_b_fed_asin_title&amp;th=1"[^>]*>one from Amazon<\/a>/);
   assert.match(html, /he ended up laying it on his first night home and now he sleeps there every night\./);
   assert.match(html, /My puppy shopping haul continues/);
   assert.match(html, />crinkle duck toy<\/a>/);

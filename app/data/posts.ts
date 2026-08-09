@@ -6,6 +6,7 @@ const category = (slug: string) => categories.find((item) => item.slug === slug)
 const tag = (slug: string) => tags.find((item) => item.slug === slug)!;
 const barkBoxUrl = "https://bark.co/pages/join-barkbox-dd-ff-d1a?msclkid=7acb182e174a1b93e325725605140d1a&utm_campaign=688342557&utm_content=&utm_medium=cpc&utm_source=bing&utm_term=co_bb_can+i+buy+barkbox+toys+without+a+subscription&wm_ad_id=&wm_adgroup_id=1233653118341272&wm_medium=ads&wm_source=bing";
 const blowfishUrl = "https://www.chewy.com/bark-spike-blowfish-squeaky-plush-dog/dp/4482022?utm_source=google-product&utm_medium=cpc&utm_campaign=19996370614&utm_content=&gad_source=1&gad_campaignid=19996373038&gbraid=0AAAAADmQ2V3UCBrfcclR5wjfzXIU31SoN&gclid=CjwKCAjw1bvTBhBbEiwAzbP8L8dg90BGMHuYsGNL2B-Dp10XyMwnbKam-qI1l12yq40g_QFdFhohtRoC22IQAvD_BwE";
+const dogCrateUrl = "https://www.amazon.com/dp/B0CPHSBTWQ?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1";
 const dogBedAffiliateUrl = "https://www.amazon.com/dp/B08CXQY47M?th=1&linkCode=ll2&tag=archieapprove-20&linkId=f580d6f1a8c1a1d0fb7ec9c4c54c0944&language=en_US&gaOptInStatus=true&ref_=as_li_ss_tl";
 const dogHarnessAffiliateUrl = "https://www.amazon.com/dp/B0FH8C8YNJ?th=1&linkCode=ll2&tag=archieapprove-20&linkId=9887767cab19d655439a06933e056526&language=en_US&gaOptInStatus=true&ref_=as_li_ss_tl";
 const crinkleDuckAffiliateUrl = "https://www.amazon.com/dp/B09BBL8T4Z?th=1&linkCode=ll2&tag=archieapprove-20&linkId=31ca4d7eb61ba25c49b93f5fada8ed92&language=en_US&gaOptInStatus=true&ref_=as_li_ss_tl";
@@ -53,7 +54,7 @@ export const posts: Post[] = [
       { type: "paragraph", text: "I also grabbed a cute storage canister from Hearth & Hand with Magnolia because, let’s be honest, puppy supplies can take over your house quickly, and I wanted everything to still match our home aesthetic." },
       { type: "paragraph", text: "I also found the cutest little collection by Hooray House and had to scoop up the golf polo, bucket hat, and golf club dog toy. If you haven’t heard, a video of Archie playing with a tennis ball is what sold my husband on getting him. I also found a poop bag dispenser shaped like a tennis ball, so this was a must-buy!" },
       { type: "links", title: "Items in This Post", items: [
-        { label: "Furniture-style dog crate", href: "https://www.amazon.com/dp/B0CPHSBTWQ?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1", image: "/products/dog-crate.jpeg", retailer: "Amazon" },
+        { label: "Furniture-style dog crate", href: dogCrateUrl, image: "/products/dog-crate.jpeg", retailer: "Amazon" },
         { label: "Archie’s dog bed", href: dogBedAffiliateUrl, image: "/products/dog-bed.jpeg", retailer: "Amazon" },
         { label: "Dog harness", href: dogHarnessAffiliateUrl, image: "/products/dog-harness.jpeg", retailer: "Amazon" },
         { label: "Crinkle duck toy", href: crinkleDuckAffiliateUrl, image: "/products/crinkle-duck.jpeg", retailer: "Amazon" },
@@ -90,6 +91,7 @@ export const posts: Post[] = [
     },
     author: { name: "Natalie Tromp", href: "/about#natalie-tromp" },
     inline_links: [
+      { text: "one from Amazon", href: dogCrateUrl },
       { text: "Home Goods", href: "https://www.homegoods.com/" },
       { text: "BarkBox", href: barkBoxUrl },
       { text: "Bark Box", href: barkBoxUrl },
