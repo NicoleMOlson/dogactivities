@@ -46,6 +46,7 @@ test("uses Alegreya typography across the site", async () => {
   assert.match(layout, /--font-heading/);
   assert.match(styles, /font-family: var\(--font-heading\), sans-serif; font-weight: 900/);
   assert.match(styles, /font-family: var\(--font-body\), serif/);
+  assert.match(styles, /\.post-body > p \{ margin: 0 0 1\.4em; \}/);
   assert.doesNotMatch(layout, /DM_Sans|Fraunces/);
 });
 
