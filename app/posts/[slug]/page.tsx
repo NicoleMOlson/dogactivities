@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 }
 
 function Block({ block }: { block: ContentBlock }) {
-  if (block.type === "heading") return <h2>{block.text}</h2>;
+  if (block.type === "heading") return block.level === 3 ? <h3>{block.text}</h3> : <h2>{block.text}</h2>;
   if (block.type === "quote") return <blockquote>{block.text}</blockquote>;
   if (block.type === "list") return <ul>{block.items.map((item) => <li key={item}>{item}</li>)}</ul>;
   if (block.type === "image") return (

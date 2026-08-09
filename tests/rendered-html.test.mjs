@@ -115,6 +115,9 @@ test("publishes the Archie puppy-preparation post with accessible photos and sho
   assert.match(html, /Archie’s Dog Toys and Dog Collar/);
   assert.match(html, /archie-puppy-toys\.jpeg/);
   assert.match(html, /Shopping at Target while Preparing to Bring Home a Puppy/);
+  assert.match(html, /<h2>Creating Archie’s Puppy Space<\/h2>/);
+  assert.match(html, /<h3>Archie’s Crate for Puppies, Dogs, and Mid-Sized Breeds<\/h3>/);
+  assert.match(html, /<h3>Shopping at Target while Preparing to Bring Home a Puppy<\/h3>/);
   assert.match(html, /archie-target-golf-collection\.jpeg/);
   assert.match(html, /Items in This Post/);
   assert.match(html, /Products in This Post/);
