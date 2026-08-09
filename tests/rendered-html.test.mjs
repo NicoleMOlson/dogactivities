@@ -51,7 +51,8 @@ test("uses Alegreya typography across the site", async () => {
   assert.match(styles, /\.post-header \{ width: min\(1120px, 100%\)/);
   assert.match(styles, /\.post-featured \{ width: min\(1120px, 100%\)/);
   assert.match(styles, /\.post-featured[^}]*margin: 24px auto 0/);
-  assert.match(styles, /\.post-featured img \{ width: min\(950px, 100%\)/);
+  assert.match(styles, /\.post-featured img \{ width: auto; max-width: 100%; height: auto; max-height: 720px/);
+  assert.doesNotMatch(styles, /\.post-featured img[^}]*object-fit: cover/);
   assert.match(styles, /\.post-inline-image[^}]*margin: 2\.8em 0 3\.2em/);
   assert.match(styles, /\.product-shelf[^}]*margin: 64px 0 0/);
   assert.doesNotMatch(layout, /DM_Sans|Fraunces/);
@@ -122,7 +123,9 @@ test("publishes the Archie puppy-preparation post with accessible photos and sho
   assert.match(html, /Archie’s Dog Toys and Dog Collar/);
   assert.match(html, /archie-puppy-toys\.jpeg/);
   assert.match(html, /Shopping at Target while Preparing to Bring Home a Puppy/);
-  assert.match(html, /<h2>Creating Archie’s Puppy Space<\/h2>/);
+  assert.match(html, /<h2 class="compact-heading">Creating Archie’s Puppy Space<\/h2>/);
+  assert.match(html, /From research, to building, to crate training - picking the right crate can be a PROCESS!/);
+  assert.match(html, /Here’s everything that went into selecting the right crate for Archie\./);
   assert.match(html, /<h3>Archie’s Crate for Puppies, Dogs, and Mid-Sized Breeds<\/h3>/);
   assert.match(html, /<h3>Shopping at Target while Preparing to Bring Home a Puppy<\/h3>/);
   assert.match(html, /archie-target-golf-collection\.jpeg/);

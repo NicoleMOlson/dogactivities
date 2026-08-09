@@ -22,7 +22,7 @@ export type MediaAsset = {
 
 export type ContentBlock =
   | { type: "paragraph"; text: string }
-  | { type: "heading"; text: string; level?: 2 | 3 }
+  | { type: "heading"; text: string; level?: 2 | 3; compact?: boolean }
   | { type: "list"; items: string[] }
   | { type: "quote"; text: string }
   | { type: "image"; image: MediaAsset }

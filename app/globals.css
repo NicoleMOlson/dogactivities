@@ -174,11 +174,12 @@ h1, h2, h3 { font-family: var(--font-heading), sans-serif; font-weight: 900; let
 .post-author a { text-underline-offset: 4px; }
 .post-meta { justify-content: flex-start; }
 .post-featured { width: min(1120px, 100%); margin: 24px auto 0; padding: 15px 15px 42px; transform: rotate(1.2deg); }
-.post-featured img { width: min(950px, 100%); margin-inline: auto; max-height: 610px; aspect-ratio: 16/9; object-fit: cover; }
+.post-featured img { width: auto; max-width: 100%; height: auto; max-height: 720px; margin-inline: auto; object-fit: contain; }
 .post-featured figcaption { width: min(950px, 100%); margin-inline: auto; }
 .post-body { width: min(1120px, 100%); margin: 46px auto 80px; padding: clamp(38px, 7vw, 76px); font-family: var(--font-body); font-size: 1.15rem; line-height: 1.85; min-width: 0; }
 .post-body > p { margin: 0 0 1.4em; }
 .post-body h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05; margin: 2.3em 0 .7em; }
+.post-body h2.compact-heading { margin-top: 0; }
 .post-body h3 { font-size: clamp(1.55rem, 3vw, 2.15rem); line-height: 1.12; margin: 2.15em 0 .65em; }
 .post-body h2:first-child { margin-top: 0; }
 .post-body li { margin-bottom: 8px; }
