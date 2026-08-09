@@ -75,6 +75,7 @@ export const posts: Post[] = [
       { text: "this cute fish", href: blowfishUrl },
       { text: "Chewy", href: "https://www.chewy.com/" },
       { text: "this one!", href: petYardUrl },
+      { text: "Target", href: "https://www.target.com/c/dog-supplies-pets/-/N-5xt3t" },
     ],
   },
   {

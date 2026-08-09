@@ -122,7 +122,8 @@ test("publishes the Archie puppy-preparation post with accessible photos and sho
   assert.match(html, /dog crate inside of a home with a dog bed/);
   assert.match(html, /Archie’s Dog Toys and Dog Collar/);
   assert.match(html, /archie-puppy-toys\.jpeg/);
-  assert.match(html, /Shopping at Target while Preparing to Bring Home a Puppy/);
+  assert.match(html, /Shopping at /);
+  assert.match(html, /while Preparing to Bring Home a Puppy/);
   assert.match(html, /<h2 class="compact-heading">Creating Archie’s Puppy Space<\/h2>/);
   assert.match(html, /From research, to building, to crate training - picking the right crate can be a PROCESS!/);
   assert.match(html, /Here’s everything that went into selecting the right crate for Archie\./);
@@ -134,8 +135,9 @@ test("publishes the Archie puppy-preparation post with accessible photos and sho
   assert.equal((html.match(/href="https:\/\/www\.chewy\.com\/bark-spike-blowfish-squeaky-plush-dog\/dp\/4482022\?utm_source=google-product/g) ?? []).length, 3);
   assert.match(html, /class="inline-retailer-link" href="https:\/\/www\.chewy\.com\/"[^>]*>Chewy<\/a>/);
   assert.match(html, /class="inline-retailer-link" href="https:\/\/www\.chewy\.com\/mypet-indoor-outdoor-6-panel-petyard\/dp\/3507174"[^>]*>this one!<\/a>/);
+  assert.equal((html.match(/class="inline-retailer-link" href="https:\/\/www\.target\.com\/c\/dog-supplies-pets\/-\/N-5xt3t"/g) ?? []).length, 4);
   assert.match(html, /<h3>Archie’s Crate for Puppies, Dogs, and Mid-Sized Breeds<\/h3>/);
-  assert.match(html, /<h3>Shopping at Target while Preparing to Bring Home a Puppy<\/h3>/);
+  assert.match(html, /<h3>Shopping at .*while Preparing to Bring Home a Puppy<\/h3>/);
   assert.match(html, /archie-target-golf-collection\.jpeg/);
   assert.match(html, /Items in This Post/);
   assert.match(html, /Products in This Post/);
