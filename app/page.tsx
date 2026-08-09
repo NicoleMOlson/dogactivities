@@ -10,8 +10,10 @@ export default function Home() {
     <main>
       <section className="hero page-shell">
         <div className="hero-copy paper-card taped-card">
-          <p className="eyebrow">We sniffed it first.</p>
-          <h1>More tail wags<br />for you.</h1>
+          <h1 className="hero-title">
+            <span>We sniffed it first.</span>
+            <span>More tail wags for you.</span>
+          </h1>
           <p className="hero-deck">
             Paws-on-the-ground outings, tried and true training tricks, with a dose of our favorite
             treats and toys—we know what works and what flops when it comes to having fun while out with your dog.

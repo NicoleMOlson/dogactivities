@@ -47,7 +47,7 @@ nav { display: flex; align-items: center; gap: 30px; font-size: .83rem; font-wei
 nav a { text-decoration: none; border-bottom: 1px solid transparent; }
 nav a:hover, nav a:focus-visible { border-color: currentColor; }
 
-.hero { min-height: 650px; position: relative; padding: 48px 0 78px; display: grid; grid-template-columns: 1.2fr .8fr; align-items: center; gap: 52px; }
+.hero { min-height: 650px; position: relative; padding: 48px 0 78px; display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(280px, .65fr); align-items: center; gap: 38px; }
 .paper-card, .paper-strip, .post-card { background: var(--paper); box-shadow: var(--shadow); border: 1px solid rgba(37,62,42,.13); }
 .hero-copy { padding: clamp(38px, 6vw, 76px); position: relative; transform: rotate(-1.1deg); z-index: 2; }
 .taped-card::before {
@@ -56,7 +56,9 @@ nav a:hover, nav a:focus-visible { border-color: currentColor; }
 }
 .eyebrow { margin: 0 0 14px; text-transform: uppercase; letter-spacing: .17em; font-size: .72rem; font-weight: 800; color: #4d6a57; }
 h1, h2, h3 { font-family: var(--font-heading), sans-serif; font-weight: 900; letter-spacing: -.035em; }
-.hero h1 { margin: 0; font-size: clamp(3.6rem, 7vw, 6.5rem); line-height: .92; }
+.hero h1 { margin: 0; font-size: clamp(2.9rem, 4.5vw, 4.8rem); line-height: .98; }
+.hero-title span { display: block; white-space: nowrap; }
+.hero-title span + span { margin-top: .12em; }
 .hero-deck { font-size: clamp(1rem, 1.7vw, 1.25rem); line-height: 1.6; max-width: 600px; margin: 25px 0 32px; }
 .button { display: inline-flex; align-items: center; gap: 18px; padding: 14px 19px; text-decoration: none; font-weight: 800; font-size: .82rem; letter-spacing: .04em; }
 .button-dark { background: var(--ink); color: white; box-shadow: 5px 5px 0 var(--sun); }
@@ -233,6 +235,7 @@ h1, h2, h3 { font-family: var(--font-heading), sans-serif; font-weight: 900; let
   nav a:first-child { display: none; }
   .hero { grid-template-columns: 1fr; padding-top: 28px; gap: 30px; }
   .hero-copy { padding: 42px 30px; }
+  .hero-title span { white-space: normal; }
   .hero-photo { width: 74%; justify-self: end; margin-top: -35px; }
   .route-marker { display: none; }
   .section-heading { align-items: flex-start; flex-direction: column; }
