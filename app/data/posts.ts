@@ -6,7 +6,13 @@ const category = (slug: string) => categories.find((item) => item.slug === slug)
 const tag = (slug: string) => tags.find((item) => item.slug === slug)!;
 const barkBoxUrl = "https://bark.co/pages/join-barkbox-dd-ff-d1a?msclkid=7acb182e174a1b93e325725605140d1a&utm_campaign=688342557&utm_content=&utm_medium=cpc&utm_source=bing&utm_term=co_bb_can+i+buy+barkbox+toys+without+a+subscription&wm_ad_id=&wm_adgroup_id=1233653118341272&wm_medium=ads&wm_source=bing";
 const blowfishUrl = "https://www.chewy.com/bark-spike-blowfish-squeaky-plush-dog/dp/4482022?utm_source=google-product&utm_medium=cpc&utm_campaign=19996370614&utm_content=&gad_source=1&gad_campaignid=19996373038&gbraid=0AAAAADmQ2V3UCBrfcclR5wjfzXIU31SoN&gclid=CjwKCAjw1bvTBhBbEiwAzbP8L8dg90BGMHuYsGNL2B-Dp10XyMwnbKam-qI1l12yq40g_QFdFhohtRoC22IQAvD_BwE";
-const petYardUrl = "https://www.chewy.com/mypet-indoor-outdoor-6-panel-petyard/dp/3507174";
+const dogBedAffiliateUrl = "https://www.amazon.com/dp/B08CXQY47M?th=1&linkCode=ll2&tag=archieapprove-20&linkId=f580d6f1a8c1a1d0fb7ec9c4c54c0944&language=en_US&gaOptInStatus=true&ref_=as_li_ss_tl";
+const dogHarnessAffiliateUrl = "https://www.amazon.com/dp/B0FH8C8YNJ?th=1&linkCode=ll2&tag=archieapprove-20&linkId=9887767cab19d655439a06933e056526&language=en_US&gaOptInStatus=true&ref_=as_li_ss_tl";
+const crinkleDuckAffiliateUrl = "https://www.amazon.com/dp/B09BBL8T4Z?th=1&linkCode=ll2&tag=archieapprove-20&linkId=31ca4d7eb61ba25c49b93f5fada8ed92&language=en_US&gaOptInStatus=true&ref_=as_li_ss_tl";
+const squeakyCrabAffiliateUrl = "https://www.amazon.com/dp/B0FSPMRRSN?&linkCode=ll2&tag=archieapprove-20&linkId=0bedc51c151938538c737a1a63f34424&language=en_US&gaOptInStatus=true&ref_=as_li_ss_tl";
+const dentachewAffiliateUrl = "https://www.amazon.com/dp/B07VBW7RMK?th=1&linkCode=ll2&tag=archieapprove-20&linkId=88b55900611f09f4ff2acf86ac2e8d0b&language=en_US&gaOptInStatus=true&ref_=as_li_ss_tl";
+const squeakerBallzAffiliateUrl = "https://www.amazon.com/dp/B07P5PTZWT?th=1&linkCode=ll2&tag=archieapprove-20&linkId=cb02f82dc80bfaacfb885f2b15aadb2a&language=en_US&gaOptInStatus=true&ref_=as_li_ss_tl";
+const petYardAffiliateUrl = "https://amzn.to/3RIwl2q";
 const targetFoodStorageUrl = "https://www.target.com/p/pet-food-storage-tub-with-built-in-scoop---35lbs---up--38-up--8482-/-/A-87004694";
 const targetCanisterUrl = "https://www.target.com/p/71-fl-oz-large-stoneware-canister-sour-cream---hearth---38--hand--8482--with-magnolia/-/A-94688420";
 const targetGolfHatUrl = "https://www.target.com/p/hooray-house-golf-hat---green-xs-s/-/A-95098361";
@@ -34,7 +40,7 @@ export const posts: Post[] = [
       { type: "paragraph", text: "The crate came with a dog bed, but I knew I wanted a bed for my office on my work-from-home days. I picked the fluffiest one I could find - he ended up laying it on his first night home and now he sleeps there every night." },
       { type: "heading", level: 3, text: "Archie’s Dog Toys and Dog Collar for Puppies, Dogs, and Mid-Sized Breeds" },
       { type: "image", image: archieToysPhoto },
-      { type: "paragraph", text: "I also got a few of his toys, his collar, and a cute basket from Amazon to hold them. Amazon was also my go-to for his dog bowls, and I must say they match the aesthetic of our house perfectly. I also went to Home Goods and found some great BarkBox toys at an amazing price, along with baskets and other necessities, so definitely check out both!" },
+      { type: "paragraph", text: "My puppy shopping haul continues - I still needed a crinkle duck toy, a plush squeaky crab toy, Mini Dentachew toys, Squeaker Ballz, a collar, and of course - an organizing bin for it all! I turned to Amazon Prime so I could get everything fast and it would be ready when Archie came home. I found dog bowls that perfectly blended in with our home's aesthetic and decor. No spree is complete without a trip to Home Goods, their impressive pet aisle made it easy to finish up with the last minute things I needed. I found Bark Box toys at an amazing price." },
       { type: "paragraph", text: "Archie’s favorite toy is a tennis ball, but he also loves this cute fish! I got lucky and found one at Home Goods, but Chewy also sells it." },
       { type: "heading", level: 3, text: "The Best Puppy Play Area for Small Puppies and Mid-Sized Breeds" },
       { type: "paragraph", text: "After watching many YouTube videos, I noticed that many trainers and new puppy owners set up small play areas for their dogs to contain them. Again, with us moving into our house post-construction, this was very important for me. I didn’t want a chain-link-fence-looking one, so I bought this one! After being around it for two hours, Archie had already figured out how to go in and out the doggy door (it can be locked, don’t worry)—a definite mama win!" },
@@ -48,14 +54,14 @@ export const posts: Post[] = [
       { type: "paragraph", text: "I also found the cutest little collection by Hooray House and had to scoop up the golf polo, bucket hat, and golf club dog toy. If you haven’t heard, a video of Archie playing with a tennis ball is what sold my husband on getting him. I also found a poop bag dispenser shaped like a tennis ball, so this was a must-buy!" },
       { type: "links", title: "Items in This Post", items: [
         { label: "Furniture-style dog crate", href: "https://www.amazon.com/dp/B0CPHSBTWQ?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1", image: "/products/dog-crate.jpeg", retailer: "Amazon" },
-        { label: "Archie’s dog bed", href: "https://www.amazon.com/dp/B08CXQY47M?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1", image: "/products/dog-bed.jpeg", retailer: "Amazon" },
-        { label: "Dog harness", href: "https://www.amazon.com/dp/B0FH8C8YNJ?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1", image: "/products/dog-harness.jpeg", retailer: "Amazon" },
-        { label: "Crinkle duck toy", href: "https://www.amazon.com/dp/B09BBL8T4Z?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1", image: "/products/crinkle-duck.jpeg", retailer: "Amazon" },
-        { label: "Plush squeaky crab toy", href: "https://www.amazon.com/dp/B0FSPMRRSN?ref=ppx_yo2ov_dt_b_fed_asin_title", image: "/products/squeaky-crab.jpeg", retailer: "Amazon" },
-        { label: "Mini Dentachew toys", href: "https://www.amazon.com/dp/B07VBW7RMK?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1", image: "/products/dentachew.jpeg", retailer: "Amazon" },
-        { label: "Squeaker Ballz", href: "https://www.amazon.com/dp/B07P5PTZWT?ref=ppx_yo2ov_dt_b_fed_asin_title", image: "/products/squeaker-balls.jpeg", retailer: "Amazon" },
+        { label: "Archie’s dog bed", href: dogBedAffiliateUrl, image: "/products/dog-bed.jpeg", retailer: "Amazon" },
+        { label: "Dog harness", href: dogHarnessAffiliateUrl, image: "/products/dog-harness.jpeg", retailer: "Amazon" },
+        { label: "Crinkle duck toy", href: crinkleDuckAffiliateUrl, image: "/products/crinkle-duck.jpeg", retailer: "Amazon" },
+        { label: "Plush squeaky crab toy", href: squeakyCrabAffiliateUrl, image: "/products/squeaky-crab.jpeg", retailer: "Amazon" },
+        { label: "Mini Dentachew toys", href: dentachewAffiliateUrl, image: "/products/dentachew.jpeg", retailer: "Amazon" },
+        { label: "Squeaker Ballz", href: squeakerBallzAffiliateUrl, image: "/products/squeaker-balls.jpeg", retailer: "Amazon" },
         { label: "Bark blowfish toy", href: blowfishUrl, image: "/archie-puppy-toys.jpeg", retailer: "Chewy" },
-        { label: "Six-panel pet yard", href: petYardUrl, image: "/archie-crate-and-bed.jpeg", retailer: "Chewy" },
+        { label: "Six-panel pet yard", href: petYardAffiliateUrl, image: "/archie-crate-and-bed.jpeg", retailer: "Amazon" },
         { label: "Hearth & Hand stoneware canister", href: targetCanisterUrl, image: "/products/stoneware-canister.jpeg", retailer: "Target" },
         { label: "Pet food storage tub with scoop", href: targetFoodStorageUrl, image: "/products/pet-food-storage.jpeg", retailer: "Target" },
         { label: "Hooray House golf hat", href: targetGolfHatUrl, image: "/products/golf-hat.jpeg", retailer: "Target" },
@@ -89,8 +95,13 @@ export const posts: Post[] = [
       { text: "Bark Box", href: barkBoxUrl },
       { text: "this cute fish", href: blowfishUrl },
       { text: "Chewy", href: "https://www.chewy.com/" },
-      { text: "this one", href: "https://amzn.to/3RIwl2q" },
-      { text: "fluffiest one I could find", href: "https://www.amazon.com/dp/B08CXQY47M?th=1&linkCode=ll2&tag=archieapprove-20&linkId=f580d6f1a8c1a1d0fb7ec9c4c54c0944&language=en_US&gaOptInStatus=true&ref_=as_li_ss_tl" },
+      { text: "this one", href: petYardAffiliateUrl },
+      { text: "fluffiest one I could find", href: dogBedAffiliateUrl },
+      { text: "a collar", href: dogHarnessAffiliateUrl },
+      { text: "crinkle duck toy", href: crinkleDuckAffiliateUrl },
+      { text: "plush squeaky crab toy", href: squeakyCrabAffiliateUrl },
+      { text: "Mini Dentachew toys", href: dentachewAffiliateUrl },
+      { text: "Squeaker Ballz", href: squeakerBallzAffiliateUrl },
       { text: "Target", href: "https://www.target.com/c/dog-supplies-pets/-/N-5xt3t" },
       { text: "pet food storage container with a built-in scoop", href: targetFoodStorageUrl },
       { text: "cute storage canister from Hearth & Hand with Magnolia", href: targetCanisterUrl },

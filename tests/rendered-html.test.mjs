@@ -137,7 +137,7 @@ test("publishes the Archie puppy-preparation post with accessible photos and sho
   assert.match(html, /Here’s everything that went into selecting the right crate for Archie\./);
   assert.match(html, /href="https:\/\/www\.homegoods\.com\/"[^>]*>Home Goods<\/a>/);
   assert.equal((html.match(/class="inline-retailer-link" href="https:\/\/www\.homegoods\.com\/"/g) ?? []).length, 3);
-  assert.match(html, /class="inline-retailer-link" href="https:\/\/bark\.co\/pages\/join-barkbox-dd-ff-d1a\?msclkid=7acb182e174a1b93e325725605140d1a[^>]*>BarkBox<\/a>/);
+  assert.match(html, /class="inline-retailer-link" href="https:\/\/bark\.co\/pages\/join-barkbox-dd-ff-d1a\?msclkid=7acb182e174a1b93e325725605140d1a[^>]*>Bark Box<\/a>/);
   assert.equal((html.match(/href="https:\/\/bark\.co\/pages\/join-barkbox-dd-ff-d1a\?msclkid=/g) ?? []).length, 3);
   assert.match(html, /class="inline-retailer-link" href="https:\/\/www\.chewy\.com\/bark-spike-blowfish-squeaky-plush-dog\/dp\/4482022\?utm_source=google-product[^>]*>this cute fish<\/a>/);
   assert.equal((html.match(/href="https:\/\/www\.chewy\.com\/bark-spike-blowfish-squeaky-plush-dog\/dp\/4482022\?utm_source=google-product/g) ?? []).length, 3);
@@ -146,6 +146,19 @@ test("publishes the Archie puppy-preparation post with accessible photos and sho
   assert.match(html, /I picked the/);
   assert.match(html, /class="inline-retailer-link" href="https:\/\/www\.amazon\.com\/dp\/B08CXQY47M\?th=1&amp;linkCode=ll2&amp;tag=archieapprove-20[^>]*>fluffiest one I could find<\/a>/);
   assert.match(html, /he ended up laying it on his first night home and now he sleeps there every night\./);
+  assert.match(html, /My puppy shopping haul continues/);
+  assert.match(html, />crinkle duck toy<\/a>/);
+  assert.match(html, />plush squeaky crab toy<\/a>/);
+  assert.match(html, />Mini Dentachew toys<\/a>/);
+  assert.match(html, />Squeaker Ballz<\/a>/);
+  assert.match(html, />a collar<\/a>/);
+  assert.match(html, /href="https:\/\/www\.homegoods\.com\/"[^>]*>Home Goods<\/a>/);
+  assert.match(html, />Bark Box<\/a>/);
+  assert.equal((html.match(/href="https:\/\/www\.amazon\.com\/dp\/B09BBL8T4Z\?th=1&amp;linkCode=ll2&amp;tag=archieapprove-20/g) ?? []).length, 3);
+  assert.equal((html.match(/href="https:\/\/www\.amazon\.com\/dp\/B0FSPMRRSN\?&amp;linkCode=ll2&amp;tag=archieapprove-20/g) ?? []).length, 3);
+  assert.equal((html.match(/href="https:\/\/www\.amazon\.com\/dp\/B07VBW7RMK\?th=1&amp;linkCode=ll2&amp;tag=archieapprove-20/g) ?? []).length, 3);
+  assert.equal((html.match(/href="https:\/\/www\.amazon\.com\/dp\/B07P5PTZWT\?th=1&amp;linkCode=ll2&amp;tag=archieapprove-20/g) ?? []).length, 3);
+  assert.equal((html.match(/href="https:\/\/www\.amazon\.com\/dp\/B0FH8C8YNJ\?th=1&amp;linkCode=ll2&amp;tag=archieapprove-20/g) ?? []).length, 3);
   assert.equal((html.match(/class="inline-retailer-link" href="https:\/\/www\.target\.com\/c\/dog-supplies-pets\/-\/N-5xt3t"/g) ?? []).length, 4);
   assert.match(html, />pet food storage container with a built-in scoop<\/a>/);
   assert.match(html, />cute storage canister from Hearth &amp; Hand with Magnolia<\/a>/);
