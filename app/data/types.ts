@@ -26,7 +26,7 @@ export type ContentBlock =
   | { type: "list"; items: string[] }
   | { type: "quote"; text: string }
   | { type: "image"; image: MediaAsset }
-  | { type: "links"; title: string; items: { label: string; href: string }[] };
+  | { type: "links"; title: string; items: { label: string; href: string; image: string; retailer: string }[] };
 
 export type Post = {
   id: string;

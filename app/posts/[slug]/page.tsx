@@ -23,10 +23,29 @@ function Block({ block }: { block: ContentBlock }) {
     </figure>
   );
   if (block.type === "links") return (
-    <aside className="post-shopping" aria-labelledby="items-in-post">
-      <h2 id="items-in-post">{block.title}</h2>
-      <ul>{block.items.map((item) => <li key={item.href}><a href={item.href} target="_blank" rel="noreferrer">{item.label}<span aria-hidden="true"> ↗</span></a></li>)}</ul>
-    </aside>
+    <>
+      <aside className="post-shopping" aria-labelledby="items-in-post">
+        <h2 id="items-in-post">{block.title}</h2>
+        <ul>{block.items.map((item) => <li key={item.href}><a href={item.href} target="_blank" rel="noreferrer">{item.label}<span aria-hidden="true"> ↗</span></a></li>)}</ul>
+      </aside>
+      <section className="product-shelf" aria-labelledby="products-in-post">
+        <div className="product-shelf-heading">
+          <p className="eyebrow">Shop the field note</p>
+          <h2 id="products-in-post">Products in This Post</h2>
+          <p>Scroll to browse every product mentioned above.</p>
+        </div>
+        <div className="product-rail">
+          {block.items.map((item) => (
+            <a className="product-card" href={item.href} target="_blank" rel="noreferrer" key={`product-${item.href}`}>
+              <img src={item.image} alt="" />
+              <span className="product-retailer">{item.retailer}</span>
+              <strong>{item.label}</strong>
+              <span className="product-link">View product <span aria-hidden="true">↗</span></span>
+            </a>
+          ))}
+        </div>
+      </section>
+    </>
   );
   return <p>{block.text}</p>;
 }

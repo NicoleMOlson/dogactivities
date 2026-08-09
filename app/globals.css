@@ -188,6 +188,19 @@ h1, h2, h3 { font-family: var(--font-serif), serif; font-weight: 620; letter-spa
 .post-shopping ul { columns: 2; gap: 36px; list-style: none; margin: 0; padding: 0; }
 .post-shopping li { break-inside: avoid; margin: 0 0 13px; }
 .post-shopping a { font-weight: 750; text-underline-offset: 4px; }
+.product-shelf { font-family: var(--font-sans); margin: 64px calc(50% - 50vw) 0; padding: 44px max(24px, calc((100vw - 1120px) / 2)); }
+.product-shelf-heading { color: white; margin-bottom: 26px; }
+.product-shelf-heading .eyebrow { color: rgba(255,255,255,.78); }
+.product-shelf-heading h2 { font-size: clamp(2.2rem, 5vw, 4rem); margin: 0 0 10px; }
+.product-shelf-heading > p:last-child { margin: 0; opacity: .82; }
+.product-rail { display: grid; gap: 18px; grid-auto-columns: minmax(190px, 235px); grid-auto-flow: column; overflow-x: auto; padding: 8px 5px 28px; scroll-padding-inline: 5px; scroll-snap-type: x mandatory; scrollbar-color: var(--sun) rgba(255,255,255,.22); }
+.product-card { background: var(--paper); border: 1px solid rgba(37,62,42,.15); box-shadow: 7px 9px 0 rgba(23,50,37,.22); color: var(--ink); display: flex; flex-direction: column; min-height: 330px; padding: 12px 12px 18px; scroll-snap-align: start; text-decoration: none; }
+.product-card:hover, .product-card:focus-visible { transform: translateY(-3px) rotate(-.3deg); }
+.product-card:focus-visible { outline: 3px solid var(--sun); outline-offset: 3px; }
+.product-card img { aspect-ratio: 1; background: white; object-fit: contain; width: 100%; }
+.product-retailer { color: #59705f; font-size: .65rem; font-weight: 800; letter-spacing: .12em; margin: 15px 3px 7px; text-transform: uppercase; }
+.product-card strong { font: 650 1.08rem/1.25 var(--font-serif); margin: 0 3px 16px; }
+.product-link { font-size: .72rem; font-weight: 800; margin: auto 3px 0; text-decoration: underline; text-underline-offset: 4px; }
 
 @media (max-width: 800px) {
   .site-header { min-height: 84px; }
@@ -227,6 +240,8 @@ h1, h2, h3 { font-family: var(--font-serif), serif; font-weight: 620; letter-spa
   .post-body { width: 100%; padding: 38px 25px; }
   .post-inline-image { margin-inline: -12px; }
   .post-shopping ul { columns: 1; }
+  .product-shelf { margin-top: 44px; padding-inline: 18px; }
+  .product-rail { grid-auto-columns: minmax(175px, 78vw); }
   .about-copy { padding: 38px 26px; }
   .human-profile-grid { grid-template-columns: 1fr; }
   .dog-photo { width: 88%; }

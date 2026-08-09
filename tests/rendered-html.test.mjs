@@ -103,7 +103,12 @@ test("publishes the Archie puppy-preparation post with accessible photos and sho
   assert.match(html, /Shopping at Target while Preparing to Bring Home a Puppy/);
   assert.match(html, /archie-target-golf-collection\.jpeg/);
   assert.match(html, /Items in This Post/);
+  assert.match(html, /Products in This Post/);
+  assert.match(html, /class="product-rail"/);
+  assert.match(html, /\/products\/dog-crate\.jpeg/);
+  assert.match(html, /\/products\/country-club-polo\.jpeg/);
   assert.match(html, /target\.com\/p\/hooray-house-country-club-polo/);
+  assert.doesNotMatch(html, /Keep reading more/);
 });
 
 test("newsletter component uses the RPC and safe user-facing states", async () => {
