@@ -217,6 +217,8 @@ test("publishes the Archie puppy-preparation post with accessible photos and sho
   assert.match(html, /\/products\/country-club-polo\.jpeg/);
   assert.match(html, /target\.com\/p\/hooray-house-country-club-polo/);
   assert.doesNotMatch(html, /Keep reading more/);
+  assert.match(html, /Get a link to share this post/);
+  assert.match(html, /Know someone who would love this\?/);
   assert.ok(html.indexOf("Things We’ve Sunk Our Teeth Into") < html.indexOf("Items in This Post"));
 });
 

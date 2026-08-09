@@ -274,6 +274,21 @@ h1, h2, h3 { font-family: var(--font-heading), sans-serif; font-weight: 900; let
 .product-retailer { color: #59705f; font-size: .65rem; font-weight: 800; letter-spacing: .12em; margin: 15px 3px 7px; text-transform: uppercase; }
 .product-card strong { font: 800 1.08rem/1.25 var(--font-heading); margin: 0 3px 16px; }
 .product-link { font-size: .72rem; font-weight: 800; margin: auto 3px 0; text-decoration: underline; text-underline-offset: 4px; }
+.share-post-card {
+  align-items: center;
+  background: var(--cream);
+  border: 1px solid rgba(37,62,42,.13);
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 18px 30px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  margin: 0 auto 70px;
+  padding: clamp(28px, 4vw, 46px);
+  width: min(900px, 100%);
+}
+.share-post-card h2 { font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1; margin: 0; }
+.share-post-card .eyebrow { margin-bottom: 10px; }
+.share-post-status { font-weight: 700; grid-column: 1 / -1; margin: 0; min-height: 1.4em; }
 
 @media (max-width: 800px) {
   .site-header { min-height: 84px; }
@@ -292,6 +307,8 @@ h1, h2, h3 { font-family: var(--font-heading), sans-serif; font-weight: 900; let
   .dog-profile-grid { grid-template-columns: 1fr; gap: 70px; }
   .ambassador-profile-hero { grid-template-columns: 1fr; }
   .ambassador-profile-photo { margin-inline: auto; max-width: 440px; }
+  .share-post-card { align-items: start; grid-template-columns: 1fr; }
+  .share-post-status { grid-column: 1; }
   .dog-profile-grid::before { display: none; }
   .dog-photo { width: 72%; }
   .values-row { grid-template-columns: 1fr; gap: 34px; }

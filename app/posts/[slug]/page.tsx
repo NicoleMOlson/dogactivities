@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { EmailSignup } from "../../components/EmailSignup";
+import { SharePostButton } from "../../components/SharePostButton";
 import { getPostBySlug, publishedPosts } from "../../data/posts";
 import type { ContentBlock, FeaturedAmbassador, InlineLink } from "../../data/types";
 
@@ -125,6 +126,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           {post.body.map((block, index) => <Block block={block} links={post.inline_links ?? []} ambassador={post.featured_ambassador} key={`${block.type}-${index}`} />)}
         </div>
       </article>
+      <SharePostButton />
       <EmailSignup />
     </main>
   );
