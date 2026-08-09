@@ -1,0 +1,196 @@
+{
+  "status": "hidden_draft",
+  "publicly_rendered": false,
+  "purpose": "Future author-reviewed product grid. This file is reference data only and is not imported by the website.",
+  "source_post": {
+    "title": "Preparing for the Arrival of Archie: My Mini Bernadoodle Puppy",
+    "slug": "preparing-for-arrival-of-archie-mini-bernedoodle-puppy"
+  },
+  "author_review_rules": {
+    "rating_source": "post_author",
+    "rating_scale": 5,
+    "review_max_words": 500
+  },
+  "items": [
+    {
+      "link": "https://www.amazon.com/dp/B0CPHSBTWQ?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1",
+      "source": "Amazon",
+      "product_name": "Furniture-Style Dog Crate",
+      "brand": null,
+      "author_rating": null,
+      "blurb": "A furniture-style crate designed to blend into the home while providing Archie with a dedicated sleeping space.",
+      "author_review": ""
+    },
+    {
+      "link": "https://www.amazon.com/dp/B08CXQY47M?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1",
+      "source": "Amazon",
+      "product_name": "Calming Donut Dog Bed, 23-inch",
+      "brand": "Bedsure",
+      "author_rating": null,
+      "blurb": "A washable faux-fur bed with a raised edge, intended for small dogs weighing up to 25 pounds.",
+      "author_review": ""
+    },
+    {
+      "link": "https://www.amazon.com/dp/B0FH8C8YNJ?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1",
+      "source": "Amazon",
+      "product_name": "Dog Harness",
+      "brand": "Freshly Bailey",
+      "author_rating": null,
+      "blurb": "A wearable harness for walking and everyday puppy outings.",
+      "author_review": ""
+    },
+    {
+      "link": "https://www.amazon.com/dp/B09BBL8T4Z?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1",
+      "source": "Amazon",
+      "product_name": "Blue Crinkle Duck Dog Toy",
+      "brand": "Best Pet Supplies",
+      "author_rating": null,
+      "blurb": "A stuffing-free plush duck with crinkle material and squeakers for carrying, chewing, and interactive play.",
+      "author_review": ""
+    },
+    {
+      "link": "https://www.amazon.com/dp/B0FSPMRRSN?ref=ppx_yo2ov_dt_b_fed_asin_title",
+      "source": "Amazon",
+      "product_name": "Plush Squeaky Crab Dog Toy",
+      "brand": null,
+      "author_rating": null,
+      "blurb": "A plush crab toy with rope-style legs for chewing, tugging, and squeaky play.",
+      "author_review": ""
+    },
+    {
+      "link": "https://www.amazon.com/dp/B07VBW7RMK?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1",
+      "source": "Amazon",
+      "product_name": "Mini Dentachew Dog Toys",
+      "brand": null,
+      "author_rating": null,
+      "blurb": "Small textured chew toys intended to provide puppies with an appropriate chewing activity.",
+      "author_review": ""
+    },
+    {
+      "link": "https://www.amazon.com/dp/B07P5PTZWT?ref=ppx_yo2ov_dt_b_fed_asin_title",
+      "source": "Amazon",
+      "product_name": "Squeaker Ballz, Medium 4-Pack",
+      "brand": "Outward Hound",
+      "author_rating": null,
+      "blurb": "Colorful squeaky tennis balls made for fetching, training, and active play.",
+      "author_review": ""
+    },
+    {
+      "link": "https://www.chewy.com/bark-spike-blowfish-squeaky-plush-dog/dp/4482022",
+      "source": "Chewy",
+      "product_name": "Spike the Blowfish Squeaky Plush Dog Toy",
+      "brand": "BARK",
+      "author_rating": null,
+      "blurb": "A two-in-one plush toy with a hidden spiky squeaker ball, crinkle material, and floppy fins.",
+      "author_review": ""
+    },
+    {
+      "link": "https://www.chewy.com/mypet-indoor-outdoor-6-panel-petyard/dp/3507174",
+      "source": "Chewy",
+      "product_name": "Indoor & Outdoor Six-Panel Petyard with SecureMat",
+      "brand": "MyPet",
+      "author_rating": null,
+      "blurb": "A portable six-panel puppy enclosure with a lockable door and washable, liquid-resistant floor mat.",
+      "author_review": ""
+    },
+    {
+      "link": "https://www.target.com/p/pet-food-storage-tub-with-built-in-scoop---35lbs---up--38-up--8482-/-/A-87004694",
+      "source": "Target",
+      "product_name": "35-lb Pet Food Storage Tub with Built-In Scoop",
+      "brand": "up&up",
+      "author_rating": null,
+      "blurb": "A lidded storage tub that keeps dry dog food organized and includes a scoop for feeding.",
+      "author_review": ""
+    },
+    {
+      "link": "https://www.target.com/p/71-fl-oz-large-stoneware-canister-sour-cream---hearth---38--hand--8482--with-magnolia/-/A-94688420",
+      "source": "Target",
+      "product_name": "71-fl-oz Large Stoneware Canister",
+      "brand": "Hearth & Hand with Magnolia",
+      "author_rating": null,
+      "blurb": "A neutral stoneware canister used to keep puppy supplies accessible while complementing home decor.",
+      "author_review": ""
+    },
+    {
+      "link": "https://www.target.com/p/hooray-house-golf-hat---green-xs-s/-/A-95098361",
+      "source": "Target",
+      "product_name": "Green Golf Hat, XS/S",
+      "brand": "Hooray House",
+      "author_rating": null,
+      "blurb": "A small green bucket-style golf hat for Archie's playful country-club look.",
+      "author_review": ""
+    },
+    {
+      "link": "https://www.target.com/p/hooray-house-country-club-polo---green-s/-/A-95098317",
+      "source": "Target",
+      "product_name": "Green Country Club Polo, Small",
+      "brand": "Hooray House",
+      "author_rating": null,
+      "blurb": "A green collared dog polo with striped trim.",
+      "author_review": ""
+    },
+    {
+      "link": "https://www.target.com/p/hooray-house-golf-clubs-hide-toy/-/A-95098326",
+      "source": "Target",
+      "product_name": "Golf Clubs Hide Dog Toy",
+      "brand": "Hooray House",
+      "author_rating": null,
+      "blurb": "A golf-bag-shaped hide-and-seek toy containing removable plush golf clubs.",
+      "author_review": ""
+    },
+    {
+      "link": "https://www.target.com/p/hooray-house-waste-bag-holder-tennis-ball/-/A-95098357#lnk=sametab",
+      "source": "Target",
+      "product_name": "Tennis-Ball Waste Bag Holder",
+      "brand": "Hooray House",
+      "author_rating": null,
+      "blurb": "A tennis-ball-inspired dispenser that attaches to a leash and stores waste bags.",
+      "author_review": ""
+    },
+    {
+      "link": "https://www.homegoods.com/",
+      "source": "HomeGoods",
+      "product_name": "HomeGoods Pet Department",
+      "brand": "Various brands",
+      "author_rating": null,
+      "blurb": "General retailer link for browsing dog toys, baskets, and other pet supplies.",
+      "author_review": ""
+    },
+    {
+      "link": "https://bark.co/pages/join-barkbox-dd-ff-d1a?msclkid=7acb182e174a1b93e325725605140d1a&utm_campaign=688342557&utm_content=&utm_medium=cpc&utm_source=bing&utm_term=co_bb_can+i+buy+barkbox+toys+without+a+subscription&wm_ad_id=&wm_adgroup_id=1233653118341272&wm_medium=ads&wm_source=bing",
+      "source": "BARK",
+      "product_name": "BarkBox Subscription",
+      "brand": "BARK",
+      "author_rating": null,
+      "blurb": "Subscription service offering themed boxes of dog toys and treats.",
+      "author_review": ""
+    },
+    {
+      "link": "https://www.chewy.com/",
+      "source": "Chewy",
+      "product_name": "Chewy Pet Store",
+      "brand": "Various brands",
+      "author_rating": null,
+      "blurb": "General retailer link for browsing food, toys, crates, beds, and other pet supplies.",
+      "author_review": ""
+    },
+    {
+      "link": "https://www.target.com/c/dog-supplies-pets/-/N-5xt3t",
+      "source": "Target",
+      "product_name": "Target Dog Supplies",
+      "brand": "Various brands",
+      "author_rating": null,
+      "blurb": "Target's general dog-supplies department.",
+      "author_review": ""
+    },
+    {
+      "link": "https://www.target.com/b/hooray-house/-/N-q643leqgrp9",
+      "source": "Target",
+      "product_name": "Hooray House Collection",
+      "brand": "Hooray House",
+      "author_rating": null,
+      "blurb": "The complete Target collection featuring coordinated pet clothing, accessories, and toys.",
+      "author_review": ""
+    }
+  ]
+}
