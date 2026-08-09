@@ -109,6 +109,7 @@ test("publishes the Archie puppy-preparation post with accessible photos and sho
   assert.match(html, /\/products\/country-club-polo\.jpeg/);
   assert.match(html, /target\.com\/p\/hooray-house-country-club-polo/);
   assert.doesNotMatch(html, /Keep reading more/);
+  assert.ok(html.indexOf("Products in This Post") < html.indexOf("Items in This Post"));
 });
 
 test("newsletter component uses the RPC and safe user-facing states", async () => {

@@ -24,10 +24,6 @@ function Block({ block }: { block: ContentBlock }) {
   );
   if (block.type === "links") return (
     <>
-      <aside className="post-shopping" aria-labelledby="items-in-post">
-        <h2 id="items-in-post">{block.title}</h2>
-        <ul>{block.items.map((item) => <li key={item.href}><a href={item.href} target="_blank" rel="noreferrer">{item.label}<span aria-hidden="true"> ↗</span></a></li>)}</ul>
-      </aside>
       <section className="product-shelf" aria-labelledby="products-in-post">
         <div className="product-shelf-heading">
           <p className="eyebrow">Shop the field note</p>
@@ -45,6 +41,10 @@ function Block({ block }: { block: ContentBlock }) {
           ))}
         </div>
       </section>
+      <aside className="post-shopping" aria-labelledby="items-in-post">
+        <h2 id="items-in-post">{block.title}</h2>
+        <ul>{block.items.map((item) => <li key={item.href}><a href={item.href} target="_blank" rel="noreferrer">{item.label}<span aria-hidden="true"> ↗</span></a></li>)}</ul>
+      </aside>
     </>
   );
   return <p>{block.text}</p>;
