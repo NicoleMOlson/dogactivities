@@ -136,6 +136,8 @@ test("Archie profile collects his posts and products", async () => {
   assert.match(html, /TikTok link coming soon/);
   assert.match(html, /class="product-rail"/);
   assert.match(html, /Crinkle duck toy/);
+  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+  assert.match(css, /\.ambassador-products\s*\{[^}]*background:\s*var\(--cream\);/s);
 });
 
 test("publishes the Archie puppy-preparation post with accessible photos and shopping links", async () => {

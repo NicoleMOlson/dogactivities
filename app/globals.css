@@ -171,7 +171,15 @@ h1, h2, h3 { font-family: var(--font-heading), sans-serif; font-weight: 900; let
 .ambassador-socials { align-items: flex-start; display: flex; flex-direction: column; margin-top: 20px; }
 .ambassador-posts { padding: 90px 0 30px; }
 .ambassador-posts .section-heading h2 { font-size: clamp(2.3rem, 5vw, 4rem); }
-.ambassador-products { margin-top: 70px; }
+.ambassador-products {
+  background: var(--cream);
+  border: 1px solid rgba(37,62,42,.13);
+  box-shadow: var(--shadow);
+  margin-top: 70px;
+  padding: clamp(28px, 5vw, 58px);
+  transform: rotate(.2deg);
+}
+.ambassador-products .product-rail { margin-inline: calc(clamp(28px, 5vw, 58px) * -.25); }
 
 .archive-page { padding: 55px 0 100px; }
 .archive-header { width: min(800px, 100%); padding: clamp(36px, 6vw, 68px); margin: 0 auto 62px; transform: rotate(-.6deg); text-align: center; }
@@ -296,6 +304,8 @@ h1, h2, h3 { font-family: var(--font-heading), sans-serif; font-weight: 900; let
   .post-extras-row { grid-template-columns: 1fr; }
   .featured-ambassador { aspect-ratio: auto; min-height: 290px; }
   .product-shelf { margin-top: 44px; padding-inline: 0; }
+  .ambassador-products { padding: 28px 20px; }
+  .ambassador-products .product-rail { margin-inline: 0; }
   .product-rail { grid-auto-columns: minmax(175px, 78vw); }
   .about-copy { padding: 38px 26px; }
   .human-profile-grid { grid-template-columns: 1fr; }
