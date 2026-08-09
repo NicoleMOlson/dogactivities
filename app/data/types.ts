@@ -22,6 +22,14 @@ export type MediaAsset = {
 
 export type InlineLink = { text: string; href: string };
 
+export type FeaturedAmbassador = {
+  name: string;
+  photo: string;
+  photo_alt: string;
+  caption: string;
+  instagram_url: string;
+};
+
 export type ContentBlock =
   | { type: "paragraph"; text: string }
   | { type: "heading"; text: string; level?: 2 | 3; compact?: boolean }
@@ -46,4 +54,5 @@ export type Post = {
   author?: { name: string; href: string };
   inline_links?: InlineLink[];
   highlighted_tag_slugs?: string[];
+  featured_ambassador?: FeaturedAmbassador;
 };

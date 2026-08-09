@@ -74,6 +74,13 @@ export const posts: Post[] = [
     category: category("supplies"),
     tags: [tag("target"), tag("home-goods"), tag("amazon"), tag("dog-toys"), tag("organization"), tag("pet-crate"), tag("dog-bed"), tag("puppy"), tag("mid-size-dog-breed")],
     highlighted_tag_slugs: ["puppy", "mid-size-dog-breed"],
+    featured_ambassador: {
+      name: "Archie",
+      photo: "/archie-coffee.jpeg",
+      photo_alt: "puppy sniffing a cup of coffee",
+      caption: "Archie’s New Here and is adjusting very well to his new home.",
+      instagram_url: "https://www.instagram.com/archibald_the_bernedoodle",
+    },
     author: { name: "Natalie Tromp", href: "/about#natalie-tromp" },
     inline_links: [
       { text: "Home Goods", href: "https://www.homegoods.com/" },

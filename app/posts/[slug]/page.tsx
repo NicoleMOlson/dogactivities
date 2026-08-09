@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { EmailSignup } from "../../components/EmailSignup";
 import { getPostBySlug, publishedPosts } from "../../data/posts";
-import type { ContentBlock, InlineLink } from "../../data/types";
+import type { ContentBlock, FeaturedAmbassador, InlineLink } from "../../data/types";
 
 export function generateStaticParams() { return publishedPosts.map((post) => ({ slug: post.slug })); }
 
@@ -27,7 +27,7 @@ function LinkedText({ text, links }: { text: string; links: InlineLink[] }) {
   });
 }
 
-function Block({ block, links }: { block: ContentBlock; links: InlineLink[] }) {
+function Block({ block, links, ambassador }: { block: ContentBlock; links: InlineLink[]; ambassador?: FeaturedAmbassador }) {
   if (block.type === "heading") return block.level === 3
     ? <h3><LinkedText text={block.text} links={links} /></h3>
     : <h2 className={block.compact ? "compact-heading" : undefined}><LinkedText text={block.text} links={links} /></h2>;
@@ -58,10 +58,24 @@ function Block({ block, links }: { block: ContentBlock; links: InlineLink[] }) {
           ))}
         </div>
       </section>
-      <aside className="post-shopping" aria-labelledby="items-in-post">
-        <h2 id="items-in-post">{block.title}</h2>
-        <ul>{block.items.map((item) => <li key={item.href}><a href={item.href} target="_blank" rel="noreferrer">{item.label}<span aria-hidden="true"> ↗</span></a></li>)}</ul>
-      </aside>
+      <div className="post-extras-row">
+        <aside className="post-shopping" aria-labelledby="items-in-post">
+          <h2 id="items-in-post">{block.title}</h2>
+          <ul>{block.items.map((item) => <li key={item.href}><a href={item.href} target="_blank" rel="noreferrer">{item.label}<span aria-hidden="true"> ↗</span></a></li>)}</ul>
+        </aside>
+        {ambassador && (
+          <aside className="featured-ambassador" aria-labelledby="featured-ambassador-name">
+            <p className="eyebrow">Featured Ambassador</p>
+            <img src={ambassador.photo} alt={ambassador.photo_alt} />
+            <h2 id="featured-ambassador-name">{ambassador.name}</h2>
+            <p>{ambassador.caption}</p>
+            <a className="profile-social-link" href={ambassador.instagram_url} target="_blank" rel="noreferrer" aria-label={`Follow ${ambassador.name} on Instagram`}>
+              <span className="instagram-mark" aria-hidden="true" />
+              <span>follow along on Instagram</span>
+            </a>
+          </aside>
+        )}
+      </div>
     </>
   );
   return <p><LinkedText text={block.text} links={links} /></p>;
@@ -98,7 +112,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           {post.featured_image_caption && <figcaption className="polaroid-caption"><LinkedText text={post.featured_image_caption} links={post.inline_links ?? []} /></figcaption>}
         </figure>
         <div className="post-body paper-card">
-          {post.body.map((block, index) => <Block block={block} links={post.inline_links ?? []} key={`${block.type}-${index}`} />)}
+          {post.body.map((block, index) => <Block block={block} links={post.inline_links ?? []} ambassador={post.featured_ambassador} key={`${block.type}-${index}`} />)}
         </div>
       </article>
       <EmailSignup />

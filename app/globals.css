@@ -190,11 +190,18 @@ h1, h2, h3 { font-family: var(--font-heading), sans-serif; font-weight: 900; let
 .post-inline-image { background: #fffdf6; box-shadow: 0 14px 28px rgba(15,39,22,.18); margin: 2.8em 0 3.2em; max-width: 100%; padding: 12px 12px 20px; transform: rotate(-.4deg); }
 .post-inline-image img { max-height: 720px; object-fit: cover; }
 .post-inline-image figcaption { font: 600 .95rem/1.5 var(--font-body); padding: 14px 7px 0; }
-.post-shopping { background: var(--sun); border: 1px solid rgba(37,62,42,.16); box-shadow: 6px 6px 0 rgba(23,50,37,.16); font-family: var(--font-body); font-size: .84rem; margin: 24px auto 0; padding: 22px 26px; width: min(720px, 100%); }
+.post-extras-row { align-items: start; display: grid; gap: 24px; grid-template-columns: minmax(0, 1fr) minmax(250px, 310px); margin-top: 24px; }
+.post-shopping { background: var(--sun); border: 1px solid rgba(37,62,42,.16); box-shadow: 6px 6px 0 rgba(23,50,37,.16); font-family: var(--font-body); font-size: .84rem; margin: 0; padding: 22px 26px; width: 100%; }
 .post-shopping h2 { font-family: var(--font-heading); font-size: 2rem; margin: 0 0 18px; }
 .post-shopping ul { columns: 3; gap: 26px; list-style: none; margin: 0; padding: 0; }
 .post-shopping li { break-inside: avoid; margin: 0 0 13px; }
 .post-shopping a { font-weight: 750; text-underline-offset: 4px; }
+.featured-ambassador { aspect-ratio: 1; background: var(--sun); border: 1px solid rgba(37,62,42,.16); box-shadow: 6px 6px 0 rgba(23,50,37,.16); display: grid; font-family: var(--font-body); grid-template-columns: 88px 1fr; grid-template-rows: auto auto 1fr auto; padding: 18px; }
+.featured-ambassador .eyebrow { grid-column: 1 / -1; margin: 0 0 12px; }
+.featured-ambassador img { aspect-ratio: 1; grid-row: 2 / span 2; height: 88px; object-fit: cover; width: 88px; }
+.featured-ambassador h2 { align-self: end; font-size: 2rem; grid-column: 2; margin: 0 0 2px 14px; }
+.featured-ambassador > p:not(.eyebrow) { font-size: .9rem; grid-column: 2; line-height: 1.35; margin: 0 0 0 14px; }
+.featured-ambassador .profile-social-link { align-self: end; font-size: .78rem; grid-column: 1 / -1; }
 .product-shelf { font-family: var(--font-body); margin: 64px 0 0; max-width: 100%; min-width: 0; padding: 44px 0 0; }
 .product-shelf-heading { color: var(--ink); margin-bottom: 26px; }
 .product-shelf-heading .eyebrow { color: var(--ink); opacity: .78; }
@@ -247,6 +254,8 @@ h1, h2, h3 { font-family: var(--font-heading), sans-serif; font-weight: 900; let
   .post-body { width: 100%; padding: 38px 25px; }
   .post-inline-image { margin-inline: 0; }
   .post-shopping ul { columns: 1; }
+  .post-extras-row { grid-template-columns: 1fr; }
+  .featured-ambassador { aspect-ratio: auto; min-height: 290px; }
   .product-shelf { margin-top: 44px; padding-inline: 0; }
   .product-rail { grid-auto-columns: minmax(175px, 78vw); }
   .about-copy { padding: 38px 26px; }

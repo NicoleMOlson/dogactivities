@@ -156,6 +156,11 @@ test("publishes the Archie puppy-preparation post with accessible photos and sho
   assert.match(html, /archie-target-golf-collection\.jpeg/);
   assert.match(html, /Items in This Post/);
   assert.match(html, /Products in This Post/);
+  assert.match(html, /Featured Ambassador/);
+  assert.match(html, /Archie’s New Here and is adjusting very well to his new home\./);
+  assert.match(html, /archie-coffee\.jpeg/);
+  assert.match(html, /href="https:\/\/www\.instagram\.com\/archibald_the_bernedoodle"/);
+  assert.match(html, /follow along on Instagram/);
   assert.match(html, /class="product-rail"/);
   assert.match(html, /\/products\/dog-crate\.jpeg/);
   assert.match(html, /\/products\/country-club-polo\.jpeg/);
