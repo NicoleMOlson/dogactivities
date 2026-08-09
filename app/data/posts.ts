@@ -6,6 +6,7 @@ const category = (slug: string) => categories.find((item) => item.slug === slug)
 const tag = (slug: string) => tags.find((item) => item.slug === slug)!;
 const barkBoxUrl = "https://bark.co/pages/join-barkbox-dd-ff-d1a?msclkid=7acb182e174a1b93e325725605140d1a&utm_campaign=688342557&utm_content=&utm_medium=cpc&utm_source=bing&utm_term=co_bb_can+i+buy+barkbox+toys+without+a+subscription&wm_ad_id=&wm_adgroup_id=1233653118341272&wm_medium=ads&wm_source=bing";
 const blowfishUrl = "https://www.chewy.com/bark-spike-blowfish-squeaky-plush-dog/dp/4482022?utm_source=google-product&utm_medium=cpc&utm_campaign=19996370614&utm_content=&gad_source=1&gad_campaignid=19996373038&gbraid=0AAAAADmQ2V3UCBrfcclR5wjfzXIU31SoN&gclid=CjwKCAjw1bvTBhBbEiwAzbP8L8dg90BGMHuYsGNL2B-Dp10XyMwnbKam-qI1l12yq40g_QFdFhohtRoC22IQAvD_BwE";
+const petYardUrl = "https://www.chewy.com/mypet-indoor-outdoor-6-panel-petyard/dp/3507174";
 
 // Static sample records share the same shape intended for a future Supabase post repository.
 export const posts: Post[] = [
@@ -30,7 +31,7 @@ export const posts: Post[] = [
       { type: "paragraph", text: "I also got a few of his toys, his collar, and a cute basket from Amazon to hold them. Amazon was also my go-to for his dog bowls, and I must say they match the aesthetic of our house perfectly. I also went to Home Goods and found some great BarkBox toys at an amazing price, along with baskets and other necessities, so definitely check out both!" },
       { type: "paragraph", text: "Archie’s favorite toy is a tennis ball, but he also loves this cute fish! I got lucky and found one at Home Goods, but Chewy also sells it." },
       { type: "heading", level: 3, text: "The Best Puppy Play Area for Small Puppies and Mid-Sized Breeds" },
-      { type: "paragraph", text: "After watching many YouTube videos, I noticed that many trainers and new puppy owners set up small play areas for their dogs to contain them. Again, with us moving into our house post-construction, this was very important for me. I didn’t want a chain-link-fence-looking one, so I bought a six-panel pet yard. After being around it for two hours, Archie had already figured out how to go in and out the doggy door (it can be locked, don’t worry)—a definite mama win!" },
+      { type: "paragraph", text: "After watching many YouTube videos, I noticed that many trainers and new puppy owners set up small play areas for their dogs to contain them. Again, with us moving into our house post-construction, this was very important for me. I didn’t want a chain-link-fence-looking one, so I bought this one! After being around it for two hours, Archie had already figured out how to go in and out the doggy door (it can be locked, don’t worry)—a definite mama win!" },
       { type: "heading", level: 3, text: "Shopping at Target while Preparing to Bring Home a Puppy" },
       { type: "image", image: archieTargetGolfPhoto },
       { type: "paragraph", text: "Target was my next stop. I knew I wanted some cute accessories, and I needed a storage container for his dog food." },
@@ -48,7 +49,7 @@ export const posts: Post[] = [
         { label: "Mini Dentachew toys", href: "https://www.amazon.com/dp/B07VBW7RMK?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1", image: "/products/dentachew.jpeg", retailer: "Amazon" },
         { label: "Squeaker Ballz", href: "https://www.amazon.com/dp/B07P5PTZWT?ref=ppx_yo2ov_dt_b_fed_asin_title", image: "/products/squeaker-balls.jpeg", retailer: "Amazon" },
         { label: "Bark blowfish toy", href: blowfishUrl, image: "/archie-puppy-toys.jpeg", retailer: "Chewy" },
-        { label: "Six-panel pet yard", href: "https://www.chewy.com/mypet-indoor-outdoor-6-panel-petyard/dp/3507174", image: "/archie-crate-and-bed.jpeg", retailer: "Chewy" },
+        { label: "Six-panel pet yard", href: petYardUrl, image: "/archie-crate-and-bed.jpeg", retailer: "Chewy" },
         { label: "Hearth & Hand stoneware canister", href: "https://www.target.com/p/71-fl-oz-large-stoneware-canister-sour-cream---hearth---38--hand--8482--with-magnolia/-/A-94688420", image: "/products/stoneware-canister.jpeg", retailer: "Target" },
         { label: "Pet food storage tub with scoop", href: "https://www.target.com/p/pet-food-storage-tub-with-built-in-scoop---35lbs---up--38-up--8482-/-/A-87004694", image: "/products/pet-food-storage.jpeg", retailer: "Target" },
         { label: "Hooray House golf hat", href: "https://www.target.com/p/hooray-house-golf-hat---green-xs-s/-/A-95098361", image: "/products/golf-hat.jpeg", retailer: "Target" },
@@ -73,6 +74,7 @@ export const posts: Post[] = [
       { text: "Bark Box", href: barkBoxUrl },
       { text: "this cute fish", href: blowfishUrl },
       { text: "Chewy", href: "https://www.chewy.com/" },
+      { text: "this one!", href: petYardUrl },
     ],
   },
   {
