@@ -65,6 +65,12 @@ test("uses Alegreya typography across the site", async () => {
   assert.doesNotMatch(layout, /DM_Sans|Fraunces/);
 });
 
+test("visually distinguishes inline shopping links", async () => {
+  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+  assert.match(css, /\.inline-retailer-link\s*\{[^}]*text-decoration-line:\s*underline;/s);
+  assert.match(css, /\.inline-retailer-link\s*\{[^}]*text-decoration-color:\s*var\(--orange\);/s);
+});
+
 test("about page shows the team profiles without the former inspector photo", async () => {
   const response = await render("/about");
   const html = await response.text();
