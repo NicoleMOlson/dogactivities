@@ -132,6 +132,7 @@ test("publishes the Archie puppy-preparation post with accessible photos and sho
   assert.equal((html.match(/href="https:\/\/bark\.co\/pages\/join-barkbox-dd-ff-d1a\?msclkid=/g) ?? []).length, 3);
   assert.match(html, /class="inline-retailer-link" href="https:\/\/www\.chewy\.com\/bark-spike-blowfish-squeaky-plush-dog\/dp\/4482022\?utm_source=google-product[^>]*>this cute fish<\/a>/);
   assert.equal((html.match(/href="https:\/\/www\.chewy\.com\/bark-spike-blowfish-squeaky-plush-dog\/dp\/4482022\?utm_source=google-product/g) ?? []).length, 3);
+  assert.match(html, /class="inline-retailer-link" href="https:\/\/www\.chewy\.com\/"[^>]*>Chewy<\/a>/);
   assert.match(html, /<h3>Archie’s Crate for Puppies, Dogs, and Mid-Sized Breeds<\/h3>/);
   assert.match(html, /<h3>Shopping at Target while Preparing to Bring Home a Puppy<\/h3>/);
   assert.match(html, /archie-target-golf-collection\.jpeg/);

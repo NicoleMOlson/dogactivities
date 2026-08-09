@@ -72,6 +72,7 @@ export const posts: Post[] = [
       { text: "BarkBox", href: barkBoxUrl },
       { text: "Bark Box", href: barkBoxUrl },
       { text: "this cute fish", href: blowfishUrl },
+      { text: "Chewy", href: "https://www.chewy.com/" },
     ],
   },
   {
