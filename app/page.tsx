@@ -10,11 +10,11 @@ export default function Home() {
     <main>
       <section className="hero page-shell">
         <div className="hero-copy paper-card taped-card">
-          <p className="eyebrow">Field notes for better days outside</p>
-          <h1>More sniffing.<br />Better weekends.</h1>
+          <p className="eyebrow">We sniffed it first.</p>
+          <h1>More tail wags<br />for you.</h1>
           <p className="hero-deck">
-            Trail-tested outings, low-stress adventures, and honest notes on
-            making the most of life with a dog in tow.
+            Paws-on-the-ground outings, tried and true training tricks, with a dose of our favorite
+            treats and toys—we know what works and what flops when it comes to having fun while out with your dog.
           </p>
           <Link className="button button-dark" href={`/posts/${leadPost.slug}`}>
             Read the latest field note <span aria-hidden="true">→</span>
