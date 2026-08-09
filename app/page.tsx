@@ -17,7 +17,7 @@ export default function Home() {
             treats and toys—we know what works and what flops when it comes to having fun while out with your dog.
           </p>
           <Link className="button button-dark" href={`/posts/${leadPost.slug}`}>
-            Read the latest field note <span aria-hidden="true">→</span>
+            Catch the latest sniff <span aria-hidden="true">→</span>
           </Link>
         </div>
 
