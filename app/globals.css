@@ -202,8 +202,9 @@ h1, h2, h3 { font-family: var(--font-heading), sans-serif; font-weight: 900; let
 .featured-ambassador h2 { align-self: end; font-size: 2rem; grid-column: 2; margin: 0 0 2px 14px; }
 .featured-ambassador > p:not(.eyebrow) { font-size: .9rem; grid-column: 2; line-height: 1.35; margin: 0 0 0 14px; }
 .featured-ambassador > p a { font-weight: 800; text-underline-offset: 3px; }
-.ambassador-links { align-self: end; display: flex; flex-wrap: wrap; gap: 5px 14px; grid-column: 1 / -1; }
-.featured-ambassador .profile-social-link { font-size: .76rem; margin-top: 0; }
+.ambassador-links { align-items: flex-start; align-self: end; display: flex; flex-direction: column; gap: 9px; grid-column: 1 / -1; }
+.featured-ambassador .profile-social-link { font-size: .76rem; gap: .65em; line-height: 1.2; margin-top: 0; min-height: 1.25em; }
+.featured-ambassador .instagram-mark, .featured-ambassador .paw-mark { flex-basis: 1.05em; height: 1.05em; width: 1.05em; }
 .ambassador-future-link, .ambassador-future-link:hover { cursor: default; text-decoration: none; }
 .paw-mark { display: inline-block; flex: 0 0 1em; height: 1em; position: relative; width: 1em; }
 .paw-mark::before { background: currentColor; border-radius: 48% 48% 55% 55%; bottom: 0; content: ""; height: .58em; left: .2em; position: absolute; transform: rotate(2deg); width: .64em; }
