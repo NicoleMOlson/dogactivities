@@ -84,7 +84,7 @@ export const posts: Post[] = [
     ambassadors: ["archie"],
     featured_ambassador: {
       name: "Archie",
-      profile_href: "/about#archie",
+      profile_href: "/ambassadors/archie",
       photo: "/archie-coffee.jpeg",
       photo_alt: "puppy sniffing a cup of coffee",
       caption: "Archie’s New Here and his owner Natalie put a lot of thought into preparing his place in their home.",

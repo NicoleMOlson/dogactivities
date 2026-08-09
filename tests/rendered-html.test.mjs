@@ -168,7 +168,7 @@ test("publishes the Archie puppy-preparation post with accessible photos and sho
   assert.match(html, /I picked the/);
   assert.match(html, /class="inline-retailer-link" href="https:\/\/www\.amazon\.com\/dp\/B08CXQY47M\?th=1&amp;linkCode=ll2&amp;tag=archieapprove-20[^>]*>fluffiest one I could find<\/a>/);
   assert.match(html, /class="inline-retailer-link" href="https:\/\/amzn\.to\/3RIwl2q"[^>]*>this one from Amazon<\/a>/);
-  assert.match(html, /href="\/about#archie"[^>]*aria-label="Read more about Archie"/);
+  assert.match(html, /href="\/ambassadors\/archie"[^>]*aria-label="Read more about Archie"/);
   assert.match(html, /he ended up laying it on his first night home and now he sleeps there every night\./);
   assert.match(html, /My puppy shopping haul continues/);
   assert.match(html, />crinkle duck toy<\/a>/);
@@ -206,7 +206,7 @@ test("publishes the Archie puppy-preparation post with accessible photos and sho
   assert.match(html, /class="paw-mark"/);
   assert.match(html, /read more about/);
   assert.match(html, />Archie<\/span>/);
-  assert.match(html, /<a[^>]*href="\/about#archie"[^>]*>\s*<span class="paw-mark"/);
+  assert.match(html, /<a[^>]*href="\/ambassadors\/archie"[^>]*>\s*<span class="paw-mark"/);
   assert.match(html, /class="product-rail"/);
   assert.match(html, /\/products\/dog-crate\.jpeg/);
   assert.match(html, /\/products\/country-club-polo\.jpeg/);
