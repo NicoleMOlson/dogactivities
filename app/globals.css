@@ -173,7 +173,7 @@ h1, h2, h3 { font-family: var(--font-heading), sans-serif; font-weight: 900; let
 .post-header .post-author { font: 700 .82rem/1.4 var(--font-body); margin: 22px 0 0; text-transform: uppercase; letter-spacing: .08em; }
 .post-author a { text-underline-offset: 4px; }
 .post-meta { justify-content: flex-start; }
-.post-featured { width: min(1120px, 100%); margin: -12px auto 0; padding: 15px 15px 42px; transform: rotate(1.2deg); }
+.post-featured { width: min(1120px, 100%); margin: 24px auto 0; padding: 15px 15px 42px; transform: rotate(1.2deg); }
 .post-featured img { width: min(950px, 100%); margin-inline: auto; max-height: 610px; aspect-ratio: 16/9; object-fit: cover; }
 .post-featured figcaption { width: min(950px, 100%); margin-inline: auto; }
 .post-body { width: min(1120px, 100%); margin: 46px auto 80px; padding: clamp(38px, 7vw, 76px); font-family: var(--font-body); font-size: 1.15rem; line-height: 1.85; min-width: 0; }
