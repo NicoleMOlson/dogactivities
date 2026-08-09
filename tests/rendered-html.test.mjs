@@ -142,6 +142,7 @@ test("publishes the Archie puppy-preparation post with accessible photos and sho
   assert.match(html, />golf polo<\/a>/);
   assert.match(html, />golf club dog toy<\/a>/);
   assert.match(html, />bag dispenser<\/a>/);
+  assert.equal((html.match(/class="inline-retailer-link" href="https:\/\/www\.target\.com\/b\/hooray-house\/-\/N-q643leqgrp9"/g) ?? []).length, 2);
   assert.match(html, /<h3>Archie’s Crate for Puppies, Dogs, and Mid-Sized Breeds<\/h3>/);
   assert.match(html, /<h3>Shopping at .*while Preparing to Bring Home a Puppy<\/h3>/);
   assert.match(html, /archie-target-golf-collection\.jpeg/);

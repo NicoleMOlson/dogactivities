@@ -88,6 +88,7 @@ export const posts: Post[] = [
       { text: "golf polo", href: targetGolfPoloUrl },
       { text: "golf club dog toy", href: targetGolfToyUrl },
       { text: "bag dispenser", href: targetBagDispenserUrl },
+      { text: "Hooray House", href: "https://www.target.com/b/hooray-house/-/N-q643leqgrp9" },
     ],
   },
   {
