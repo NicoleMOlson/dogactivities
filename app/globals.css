@@ -173,6 +173,8 @@ h1, h2, h3 { font-family: var(--font-heading), sans-serif; font-weight: 900; let
 .post-header .post-author { font: 700 .82rem/1.4 var(--font-body); margin: 22px 0 0; text-transform: uppercase; letter-spacing: .08em; }
 .post-author a { text-underline-offset: 4px; }
 .post-meta { justify-content: flex-start; }
+.post-labels { align-items: center; display: flex; flex-wrap: wrap; gap: 9px; }
+.post-meta time { margin-left: auto; }
 .post-featured { width: min(1120px, 100%); margin: 24px auto 0; padding: 15px 15px 42px; transform: rotate(1.2deg); }
 .post-featured img { width: auto; max-width: 100%; height: auto; max-height: 720px; margin-inline: auto; object-fit: contain; }
 .post-featured figcaption { width: min(950px, 100%); margin-inline: auto; }

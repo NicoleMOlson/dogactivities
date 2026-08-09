@@ -21,4 +21,6 @@ export const tags: Tag[] = [
   { id: "tag-organization", name: "Organization", slug: "organization" },
   { id: "tag-pet-crate", name: "Pet Crate", slug: "pet-crate" },
   { id: "tag-dog-bed", name: "Dog Bed", slug: "dog-bed" },
+  { id: "tag-puppy", name: "Puppy", slug: "puppy" },
+  { id: "tag-mid-size-dog-breed", name: "Mid-Size Dog Breed", slug: "mid-size-dog-breed" },
 ];

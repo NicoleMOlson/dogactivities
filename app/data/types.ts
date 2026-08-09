@@ -45,4 +45,5 @@ export type Post = {
   featured_image_caption?: string;
   author?: { name: string; href: string };
   inline_links?: InlineLink[];
+  highlighted_tag_slugs?: string[];
 };

@@ -117,6 +117,8 @@ test("publishes the Archie puppy-preparation post with accessible photos and sho
 
   assert.match(html, /Preparing for the Arrival of Archie: My Mini Bernadoodle Puppy/);
   assert.match(html, /August 9, 2026/);
+  assert.match(html, /href="\/tags\/puppy"[^>]*>Puppy<\/a>/);
+  assert.match(html, /href="\/tags\/mid-size-dog-breed"[^>]*>Mid-Size Dog Breed<\/a>/);
   assert.match(html, /href="\/about#natalie-tromp"/);
   assert.match(html, /archie-crate-and-bed\.jpeg/);
   assert.match(html, /dog crate inside of a home with a dog bed/);

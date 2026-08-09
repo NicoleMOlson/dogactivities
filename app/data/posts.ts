@@ -72,7 +72,8 @@ export const posts: Post[] = [
     published_at: "2026-08-09T09:00:00-05:00",
     status: "published",
     category: category("supplies"),
-    tags: [tag("target"), tag("home-goods"), tag("amazon"), tag("dog-toys"), tag("organization"), tag("pet-crate"), tag("dog-bed")],
+    tags: [tag("target"), tag("home-goods"), tag("amazon"), tag("dog-toys"), tag("organization"), tag("pet-crate"), tag("dog-bed"), tag("puppy"), tag("mid-size-dog-breed")],
+    highlighted_tag_slugs: ["puppy", "mid-size-dog-breed"],
     author: { name: "Natalie Tromp", href: "/about#natalie-tromp" },
     inline_links: [
       { text: "Home Goods", href: "https://www.homegoods.com/" },

@@ -78,7 +78,12 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       <article>
         <header className="post-header paper-card">
           <div className="card-meta post-meta">
-            <Link className="category-label" href={`/categories/${post.category.slug}`}>{post.category.name}</Link>
+            <div className="post-labels">
+              <Link className="category-label" href={`/categories/${post.category.slug}`}>{post.category.name}</Link>
+              {post.tags
+                .filter((item) => post.highlighted_tag_slugs?.includes(item.slug))
+                .map((item) => <Link className="category-label" href={`/tags/${item.slug}`} key={item.id}>{item.name}</Link>)}
+            </div>
             <time dateTime={post.published_at!}>{date}</time>
           </div>
           <h1>{post.title}</h1>
