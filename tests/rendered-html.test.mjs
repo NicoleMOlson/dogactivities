@@ -138,8 +138,9 @@ test("Archie profile collects his posts and products", async () => {
   assert.match(html, /Crinkle duck toy/);
   const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
   assert.match(css, /\.ambassador-products\s*\{[^}]*background:\s*var\(--cream\);/s);
-  assert.match(css, /\.ambassador-products\s*\{[^}]*width:\s*calc\(100vw - 24px\);/s);
+  assert.match(css, /\.ambassador-products\s*\{[^}]*width:\s*calc\(100vw - 8px\);/s);
   assert.match(css, /\.ambassador-products\s*\{[^}]*overflow:\s*hidden;/s);
+  assert.match(css, /\.ambassador-flag\s*\{[^}]*background:\s*var\(--sun\);[^}]*clip-path:\s*polygon/s);
 });
 
 test("publishes the Archie puppy-preparation post with accessible photos and shopping links", async () => {

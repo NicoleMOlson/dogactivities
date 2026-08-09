@@ -60,7 +60,7 @@ export default function ArchieProfilePage() {
 
       {products.length > 0 && (
         <section className="product-shelf ambassador-products" aria-labelledby="archie-products-heading">
-          <p className="eyebrow">Archie approved</p>
+          <p className="eyebrow ambassador-flag">Archie approved</p>
           <h2 id="archie-products-heading">Things We&apos;ve Sunk Our Teeth Into</h2>
           <p>Every product mentioned in a field note featuring Archie.</p>
           <div className="product-rail">
