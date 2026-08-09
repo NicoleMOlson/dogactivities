@@ -36,6 +36,19 @@ test("server-renders the dogactivities homepage and newsletter form", async () =
   assert.doesNotMatch(html, /service[_-]?role/i);
 });
 
+test("uses Alegreya typography across the site", async () => {
+  const [layout, styles] = await Promise.all([
+    readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
+  ]);
+  assert.match(layout, /Alegreya, Alegreya_Sans/);
+  assert.match(layout, /--font-body/);
+  assert.match(layout, /--font-heading/);
+  assert.match(styles, /font-family: var\(--font-heading\), sans-serif; font-weight: 900/);
+  assert.match(styles, /font-family: var\(--font-body\), serif/);
+  assert.doesNotMatch(layout, /DM_Sans|Fraunces/);
+});
+
 test("about page shows the team profiles without the former inspector photo", async () => {
   const response = await render("/about");
   const html = await response.text();

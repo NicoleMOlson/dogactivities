@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { DM_Sans, Fraunces } from "next/font/google";
+import { Alegreya, Alegreya_Sans } from "next/font/google";
 import "./globals.css";
 
-const sans = DM_Sans({ variable: "--font-sans", subsets: ["latin"] });
-const serif = Fraunces({ variable: "--font-serif", subsets: ["latin"] });
+const body = Alegreya({ variable: "--font-body", subsets: ["latin"], weight: "variable" });
+const heading = Alegreya_Sans({ variable: "--font-heading", subsets: ["latin"], weight: ["700", "800", "900"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${sans.variable} ${serif.variable}`}>
+      <body className={`${body.variable} ${heading.variable}`}>
         <header className="site-header page-shell">
           <Link className="brand" href="/" aria-label="Paws Welcome home">
             <span className="brand-mark">PW</span>
