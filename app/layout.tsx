@@ -43,6 +43,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <p>Made for fresh air, loose plans, and dogs who stop to smell everything.</p>
           <p className="copyright">© {new Date().getFullYear()} Paws Welcome</p>
         </footer>
+        <script
+          type="module"
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token":"8c9da14fcd6b445892f9534fe6f81b13"}'
+        />
       </body>
     </html>
   );
