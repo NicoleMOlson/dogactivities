@@ -128,6 +128,8 @@ test("publishes the Archie puppy-preparation post with accessible photos and sho
   assert.match(html, /Here’s everything that went into selecting the right crate for Archie\./);
   assert.match(html, /href="https:\/\/www\.homegoods\.com\/"[^>]*>Home Goods<\/a>/);
   assert.equal((html.match(/class="inline-retailer-link" href="https:\/\/www\.homegoods\.com\/"/g) ?? []).length, 3);
+  assert.match(html, /class="inline-retailer-link" href="https:\/\/bark\.co\/pages\/join-barkbox-dd-ff-d1a\?msclkid=7acb182e174a1b93e325725605140d1a[^>]*>BarkBox<\/a>/);
+  assert.equal((html.match(/href="https:\/\/bark\.co\/pages\/join-barkbox-dd-ff-d1a\?msclkid=/g) ?? []).length, 3);
   assert.match(html, /<h3>Archie’s Crate for Puppies, Dogs, and Mid-Sized Breeds<\/h3>/);
   assert.match(html, /<h3>Shopping at Target while Preparing to Bring Home a Puppy<\/h3>/);
   assert.match(html, /archie-target-golf-collection\.jpeg/);

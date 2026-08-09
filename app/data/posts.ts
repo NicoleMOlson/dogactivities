@@ -4,6 +4,7 @@ import type { Post } from "./types";
 
 const category = (slug: string) => categories.find((item) => item.slug === slug)!;
 const tag = (slug: string) => tags.find((item) => item.slug === slug)!;
+const barkBoxUrl = "https://bark.co/pages/join-barkbox-dd-ff-d1a?msclkid=7acb182e174a1b93e325725605140d1a&utm_campaign=688342557&utm_content=&utm_medium=cpc&utm_source=bing&utm_term=co_bb_can+i+buy+barkbox+toys+without+a+subscription&wm_ad_id=&wm_adgroup_id=1233653118341272&wm_medium=ads&wm_source=bing";
 
 // Static sample records share the same shape intended for a future Supabase post repository.
 export const posts: Post[] = [
@@ -54,7 +55,7 @@ export const posts: Post[] = [
         { label: "Hooray House golf clubs hide toy", href: "https://www.target.com/p/hooray-house-golf-clubs-hide-toy/-/A-95098326", image: "/products/golf-clubs-toy.jpeg", retailer: "Target" },
         { label: "Hooray House tennis-ball waste bag holder", href: "https://www.target.com/p/hooray-house-waste-bag-holder-tennis-ball/-/A-95098357", image: "/products/tennis-ball-bag-holder.jpeg", retailer: "Target" },
         { label: "Shop HomeGoods", href: "https://www.homegoods.com/", image: "/archie-puppy-toys.jpeg", retailer: "HomeGoods" },
-        { label: "Explore BarkBox", href: "https://bark.co/pages/join-barkbox-dd-ff-d1a", image: "/products/barkbox.jpeg", retailer: "BarkBox" },
+        { label: "Explore BarkBox", href: barkBoxUrl, image: "/products/barkbox.jpeg", retailer: "BarkBox" },
       ] },
     ],
     featured_image: archieCratePhoto.src,
@@ -65,7 +66,11 @@ export const posts: Post[] = [
     category: category("supplies"),
     tags: [tag("target"), tag("home-goods"), tag("amazon"), tag("dog-toys"), tag("organization"), tag("pet-crate"), tag("dog-bed")],
     author: { name: "Natalie Tromp", href: "/about#natalie-tromp" },
-    inline_links: [{ text: "Home Goods", href: "https://www.homegoods.com/" }],
+    inline_links: [
+      { text: "Home Goods", href: "https://www.homegoods.com/" },
+      { text: "BarkBox", href: barkBoxUrl },
+      { text: "Bark Box", href: barkBoxUrl },
+    ],
   },
   {
     id: "post-001",
