@@ -6,14 +6,14 @@ const category = (slug: string) => categories.find((item) => item.slug === slug)
 const tag = (slug: string) => tags.find((item) => item.slug === slug)!;
 const barkBoxUrl = "https://bark.co/pages/join-barkbox-dd-ff-d1a?msclkid=7acb182e174a1b93e325725605140d1a&utm_campaign=688342557&utm_content=&utm_medium=cpc&utm_source=bing&utm_term=co_bb_can+i+buy+barkbox+toys+without+a+subscription&wm_ad_id=&wm_adgroup_id=1233653118341272&wm_medium=ads&wm_source=bing";
 const blowfishUrl = "https://www.chewy.com/bark-spike-blowfish-squeaky-plush-dog/dp/4482022?utm_source=google-product&utm_medium=cpc&utm_campaign=19996370614&utm_content=&gad_source=1&gad_campaignid=19996373038&gbraid=0AAAAADmQ2V3UCBrfcclR5wjfzXIU31SoN&gclid=CjwKCAjw1bvTBhBbEiwAzbP8L8dg90BGMHuYsGNL2B-Dp10XyMwnbKam-qI1l12yq40g_QFdFhohtRoC22IQAvD_BwE";
-const dogCrateUrl = "https://www.amazon.com/dp/B0CPHSBTWQ?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1";
+const dogCrateUrl = "https://amzn.to/3RIwl2q";
 const dogBedAffiliateUrl = "https://www.amazon.com/dp/B08CXQY47M?th=1&linkCode=ll2&tag=archieapprove-20&linkId=f580d6f1a8c1a1d0fb7ec9c4c54c0944&language=en_US&gaOptInStatus=true&ref_=as_li_ss_tl";
 const dogHarnessAffiliateUrl = "https://www.amazon.com/dp/B0FH8C8YNJ?th=1&linkCode=ll2&tag=archieapprove-20&linkId=9887767cab19d655439a06933e056526&language=en_US&gaOptInStatus=true&ref_=as_li_ss_tl";
 const crinkleDuckAffiliateUrl = "https://www.amazon.com/dp/B09BBL8T4Z?th=1&linkCode=ll2&tag=archieapprove-20&linkId=31ca4d7eb61ba25c49b93f5fada8ed92&language=en_US&gaOptInStatus=true&ref_=as_li_ss_tl";
 const squeakyCrabAffiliateUrl = "https://www.amazon.com/dp/B0FSPMRRSN?&linkCode=ll2&tag=archieapprove-20&linkId=0bedc51c151938538c737a1a63f34424&language=en_US&gaOptInStatus=true&ref_=as_li_ss_tl";
 const dentachewAffiliateUrl = "https://www.amazon.com/dp/B07VBW7RMK?th=1&linkCode=ll2&tag=archieapprove-20&linkId=88b55900611f09f4ff2acf86ac2e8d0b&language=en_US&gaOptInStatus=true&ref_=as_li_ss_tl";
 const squeakerBallzAffiliateUrl = "https://www.amazon.com/dp/B07P5PTZWT?th=1&linkCode=ll2&tag=archieapprove-20&linkId=cb02f82dc80bfaacfb885f2b15aadb2a&language=en_US&gaOptInStatus=true&ref_=as_li_ss_tl";
-const petYardAffiliateUrl = "https://amzn.to/3RIwl2q";
+const petYardUrl = "https://www.chewy.com/mypet-indoor-outdoor-6-panel-petyard/dp/3507174";
 const targetFoodStorageUrl = "https://www.target.com/p/pet-food-storage-tub-with-built-in-scoop---35lbs---up--38-up--8482-/-/A-87004694";
 const targetCanisterUrl = "https://www.target.com/p/71-fl-oz-large-stoneware-canister-sour-cream---hearth---38--hand--8482--with-magnolia/-/A-94688420";
 const targetGolfHatUrl = "https://www.target.com/p/hooray-house-golf-hat---green-xs-s/-/A-95098361";
@@ -36,7 +36,7 @@ export const posts: Post[] = [
       { type: "heading", compact: true, text: "Creating Archie’s Puppy Space" },
       { type: "paragraph", text: "From research, to building, to crate training - picking the right crate can be a PROCESS! It’s been about 2 weeks with Archie so far and I’m happy to report that crate training is going well. Here’s everything that went into selecting the right crate for Archie." },
       { type: "heading", level: 3, text: "Archie’s Crate for Puppies, Dogs, and Mid-Sized Breeds" },
-      { type: "paragraph", text: "One of the first things I purchased was his crate and dog bed. We recently moved into our newly remodeled house, so I knew I wanted a crate that was not only aesthetically pleasing but also functional. I also didn’t want to buy multiple puppy stages when he got bigger. I ended up purchasing one from Amazon and absolutely love it. I have a basket of his toys, a basket of treats, and his other accessories on top, and it doesn’t scream that my dog owns this corner of the house." },
+      { type: "paragraph", text: "One of the first things I purchased was his crate and dog bed. We recently moved into our newly remodeled house, so I knew I wanted a crate that was not only aesthetically pleasing but also functional. I also didn’t want to buy multiple puppy stages when he got bigger. I ended up purchasing this one from Amazon and absolutely love it. I have a basket of his toys, a basket of treats, and his other accessories on top, and it doesn’t scream that my dog owns this corner of the house." },
       { type: "heading", level: 3, text: "Archie’s Dog Bed for Puppies, Dogs, and Mid-Sized Breeds" },
       { type: "paragraph", text: "The crate came with a dog bed, but I knew I wanted a bed for my office on my work-from-home days. I picked the fluffiest one I could find - he ended up laying it on his first night home and now he sleeps there every night." },
       { type: "heading", level: 3, text: "Archie’s Dog Toys and Dog Collar for Puppies, Dogs, and Mid-Sized Breeds" },
@@ -62,7 +62,7 @@ export const posts: Post[] = [
         { label: "Mini Dentachew toys", href: dentachewAffiliateUrl, image: "/products/dentachew.jpeg", retailer: "Amazon" },
         { label: "Squeaker Ballz", href: squeakerBallzAffiliateUrl, image: "/products/squeaker-balls.jpeg", retailer: "Amazon" },
         { label: "Bark blowfish toy", href: blowfishUrl, image: "/archie-puppy-toys.jpeg", retailer: "Chewy" },
-        { label: "Six-panel pet yard", href: petYardAffiliateUrl, image: "/archie-crate-and-bed.jpeg", retailer: "Amazon" },
+        { label: "Six-panel pet yard", href: petYardUrl, image: "/archie-crate-and-bed.jpeg", retailer: "Chewy" },
         { label: "Hearth & Hand stoneware canister", href: targetCanisterUrl, image: "/products/stoneware-canister.jpeg", retailer: "Target" },
         { label: "Pet food storage tub with scoop", href: targetFoodStorageUrl, image: "/products/pet-food-storage.jpeg", retailer: "Target" },
         { label: "Hooray House golf hat", href: targetGolfHatUrl, image: "/products/golf-hat.jpeg", retailer: "Target" },
@@ -83,6 +83,7 @@ export const posts: Post[] = [
     highlighted_tag_slugs: ["puppy", "mid-size-dog-breed"],
     featured_ambassador: {
       name: "Archie",
+      profile_href: "/about#archie",
       photo: "/archie-coffee.jpeg",
       photo_alt: "puppy sniffing a cup of coffee",
       caption: "Archie’s New Here and his owner Natalie put a lot of thought into preparing his place in their home.",
@@ -91,13 +92,13 @@ export const posts: Post[] = [
     },
     author: { name: "Natalie Tromp", href: "/about#natalie-tromp" },
     inline_links: [
-      { text: "one from Amazon", href: dogCrateUrl },
+      { text: "this one from Amazon", href: dogCrateUrl },
       { text: "Home Goods", href: "https://www.homegoods.com/" },
       { text: "BarkBox", href: barkBoxUrl },
       { text: "Bark Box", href: barkBoxUrl },
       { text: "this cute fish", href: blowfishUrl },
       { text: "Chewy", href: "https://www.chewy.com/" },
-      { text: "this one", href: petYardAffiliateUrl },
+      { text: "this one", href: petYardUrl },
       { text: "fluffiest one I could find", href: dogBedAffiliateUrl },
       { text: "a collar", href: dogHarnessAffiliateUrl },
       { text: "crinkle duck toy", href: crinkleDuckAffiliateUrl },

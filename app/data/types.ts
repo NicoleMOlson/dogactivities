@@ -24,6 +24,7 @@ export type InlineLink = { text: string; href: string };
 
 export type FeaturedAmbassador = {
   name: string;
+  profile_href: string;
   photo: string;
   photo_alt: string;
   caption: string;

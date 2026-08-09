@@ -78,10 +78,10 @@ function Block({ block, links, ambassador }: { block: ContentBlock; links: Inlin
                 <span className="instagram-mark" aria-hidden="true" />
                 <span>follow along on Instagram</span>
               </a>
-              <span className="profile-social-link ambassador-future-link" aria-label={`Read more about ${ambassador.name}; coming soon`}>
+              <Link className="profile-social-link" href={ambassador.profile_href} aria-label={`Read more about ${ambassador.name}`}>
                 <span className="paw-mark" aria-hidden="true"><i /><i /><i /><i /></span>
                 <span>read more about {ambassador.name}</span>
-              </span>
+              </Link>
             </div>
           </aside>
         )}

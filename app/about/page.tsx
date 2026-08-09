@@ -59,7 +59,7 @@ export default function AboutPage() {
         </section>
       </div>
       <div className="dog-profile-grid">
-        <article className="dog-profile">
+        <article className="dog-profile" id="archie">
           <figure className="dog-photo">
             <img src="/archie-coffee.jpeg" alt="puppy sniffing a cup of coffee" />
             <figcaption>Archie loves visiting new spots and making sure mama&apos;s coffee is made just right.</figcaption>
