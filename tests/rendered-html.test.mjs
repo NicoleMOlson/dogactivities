@@ -155,7 +155,7 @@ test("publishes the Archie puppy-preparation post with accessible photos and sho
   assert.match(html, /<h3>Shopping at .*while Preparing to Bring Home a Puppy<\/h3>/);
   assert.match(html, /archie-target-golf-collection\.jpeg/);
   assert.match(html, /Items in This Post/);
-  assert.match(html, /Products in This Post/);
+  assert.match(html, /Things We’ve Sunk Our Teeth Into/);
   assert.match(html, /Featured Ambassador/);
   assert.match(html, /Archie’s New Here and his owner/);
   assert.match(html, /put a lot of thought into preparing his place in their home\./);
@@ -172,7 +172,7 @@ test("publishes the Archie puppy-preparation post with accessible photos and sho
   assert.match(html, /\/products\/country-club-polo\.jpeg/);
   assert.match(html, /target\.com\/p\/hooray-house-country-club-polo/);
   assert.doesNotMatch(html, /Keep reading more/);
-  assert.ok(html.indexOf("Products in This Post") < html.indexOf("Items in This Post"));
+  assert.ok(html.indexOf("Things We’ve Sunk Our Teeth Into") < html.indexOf("Items in This Post"));
 });
 
 test("super-tag pages list every published blog carrying that tag", async () => {

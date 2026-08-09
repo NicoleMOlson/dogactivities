@@ -44,7 +44,7 @@ function Block({ block, links, ambassador }: { block: ContentBlock; links: Inlin
       <section className="product-shelf" aria-labelledby="products-in-post">
         <div className="product-shelf-heading">
           <p className="eyebrow">Shop the field note</p>
-          <h2 id="products-in-post">Products in This Post</h2>
+          <h2 id="products-in-post">Things We’ve Sunk Our Teeth Into</h2>
           <p>Scroll to browse every product mentioned above.</p>
         </div>
         <div className="product-rail">
