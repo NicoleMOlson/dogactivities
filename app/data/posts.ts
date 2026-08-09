@@ -81,6 +81,7 @@ export const posts: Post[] = [
     category: category("supplies"),
     tags: [tag("target"), tag("home-goods"), tag("amazon"), tag("dog-toys"), tag("organization"), tag("pet-crate"), tag("dog-bed"), tag("puppy"), tag("mid-size-dog-breed")],
     highlighted_tag_slugs: ["puppy", "mid-size-dog-breed"],
+    ambassadors: ["archie"],
     featured_ambassador: {
       name: "Archie",
       profile_href: "/about#archie",
@@ -190,3 +191,4 @@ export const publishedPosts = posts
 export const getPostBySlug = (slug: string) => publishedPosts.find((post) => post.slug === slug);
 export const getPostsByCategory = (slug: string) => publishedPosts.filter((post) => post.category.slug === slug);
 export const getPostsByTag = (slug: string) => publishedPosts.filter((post) => post.tags.some((item) => item.slug === slug));
+export const getPostsByAmbassador = (slug: string) => publishedPosts.filter((post) => post.ambassadors?.includes(slug));

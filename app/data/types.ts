@@ -56,5 +56,6 @@ export type Post = {
   author?: { name: string; href: string };
   inline_links?: InlineLink[];
   highlighted_tag_slugs?: string[];
+  ambassadors?: string[];
   featured_ambassador?: FeaturedAmbassador;
 };

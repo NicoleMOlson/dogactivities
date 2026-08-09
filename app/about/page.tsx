@@ -74,6 +74,10 @@ export default function AboutPage() {
               <span className="instagram-mark" aria-hidden="true" />
               <span>follow along</span>
             </a>
+            <Link className="profile-social-link" href="/ambassadors/archie" aria-label="Read more about Archie">
+              <span className="paw-mark" aria-hidden="true"><i /><i /><i /><i /></span>
+              <span>read more about Archie</span>
+            </Link>
           </div>
         </article>
         <article className="dog-profile">

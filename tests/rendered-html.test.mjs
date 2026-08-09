@@ -93,6 +93,7 @@ test("about page shows the team profiles without the former inspector photo", as
   assert.match(html, /aria-label="Follow Archie on Instagram"/);
   assert.match(html, /follow along/);
   assert.match(html, /Myszka/);
+  assert.match(html, /href="\/ambassadors\/archie"[^>]*aria-label="Read more about Archie"/);
   assert.match(html, /Fox Valley, Kendall County, &amp; Kane County Illinois Ambassador/);
   assert.match(html, /Aurora, Yorkville, Oswego, Montgomery, Plano/);
   assert.match(html, /Breed: German Shepherd/);
@@ -121,6 +122,20 @@ test("about page shows the team profiles without the former inspector photo", as
   assert.ok(html.indexOf("Archie</h1>") < html.indexOf("Myszka</h1>"));
   assert.ok(html.indexOf("Myszka</h1>") < html.indexOf("Bella</h1>"));
   assert.ok(html.indexOf("archie-coffee.jpeg") < html.indexOf("Archie</h1>"));
+});
+
+test("Archie profile collects his posts and products", async () => {
+  const response = await render("/ambassadors/archie");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /Paws Welcome Ambassador/);
+  assert.match(html, /Field notes featuring Archie/);
+  assert.match(html, /Preparing for the Arrival of Archie/);
+  assert.match(html, /Things We(?:&#x27;|’)ve Sunk Our Teeth Into/);
+  assert.match(html, /href="https:\/\/www\.instagram\.com\/archibald_the_bernedoodle"/);
+  assert.match(html, /TikTok link coming soon/);
+  assert.match(html, /class="product-rail"/);
+  assert.match(html, /Crinkle duck toy/);
 });
 
 test("publishes the Archie puppy-preparation post with accessible photos and shopping links", async () => {
