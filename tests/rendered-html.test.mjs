@@ -136,6 +136,12 @@ test("publishes the Archie puppy-preparation post with accessible photos and sho
   assert.match(html, /class="inline-retailer-link" href="https:\/\/www\.chewy\.com\/"[^>]*>Chewy<\/a>/);
   assert.match(html, /class="inline-retailer-link" href="https:\/\/www\.chewy\.com\/mypet-indoor-outdoor-6-panel-petyard\/dp\/3507174"[^>]*>this one!<\/a>/);
   assert.equal((html.match(/class="inline-retailer-link" href="https:\/\/www\.target\.com\/c\/dog-supplies-pets\/-\/N-5xt3t"/g) ?? []).length, 4);
+  assert.match(html, />pet food storage container with a built-in scoop<\/a>/);
+  assert.match(html, />cute storage canister from Hearth &amp; Hand with Magnolia<\/a>/);
+  assert.match(html, />bucket hat<\/a>/);
+  assert.match(html, />golf polo<\/a>/);
+  assert.match(html, />golf club dog toy<\/a>/);
+  assert.match(html, />bag dispenser<\/a>/);
   assert.match(html, /<h3>Archie’s Crate for Puppies, Dogs, and Mid-Sized Breeds<\/h3>/);
   assert.match(html, /<h3>Shopping at .*while Preparing to Bring Home a Puppy<\/h3>/);
   assert.match(html, /archie-target-golf-collection\.jpeg/);

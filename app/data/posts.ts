@@ -7,6 +7,12 @@ const tag = (slug: string) => tags.find((item) => item.slug === slug)!;
 const barkBoxUrl = "https://bark.co/pages/join-barkbox-dd-ff-d1a?msclkid=7acb182e174a1b93e325725605140d1a&utm_campaign=688342557&utm_content=&utm_medium=cpc&utm_source=bing&utm_term=co_bb_can+i+buy+barkbox+toys+without+a+subscription&wm_ad_id=&wm_adgroup_id=1233653118341272&wm_medium=ads&wm_source=bing";
 const blowfishUrl = "https://www.chewy.com/bark-spike-blowfish-squeaky-plush-dog/dp/4482022?utm_source=google-product&utm_medium=cpc&utm_campaign=19996370614&utm_content=&gad_source=1&gad_campaignid=19996373038&gbraid=0AAAAADmQ2V3UCBrfcclR5wjfzXIU31SoN&gclid=CjwKCAjw1bvTBhBbEiwAzbP8L8dg90BGMHuYsGNL2B-Dp10XyMwnbKam-qI1l12yq40g_QFdFhohtRoC22IQAvD_BwE";
 const petYardUrl = "https://www.chewy.com/mypet-indoor-outdoor-6-panel-petyard/dp/3507174";
+const targetFoodStorageUrl = "https://www.target.com/p/pet-food-storage-tub-with-built-in-scoop---35lbs---up--38-up--8482-/-/A-87004694";
+const targetCanisterUrl = "https://www.target.com/p/71-fl-oz-large-stoneware-canister-sour-cream---hearth---38--hand--8482--with-magnolia/-/A-94688420";
+const targetGolfHatUrl = "https://www.target.com/p/hooray-house-golf-hat---green-xs-s/-/A-95098361";
+const targetGolfPoloUrl = "https://www.target.com/p/hooray-house-country-club-polo---green-s/-/A-95098317";
+const targetGolfToyUrl = "https://www.target.com/p/hooray-house-golf-clubs-hide-toy/-/A-95098326";
+const targetBagDispenserUrl = "https://www.target.com/p/hooray-house-waste-bag-holder-tennis-ball/-/A-95098357#lnk=sametab";
 
 // Static sample records share the same shape intended for a future Supabase post repository.
 export const posts: Post[] = [
@@ -50,12 +56,12 @@ export const posts: Post[] = [
         { label: "Squeaker Ballz", href: "https://www.amazon.com/dp/B07P5PTZWT?ref=ppx_yo2ov_dt_b_fed_asin_title", image: "/products/squeaker-balls.jpeg", retailer: "Amazon" },
         { label: "Bark blowfish toy", href: blowfishUrl, image: "/archie-puppy-toys.jpeg", retailer: "Chewy" },
         { label: "Six-panel pet yard", href: petYardUrl, image: "/archie-crate-and-bed.jpeg", retailer: "Chewy" },
-        { label: "Hearth & Hand stoneware canister", href: "https://www.target.com/p/71-fl-oz-large-stoneware-canister-sour-cream---hearth---38--hand--8482--with-magnolia/-/A-94688420", image: "/products/stoneware-canister.jpeg", retailer: "Target" },
-        { label: "Pet food storage tub with scoop", href: "https://www.target.com/p/pet-food-storage-tub-with-built-in-scoop---35lbs---up--38-up--8482-/-/A-87004694", image: "/products/pet-food-storage.jpeg", retailer: "Target" },
-        { label: "Hooray House golf hat", href: "https://www.target.com/p/hooray-house-golf-hat---green-xs-s/-/A-95098361", image: "/products/golf-hat.jpeg", retailer: "Target" },
-        { label: "Hooray House country club polo", href: "https://www.target.com/p/hooray-house-country-club-polo---green-s/-/A-95098317", image: "/products/country-club-polo.jpeg", retailer: "Target" },
-        { label: "Hooray House golf clubs hide toy", href: "https://www.target.com/p/hooray-house-golf-clubs-hide-toy/-/A-95098326", image: "/products/golf-clubs-toy.jpeg", retailer: "Target" },
-        { label: "Hooray House tennis-ball waste bag holder", href: "https://www.target.com/p/hooray-house-waste-bag-holder-tennis-ball/-/A-95098357", image: "/products/tennis-ball-bag-holder.jpeg", retailer: "Target" },
+        { label: "Hearth & Hand stoneware canister", href: targetCanisterUrl, image: "/products/stoneware-canister.jpeg", retailer: "Target" },
+        { label: "Pet food storage tub with scoop", href: targetFoodStorageUrl, image: "/products/pet-food-storage.jpeg", retailer: "Target" },
+        { label: "Hooray House golf hat", href: targetGolfHatUrl, image: "/products/golf-hat.jpeg", retailer: "Target" },
+        { label: "Hooray House country club polo", href: targetGolfPoloUrl, image: "/products/country-club-polo.jpeg", retailer: "Target" },
+        { label: "Hooray House golf clubs hide toy", href: targetGolfToyUrl, image: "/products/golf-clubs-toy.jpeg", retailer: "Target" },
+        { label: "Hooray House tennis-ball waste bag holder", href: targetBagDispenserUrl, image: "/products/tennis-ball-bag-holder.jpeg", retailer: "Target" },
         { label: "Shop HomeGoods", href: "https://www.homegoods.com/", image: "/archie-puppy-toys.jpeg", retailer: "HomeGoods" },
         { label: "Explore BarkBox", href: barkBoxUrl, image: "/products/barkbox.jpeg", retailer: "BarkBox" },
       ] },
@@ -76,6 +82,12 @@ export const posts: Post[] = [
       { text: "Chewy", href: "https://www.chewy.com/" },
       { text: "this one!", href: petYardUrl },
       { text: "Target", href: "https://www.target.com/c/dog-supplies-pets/-/N-5xt3t" },
+      { text: "pet food storage container with a built-in scoop", href: targetFoodStorageUrl },
+      { text: "cute storage canister from Hearth & Hand with Magnolia", href: targetCanisterUrl },
+      { text: "bucket hat", href: targetGolfHatUrl },
+      { text: "golf polo", href: targetGolfPoloUrl },
+      { text: "golf club dog toy", href: targetGolfToyUrl },
+      { text: "bag dispenser", href: targetBagDispenserUrl },
     ],
   },
   {
