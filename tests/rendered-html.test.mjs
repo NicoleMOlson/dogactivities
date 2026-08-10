@@ -134,6 +134,7 @@ test("Archie profile collects his posts and products", async () => {
   assert.match(html, /Paws Welcome Ambassador/);
   assert.match(html, /Field notes featuring Archie/);
   assert.match(html, /Preparing for the Arrival of Archie/);
+  assert.match(html, /My Cross-country Trip from Chicago to Pittsburgh/);
   assert.match(html, /Things We(?:&#x27;|’)ve Sunk Our Teeth Into/);
   assert.match(html, /href="https:\/\/www\.instagram\.com\/archibald_the_bernedoodle"/);
   assert.match(html, /TikTok link coming soon/);
@@ -144,6 +145,19 @@ test("Archie profile collects his posts and products", async () => {
   assert.match(css, /\.ambassador-products\s*\{[^}]*width:\s*calc\(100vw - 8px\);/s);
   assert.match(css, /\.ambassador-products\s*\{[^}]*overflow:\s*hidden;/s);
   assert.match(css, /\.ambassador-flag\s*\{[^}]*background:\s*var\(--sun\);[^}]*clip-path:\s*polygon\(0 0, 84% 0, 100% 50%, 84% 100%, 0 100%\);/s);
+});
+
+test("publishes Archie's cross-country pickup story without product links", async () => {
+  const response = await render("/posts/chicago-pittsburgh-pick-up-archie-bernedoodle");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /My Cross-country Trip from Chicago to Pittsburgh to Pick Up Archie/);
+  assert.match(html, /What&#x27;s in My Bag - Puppy Pickup Edition/);
+  assert.match(html, /Airport Check-in Process When Flying United Airlines with a Dog/);
+  assert.match(html, /Rational\? Probably not\. Relatable\? Absolutely\./);
+  assert.match(html, /Pass the sniff along/);
+  assert.doesNotMatch(html, /B0F53SPX18|95203026|86858968|2376590/);
+  assert.doesNotMatch(html, /class="product-shelf"/);
 });
 
 test("publishes the Archie puppy-preparation post with accessible photos and shopping links", async () => {

@@ -23,4 +23,7 @@ export const tags: Tag[] = [
   { id: "tag-dog-bed", name: "Dog Bed", slug: "dog-bed" },
   { id: "tag-puppy", name: "Puppy", slug: "puppy" },
   { id: "tag-mid-size-dog-breed", name: "Mid-Size Dog Breed", slug: "mid-size-dog-breed" },
+  { id: "tag-dog-travel", name: "Dog Travel", slug: "dog-travel" },
+  { id: "tag-flying-with-dogs", name: "Flying with Dogs", slug: "flying-with-dogs" },
+  { id: "tag-puppy-pickup", name: "Puppy Pickup", slug: "puppy-pickup" },
 ];
