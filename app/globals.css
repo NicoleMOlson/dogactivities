@@ -153,6 +153,8 @@ h1, h2, h3 { font-family: var(--font-heading), sans-serif; font-weight: 900; let
 .dog-copy h2 { font-size: clamp(1.2rem, 1.8vw, 1.55rem); line-height: 1.15; margin: 0 0 14px; }
 .dog-copy h3 { font: 700 .88rem/1.55 var(--font-body); letter-spacing: 0; margin: 8px 0; }
 .dog-copy p { line-height: 1.65; }
+.dog-profile-links { align-items: flex-start; display: flex; flex-direction: column; gap: 8px; }
+.dog-profile-links .profile-social-link { margin-top: 0; width: max-content; }
 .values-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; padding: 90px 0; color: white; }
 .values-row > div { border-top: 2px solid rgba(255,255,255,.68); padding-top: 18px; }
 .values-row span { font-size: .7rem; letter-spacing: .15em; }

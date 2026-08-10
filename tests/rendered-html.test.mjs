@@ -96,6 +96,7 @@ test("about page shows the team profiles without the former inspector photo", as
   assert.match(html, /follow along/);
   assert.match(html, /Myszka/);
   assert.match(html, /href="\/ambassadors\/archie"[^>]*aria-label="Read more about Archie"/);
+  assert.match(html, /class="dog-profile-links"/);
   assert.match(html, /Fox Valley, Kendall County, &amp; Kane County Illinois Ambassador/);
   assert.match(html, /Aurora, Yorkville, Oswego, Montgomery, Plano/);
   assert.match(html, /Breed: German Shepherd/);
