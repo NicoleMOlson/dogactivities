@@ -3,6 +3,7 @@ import Link from "next/link";
 import { EmailSignup } from "../components/EmailSignup";
 
 export const metadata: Metadata = { title: "About" };
+const showHiddenProfiles = false;
 
 export default function AboutPage() {
   return (
@@ -37,7 +38,7 @@ export default function AboutPage() {
             </p>
           </div>
         </section>
-        <section className="paper-card human-profile">
+        {showHiddenProfiles && <section className="paper-card human-profile">
           <figure className="about-photo">
             <img
               src="/nicole-and-mysza.png"
@@ -56,7 +57,7 @@ export default function AboutPage() {
               stress free.
             </p>
           </div>
-        </section>
+        </section>}
       </div>
       <div className="dog-profile-grid">
         <article className="dog-profile" id="archie">
@@ -82,7 +83,7 @@ export default function AboutPage() {
             </div>
           </div>
         </article>
-        <article className="dog-profile">
+        {showHiddenProfiles && <article className="dog-profile">
           <figure className="dog-photo">
             <img src="/mysza-long-hike.jpeg" alt="german shepherd dog sitting on a gravel bike path in a native grassland prarie with forest surrounding" />
             <figcaption>Myszka loves going on long hikes with her humans</figcaption>
@@ -98,8 +99,8 @@ export default function AboutPage() {
               <span>follow along</span>
             </a>
           </div>
-        </article>
-        <article className="dog-profile">
+        </article>}
+        {showHiddenProfiles && <article className="dog-profile">
           <figure className="dog-photo">
             <img src="/bella-walk.jpeg" alt="yorkie dog on a pink leash walking in the grassy on a windy day" />
             <figcaption>Beach days to hiking trails, Bella&apos;s got a streak for adventure.</figcaption>
@@ -111,7 +112,7 @@ export default function AboutPage() {
             <h3>Breed: Yorkshire Terrier</h3>
             <p>The ultimate passenger princess, Bella loves to commute by bike and car to just about any destination. A huge fan of the beach, big hills, and Stella and Chewy&apos;s freeze dried patties - Bella knows how to have fun and look good while doing it. Prim and proper to the max, you can find Bella relaxing with her humans on the couch or sunbathing in her favorite spot in the backyard. She doesn&apos;t let the sun set without going for a walk around the neighborhood.</p>
           </div>
-        </article>
+        </article>}
       </div>
       <section className="values-row">
         <div><span>01</span><h2>Useful over perfect</h2><p>Plans that work in real life, including the muddy and slightly late parts.</p></div>

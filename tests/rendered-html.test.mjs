@@ -43,6 +43,9 @@ test("server-renders the dogactivities homepage and newsletter form", async () =
   assert.doesNotMatch(html, /service[_-]?role/i);
   assert.match(html, /src="https:\/\/static\.cloudflareinsights\.com\/beacon\.min\.js"/);
   assert.match(html, /data-cf-beacon="\{&quot;token&quot;:&quot;8c9da14fcd6b445892f9534fe6f81b13&quot;\}"/);
+  assert.doesNotMatch(html, /The unhurried guide to a first trail day/);
+  assert.doesNotMatch(html, /What actually earns a place in our day-trip bag/);
+  assert.doesNotMatch(html, /A rainy afternoon that still counts as an adventure/);
 });
 
 test("uses Alegreya typography across the site", async () => {
@@ -75,7 +78,7 @@ test("visually distinguishes inline shopping links", async () => {
   assert.match(css, /\.inline-retailer-link\s*\{[^}]*text-decoration-color:\s*var\(--orange\);/s);
 });
 
-test("about page shows the team profiles without the former inspector photo", async () => {
+test("about page publicly shows Natalie and Archie while other profiles remain hidden", async () => {
   const response = await render("/about");
   const html = await response.text();
 
@@ -84,7 +87,6 @@ test("about page shows the team profiles without the former inspector photo", as
   assert.match(html, /Good days with your best friend\./);
   assert.match(html, /Paws Welcome helps dog owners find their new favorite/);
   assert.match(html, /Adventure doesn&#x27;t have to mean going far/);
-  assert.match(html, /Nicole Olson/);
   assert.match(html, /Cook County &amp; Lake County, Illinois Ambassador/);
   assert.match(html, /Elk Grove Village, Chicago, Schaumburg/);
   assert.match(html, /Breed: Mini Bernadoodle/);
@@ -96,36 +98,17 @@ test("about page shows the team profiles without the former inspector photo", as
   assert.match(html, /https:\/\/www\.instagram\.com\/archibald_the_bernedoodle/);
   assert.match(html, /aria-label="Follow Archie on Instagram"/);
   assert.match(html, /follow along/);
-  assert.match(html, /Myszka/);
   assert.match(html, /href="\/ambassadors\/archie"[^>]*aria-label="Read more about Archie"/);
   assert.match(html, /class="dog-profile-links"/);
-  assert.match(html, /Fox Valley, Kendall County, &amp; Kane County Illinois Ambassador/);
-  assert.match(html, /Aurora, Yorkville, Oswego, Montgomery, Plano/);
-  assert.match(html, /Breed: German Shepherd/);
-  assert.match(html, /Bella/);
-  assert.match(html, /Kenosha County, Wisconsin/);
-  assert.match(html, /every scenic stop in between/);
-  assert.match(html, /Breed: Yorkshire Terrier/);
   assert.match(html, /natalie-archie-gotcha-day\.jpeg/);
   assert.match(html, /girl in sunglasses holding up a white, gray, tan puppy inside of a car/);
   assert.match(html, /Archie&#x27;s Gotcha Day in Pittsburgh, PA/);
-  assert.match(html, /bella-walk\.jpeg/);
-  assert.match(html, /yorkie dog on a pink leash walking in the grassy on a windy day/);
-  assert.match(html, /Beach days to hiking trails, Bella&#x27;s got a streak for adventure\./);
-  assert.match(html, /mysza-long-hike\.jpeg/);
-  assert.match(html, /german shepherd dog sitting on a gravel bike path in a native grassland prarie with forest surrounding/);
-  assert.match(html, /Myszka loves going on long hikes with her humans/);
-  assert.match(html, /https:\/\/www\.instagram\.com\/maamaoro\//);
-  assert.match(html, /aria-label="Follow Myszka on Instagram"/);
-  assert.match(html, /nicole-and-mysza\.png/);
-  assert.match(html, /girl with long hair and glasses sitting with german shepherd dog/);
-  assert.match(html, /Myszka is never far away from her favorite people/);
+  assert.doesNotMatch(html, /Nicole Olson|Myszka|Bella/);
+  assert.doesNotMatch(html, /nicole-and-mysza\.png|mysza-long-hike\.jpeg|bella-walk\.jpeg/);
   assert.doesNotMatch(html, /Chief route inspector/);
   assert.doesNotMatch(html, /A relaxed dog outside in soft sunlight/);
   assert.match(html, /class="human-profile-grid"/);
   assert.match(html, /class="dog-profile-grid"/);
-  assert.ok(html.indexOf("Archie</h1>") < html.indexOf("Myszka</h1>"));
-  assert.ok(html.indexOf("Myszka</h1>") < html.indexOf("Bella</h1>"));
   assert.ok(html.indexOf("archie-coffee.jpeg") < html.indexOf("Archie</h1>"));
 });
 
@@ -147,6 +130,13 @@ test("Archie profile collects his posts and products", async () => {
   assert.match(css, /\.ambassador-products\s*\{[^}]*width:\s*calc\(100vw - 8px\);/s);
   assert.match(css, /\.ambassador-products\s*\{[^}]*overflow:\s*hidden;/s);
   assert.match(css, /\.ambassador-flag\s*\{[^}]*background:\s*var\(--sun\);[^}]*clip-path:\s*polygon\(0 0, 84% 0, 100% 50%, 84% 100%, 0 100%\);/s);
+});
+
+test("keeps original mock blog posts out of the public site", async () => {
+  for (const slug of ["unhurried-first-trail-day", "what-is-in-our-day-trip-bag", "rainy-afternoon-enrichment"]) {
+    const response = await render(`/posts/${slug}`);
+    assert.equal(response.status, 404);
+  }
 });
 
 test("publishes Archie's cross-country pickup story without product links", async () => {
