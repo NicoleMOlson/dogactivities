@@ -58,12 +58,12 @@ export default function AboutPage() {
             </p>
           </div>
         </section>}
-        <article className="paper-card dog-profile featured-dog-profile" id="archie">
-          <figure className="dog-photo">
+        <article className="paper-card human-profile" id="archie">
+          <figure className="about-photo">
             <img src="/archie-coffee.jpeg" alt="puppy sniffing a cup of coffee" />
             <figcaption>Archie loves visiting new spots and making sure mama&apos;s coffee is made just right.</figcaption>
           </figure>
-          <div className="dog-copy">
+          <div className="about-copy">
             <h1>Archie</h1>
             <h2>Cook County &amp; Lake County, Illinois Ambassador</h2>
             <h3>Elk Grove Village, Chicago, Schaumburg, and surrounding communities</h3>

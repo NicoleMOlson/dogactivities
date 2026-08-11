@@ -110,7 +110,7 @@ test("about page publicly shows Natalie and Archie while other profiles remain h
   assert.doesNotMatch(html, /Chief route inspector/);
   assert.doesNotMatch(html, /A relaxed dog outside in soft sunlight/);
   assert.match(html, /class="human-profile-grid"/);
-  assert.match(html, /class="paper-card dog-profile featured-dog-profile"/);
+  assert.equal((html.match(/class="paper-card human-profile"/g) ?? []).length, 2);
   assert.doesNotMatch(html, /class="dog-profile-grid"/);
   assert.ok(html.indexOf("archie-coffee.jpeg") < html.indexOf("Archie</h1>"));
 });
