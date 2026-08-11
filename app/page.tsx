@@ -47,6 +47,10 @@ export default function Home() {
           {morePosts.map((post, index) => (
             <PostCard key={post.id} post={post} index={index} />
           ))}
+          <div className="more-coming-soon" aria-label="More field notes coming soon">
+            <span className="paw-mark" aria-hidden="true"><i /><i /><i /><i /></span>
+            <span>More coming soon...</span>
+          </div>
         </div>
       </section>
 
