@@ -135,6 +135,8 @@ h1, h2, h3 { font-family: var(--font-heading), sans-serif; font-weight: 900; let
 .human-profile-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(28px, 4vw, 48px); margin-top: 64px; }
 .human-profile-grid > :only-child { grid-column: 1 / -1; }
 .human-profile { padding: clamp(24px, 3vw, 38px); }
+.featured-dog-profile { padding: clamp(24px, 3vw, 38px); transform: rotate(.45deg); }
+.about-page .dog-photo::before, .about-page .dog-photo::after { display: none; }
 .human-profile:nth-child(1) { transform: rotate(-.45deg); }
 .human-profile:nth-child(2) { transform: rotate(.45deg); }
 .human-profile .about-photo { min-height: 0; transform: none; }

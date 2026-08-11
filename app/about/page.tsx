@@ -58,9 +58,7 @@ export default function AboutPage() {
             </p>
           </div>
         </section>}
-      </div>
-      <div className="dog-profile-grid">
-        <article className="dog-profile" id="archie">
+        <article className="paper-card dog-profile featured-dog-profile" id="archie">
           <figure className="dog-photo">
             <img src="/archie-coffee.jpeg" alt="puppy sniffing a cup of coffee" />
             <figcaption>Archie loves visiting new spots and making sure mama&apos;s coffee is made just right.</figcaption>
@@ -83,6 +81,7 @@ export default function AboutPage() {
             </div>
           </div>
         </article>
+      </div>
         {showHiddenProfiles && <article className="dog-profile">
           <figure className="dog-photo">
             <img src="/mysza-long-hike.jpeg" alt="german shepherd dog sitting on a gravel bike path in a native grassland prarie with forest surrounding" />
@@ -113,7 +112,6 @@ export default function AboutPage() {
             <p>The ultimate passenger princess, Bella loves to commute by bike and car to just about any destination. A huge fan of the beach, big hills, and Stella and Chewy&apos;s freeze dried patties - Bella knows how to have fun and look good while doing it. Prim and proper to the max, you can find Bella relaxing with her humans on the couch or sunbathing in her favorite spot in the backyard. She doesn&apos;t let the sun set without going for a walk around the neighborhood.</p>
           </div>
         </article>}
-      </div>
       <section className="values-row">
         <div><span>01</span><h2>Useful over perfect</h2><p>Plans that work in real life, including the muddy and slightly late parts.</p></div>
         <div><span>02</span><h2>Dog-paced</h2><p>Comfort, curiosity, age, and energy get a vote in every outing.</p></div>
