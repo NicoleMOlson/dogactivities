@@ -58,7 +58,7 @@ test("uses Alegreya typography across the site", async () => {
   assert.match(styles, /\.post-body > p \{ margin: 0 0 1\.4em; \}/);
   assert.match(styles, /\.post-body > ul \{ list-style: none;/);
   assert.match(styles, /\.post-body \{ width: min\(1280px, 100%\)/);
-  assert.match(styles, /\.post-body[^}]*font-size: clamp\(1\.28rem, 1\.6vw, 1\.42rem\)/);
+  assert.match(styles, /\.post-body[^}]*font-size: clamp\(1\.38rem, 1\.7vw, 1\.52rem\)/);
   assert.match(styles, /\.post-header \{ width: min\(1280px, 100%\)/);
   assert.match(styles, /\.post-featured \{ width: min\(1280px, 100%\)/);
   assert.match(styles, /\.post-featured[^}]*margin: 24px auto 0/);
