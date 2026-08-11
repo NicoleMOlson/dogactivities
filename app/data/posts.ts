@@ -41,7 +41,7 @@ export const posts: Post[] = [
         "A portable travel water bottle",
       ] },
       { type: "paragraph", text: "Looking back, every single one earned its spot in my bag. The blanket and heartbeat puppy especially helped make Archie’s first big adventure a little less overwhelming." },
-      { type: "heading", text: "Airport Check-in Process When Flying United Airlines with a Dog" },
+      { type: "heading", compact: true, text: "Airport Check-in Process When Flying United Airlines with a Dog" },
       { type: "paragraph", text: "Since I flew United, there was one thing I learned that I wish I had known beforehand. If you're traveling home with a puppy, you can't simply check in through the app like normal. Even though I wasn't checking luggage, I still had to stop at the United kiosk before going through security so they could verify Archie's reservation. It's a small detail, but knowing it ahead of time can save you some stress on travel day." },
       { type: "heading", text: "Arriving in Pittsburgh to Pick Up My Mini Bernadoodle Puppy" },
       { type: "paragraph", text: "After landing in Pittsburgh, I picked up my rental car and headed to meet Archie. The drive felt surreal. I kept thinking, “I'm actually on my way to pick up my dog.” Not just any dog—the puppy whose photos I'd been staring at for days and whose arrival I'd been counting down to." },
