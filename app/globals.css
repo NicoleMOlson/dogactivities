@@ -17,6 +17,7 @@
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
+  overflow-x: clip;
   color: var(--ink);
   font-family: var(--font-body), serif;
   background-color: var(--grass);
@@ -204,12 +205,12 @@ h1, h2, h3 { font-family: var(--font-heading), sans-serif; font-weight: 900; let
 .archive-header .text-link { display: inline-block; margin-top: 18px; }
 .archive-grid { max-width: 1040px; margin-inline: auto; }
 
-.post-page { padding: 42px 0 100px; }
+.page-shell.post-page { overflow: clip; padding: 42px 0 100px; width: min(1320px, calc(100% - 24px)); }
 .back-link { color: white; display: inline-block; margin-bottom: 34px; font-weight: 700; text-underline-offset: 4px; }
 .post-page article { position: relative; }
 .post-header { width: min(1280px, 100%); margin: 0 auto; padding: clamp(38px, 7vw, 78px); position: relative; z-index: 2; transform: rotate(-.45deg); }
 .post-header h1 { font-size: clamp(3rem, 7vw, 6.3rem); line-height: .95; margin: 28px 0 22px; }
-.post-header > p { font: 480 clamp(1.08rem, 2vw, 1.35rem)/1.6 var(--font-body); max-width: 720px; }
+.post-header > p { font: 480 clamp(1.15rem, 2vw, 1.42rem)/1.6 var(--font-body); max-width: 900px; }
 .post-header .post-author { font: 700 .82rem/1.4 var(--font-body); margin: 22px 0 0; text-transform: uppercase; letter-spacing: .08em; }
 .post-author a { text-underline-offset: 4px; }
 .post-meta { justify-content: flex-start; }
@@ -218,7 +219,7 @@ h1, h2, h3 { font-family: var(--font-heading), sans-serif; font-weight: 900; let
 .post-featured { width: min(1280px, 100%); margin: 24px auto 0; padding: 15px 15px 42px; transform: rotate(1.2deg); }
 .post-featured img { width: auto; max-width: 100%; height: auto; max-height: 720px; margin-inline: auto; object-fit: contain; }
 .post-featured figcaption { width: min(950px, 100%); margin-inline: auto; }
-.post-body { width: min(1280px, 100%); margin: 46px auto 80px; padding: clamp(38px, 7vw, 76px); font-family: var(--font-body); font-size: clamp(1.18rem, 1.45vw, 1.28rem); line-height: 1.85; min-width: 0; }
+.post-body { width: min(1280px, 100%); margin: 46px auto 80px; padding: clamp(38px, 7vw, 76px); font-family: var(--font-body); font-size: clamp(1.28rem, 1.6vw, 1.42rem); line-height: 1.8; min-width: 0; }
 .post-body > p { margin: 0 0 1.4em; }
 .inline-retailer-link {
   font-weight: 800;
@@ -237,7 +238,7 @@ h1, h2, h3 { font-family: var(--font-heading), sans-serif; font-weight: 900; let
 .post-body h2:first-child { margin-top: 0; }
 .post-body > ul { list-style: none; margin: -.5em 0 1.5em; padding-left: .15em; }
 .post-body > ul > li { align-items: baseline; display: flex; gap: .7em; margin-bottom: 8px; }
-.post-list-paw { color: var(--ink); flex-basis: .8em; height: .8em; top: .06em; width: .8em; }
+.post-list-paw { color: var(--ink); flex-basis: 1em; height: 1em; top: .1em; width: 1em; }
 .post-body blockquote { margin: 2em 0; padding: 24px 0 24px 28px; border-left: 6px solid var(--sun); font-size: 1.45rem; line-height: 1.5; }
 .post-inline-image { background: #fffdf6; box-shadow: 0 14px 28px rgba(15,39,22,.18); margin: 2.8em 0 3.2em; max-width: 100%; padding: 12px 12px 20px; transform: rotate(-.4deg); }
 .post-inline-image img { max-height: 720px; object-fit: cover; }
@@ -257,6 +258,7 @@ h1, h2, h3 { font-family: var(--font-heading), sans-serif; font-weight: 900; let
 .ambassador-links { align-items: flex-start; align-self: end; display: flex; flex-direction: column; gap: 9px; grid-column: 1 / -1; }
 .featured-ambassador .profile-social-link { font-size: .76rem; gap: .65em; line-height: 1.2; margin-top: 0; min-height: 1.25em; }
 .featured-ambassador .instagram-mark, .featured-ambassador .paw-mark { flex-basis: 1.05em; height: 1.05em; width: 1.05em; }
+.standalone-ambassador { margin: 3em 0 0 auto; width: min(310px, 100%); }
 .ambassador-future-link, .ambassador-future-link:hover { cursor: default; text-decoration: none; }
 .paw-mark { display: inline-block; flex: 0 0 1em; height: 1em; position: relative; width: 1em; }
 .paw-mark::before { background: currentColor; border-radius: 48% 48% 55% 55%; bottom: 0; content: ""; height: .58em; left: .2em; position: absolute; transform: rotate(2deg); width: .64em; }

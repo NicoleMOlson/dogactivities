@@ -29,6 +29,31 @@ function LinkedText({ text, links }: { text: string; links: InlineLink[] }) {
   });
 }
 
+function AmbassadorCard({ ambassador }: { ambassador: FeaturedAmbassador }) {
+  return (
+    <aside className="featured-ambassador" aria-labelledby="featured-ambassador-name">
+      <p className="eyebrow">Featured Ambassador</p>
+      <img src={ambassador.photo} alt={ambassador.photo_alt} />
+      <h2 id="featured-ambassador-name">{ambassador.name}</h2>
+      <p>
+        {ambassador.caption.split(ambassador.owner.name)[0]}
+        <Link href={ambassador.owner.href}>{ambassador.owner.name}</Link>
+        {ambassador.caption.split(ambassador.owner.name)[1]}
+      </p>
+      <div className="ambassador-links">
+        <a className="profile-social-link" href={ambassador.instagram_url} target="_blank" rel="noreferrer" aria-label={`Follow ${ambassador.name} on Instagram`}>
+          <span className="instagram-mark" aria-hidden="true" />
+          <span>follow along on Instagram</span>
+        </a>
+        <Link className="profile-social-link" href={ambassador.profile_href} aria-label={`Read more about ${ambassador.name}`}>
+          <span className="paw-mark" aria-hidden="true"><i /><i /><i /><i /></span>
+          <span>read more about {ambassador.name}</span>
+        </Link>
+      </div>
+    </aside>
+  );
+}
+
 function Block({ block, links, ambassador }: { block: ContentBlock; links: InlineLink[]; ambassador?: FeaturedAmbassador }) {
   if (block.type === "heading") return block.level === 3
     ? <h3><LinkedText text={block.text} links={links} /></h3>
@@ -70,28 +95,7 @@ function Block({ block, links, ambassador }: { block: ContentBlock; links: Inlin
           <h2 id="items-in-post">{block.title}</h2>
           <ul>{block.items.map((item) => <li key={item.href}><a href={item.href} target="_blank" rel="noreferrer">{item.label}<span aria-hidden="true"> ↗</span></a></li>)}</ul>
         </aside>
-        {ambassador && (
-          <aside className="featured-ambassador" aria-labelledby="featured-ambassador-name">
-            <p className="eyebrow">Featured Ambassador</p>
-            <img src={ambassador.photo} alt={ambassador.photo_alt} />
-            <h2 id="featured-ambassador-name">{ambassador.name}</h2>
-            <p>
-              {ambassador.caption.split(ambassador.owner.name)[0]}
-              <Link href={ambassador.owner.href}>{ambassador.owner.name}</Link>
-              {ambassador.caption.split(ambassador.owner.name)[1]}
-            </p>
-            <div className="ambassador-links">
-              <a className="profile-social-link" href={ambassador.instagram_url} target="_blank" rel="noreferrer" aria-label={`Follow ${ambassador.name} on Instagram`}>
-                <span className="instagram-mark" aria-hidden="true" />
-                <span>follow along on Instagram</span>
-              </a>
-              <Link className="profile-social-link" href={ambassador.profile_href} aria-label={`Read more about ${ambassador.name}`}>
-                <span className="paw-mark" aria-hidden="true"><i /><i /><i /><i /></span>
-                <span>read more about {ambassador.name}</span>
-              </Link>
-            </div>
-          </aside>
-        )}
+        {ambassador && <AmbassadorCard ambassador={ambassador} />}
       </div>
     </>
   );
@@ -136,6 +140,9 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
               <Block block={block} links={post.inline_links ?? []} ambassador={post.featured_ambassador} />
             </Fragment>
           ))}
+          {!hasProductLinks && post.featured_ambassador && (
+            <div className="standalone-ambassador"><AmbassadorCard ambassador={post.featured_ambassador} /></div>
+          )}
         </div>
       </article>
       {!hasProductLinks && <SharePostButton />}

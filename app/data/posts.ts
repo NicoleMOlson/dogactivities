@@ -74,6 +74,15 @@ export const posts: Post[] = [
     tags: [tag("what-we-pack"), tag("puppy"), tag("dog-travel"), tag("flying-with-dogs"), tag("puppy-pickup")],
     highlighted_tag_slugs: ["puppy", "flying-with-dogs"],
     ambassadors: ["archie"],
+    featured_ambassador: {
+      name: "Archie",
+      profile_href: "/ambassadors/archie",
+      photo: "/archie-coffee.jpeg",
+      photo_alt: "puppy sniffing a cup of coffee",
+      caption: "Archie’s first cross-country adventure brought him home with his owner Natalie.",
+      owner: { name: "Natalie", href: "/about#natalie-tromp" },
+      instagram_url: "https://www.instagram.com/archibald_the_bernedoodle",
+    },
     author: { name: "Natalie Tromp", href: "/about#natalie-tromp" },
     inline_links: [
       { text: "United", href: unitedUrl },
