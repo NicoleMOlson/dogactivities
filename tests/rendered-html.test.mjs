@@ -56,10 +56,10 @@ test("uses Alegreya typography across the site", async () => {
   assert.match(styles, /font-family: var\(--font-heading\), sans-serif; font-weight: 900/);
   assert.match(styles, /font-family: var\(--font-body\), serif/);
   assert.match(styles, /\.post-body > p \{ margin: 0 0 1\.4em; \}/);
-  assert.match(styles, /\.post-body \{ width: min\(1120px, 100%\)/);
+  assert.match(styles, /\.post-body \{ width: min\(1280px, 100%\)/);
   assert.match(styles, /\.post-body[^}]*font-size: clamp\(1\.18rem, 1\.45vw, 1\.28rem\)/);
-  assert.match(styles, /\.post-header \{ width: min\(1120px, 100%\)/);
-  assert.match(styles, /\.post-featured \{ width: min\(1120px, 100%\)/);
+  assert.match(styles, /\.post-header \{ width: min\(1280px, 100%\)/);
+  assert.match(styles, /\.post-featured \{ width: min\(1280px, 100%\)/);
   assert.match(styles, /\.post-featured[^}]*margin: 24px auto 0/);
   assert.match(styles, /\.post-featured img \{ width: auto; max-width: 100%; height: auto; max-height: 720px/);
   assert.doesNotMatch(styles, /\.post-featured img[^}]*object-fit: cover/);
