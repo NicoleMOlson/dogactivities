@@ -160,6 +160,7 @@ test("publishes Archie's cross-country pickup story without product links", asyn
   assert.match(html, /Airlines with a Dog/);
   assert.equal((html.match(/href="https:\/\/www\.united\.com\/en\/us"/g) ?? []).length, 3);
   assert.equal((html.match(/href="https:\/\/www\.visitpittsburgh\.com\/\?/g) ?? []).length, 10);
+  assert.equal((html.match(/href="https:\/\/www\.greenfieldpuppies\.com\/dog-breeders\/tina-schultheis\/"/g) ?? []).length, 2);
   assert.equal((html.match(/class="paw-mark post-list-paw"/g) ?? []).length, 4);
   assert.match(html, /Featured Ambassador/);
   assert.match(html, /href="\/ambassadors\/archie"/);
