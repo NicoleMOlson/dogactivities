@@ -34,7 +34,12 @@ function Block({ block, links, ambassador }: { block: ContentBlock; links: Inlin
     ? <h3><LinkedText text={block.text} links={links} /></h3>
     : <h2 className={block.compact ? "compact-heading" : undefined}><LinkedText text={block.text} links={links} /></h2>;
   if (block.type === "quote") return <blockquote><LinkedText text={block.text} links={links} /></blockquote>;
-  if (block.type === "list") return <ul>{block.items.map((item) => <li key={item}><LinkedText text={item} links={links} /></li>)}</ul>;
+  if (block.type === "list") return <ul>{block.items.map((item) => (
+    <li key={item}>
+      <span className="paw-mark post-list-paw" aria-hidden="true"><i /><i /><i /><i /></span>
+      <span><LinkedText text={item} links={links} /></span>
+    </li>
+  ))}</ul>;
   if (block.type === "image") return (
     <figure className="post-inline-image">
       <img src={block.image.src} alt={block.image.alt} />

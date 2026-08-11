@@ -56,7 +56,7 @@ test("uses Alegreya typography across the site", async () => {
   assert.match(styles, /font-family: var\(--font-heading\), sans-serif; font-weight: 900/);
   assert.match(styles, /font-family: var\(--font-body\), serif/);
   assert.match(styles, /\.post-body > p \{ margin: 0 0 1\.4em; \}/);
-  assert.match(styles, /\.post-body > ul \{ list-style: disc;/);
+  assert.match(styles, /\.post-body > ul \{ list-style: none;/);
   assert.match(styles, /\.post-body \{ width: min\(1280px, 100%\)/);
   assert.match(styles, /\.post-body[^}]*font-size: clamp\(1\.18rem, 1\.45vw, 1\.28rem\)/);
   assert.match(styles, /\.post-header \{ width: min\(1280px, 100%\)/);
@@ -158,6 +158,7 @@ test("publishes Archie's cross-country pickup story without product links", asyn
   assert.match(html, /Airport Check-in Process When Flying/);
   assert.match(html, /Airlines with a Dog/);
   assert.equal((html.match(/href="https:\/\/www\.united\.com\/en\/us"/g) ?? []).length, 3);
+  assert.equal((html.match(/class="paw-mark post-list-paw"/g) ?? []).length, 4);
   assert.match(html, /Rational\? Probably not\. Relatable\? Absolutely\./);
   assert.match(html, /Pass the sniff along/);
   assert.doesNotMatch(html, /B0F53SPX18|95203026|86858968|2376590/);
