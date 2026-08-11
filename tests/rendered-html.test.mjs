@@ -153,11 +153,13 @@ test("publishes Archie's cross-country pickup story without product links", asyn
   const response = await render("/posts/chicago-pittsburgh-pick-up-archie-bernedoodle");
   assert.equal(response.status, 200);
   const html = await response.text();
-  assert.match(html, /My Cross-country Trip from Chicago to Pittsburgh to Pick Up Archie/);
+  assert.match(html, /My Cross-country Trip from Chicago to/);
+  assert.match(html, /to Pick Up Archie/);
   assert.match(html, /What&#x27;s in My Bag - Puppy Pickup Edition/);
   assert.match(html, /Airport Check-in Process When Flying/);
   assert.match(html, /Airlines with a Dog/);
   assert.equal((html.match(/href="https:\/\/www\.united\.com\/en\/us"/g) ?? []).length, 3);
+  assert.equal((html.match(/href="https:\/\/www\.visitpittsburgh\.com\/\?/g) ?? []).length, 10);
   assert.equal((html.match(/class="paw-mark post-list-paw"/g) ?? []).length, 4);
   assert.match(html, /Featured Ambassador/);
   assert.match(html, /href="\/ambassadors\/archie"/);

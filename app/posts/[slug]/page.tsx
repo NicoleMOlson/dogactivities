@@ -122,8 +122,8 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             </div>
             <time dateTime={post.published_at!}>{date}</time>
           </div>
-          <h1>{post.title}</h1>
-          <p>{post.excerpt}</p>
+          <h1><LinkedText text={post.title} links={post.inline_links ?? []} /></h1>
+          <p><LinkedText text={post.excerpt} links={post.inline_links ?? []} /></p>
           {post.author && <p className="post-author">By <Link href={post.author.href}>{post.author.name}</Link></p>}
           <div className="tag-row">
             {post.tags.map((item) => <Link href={`/tags/${item.slug}`} key={item.id}>#{item.name}</Link>)}
