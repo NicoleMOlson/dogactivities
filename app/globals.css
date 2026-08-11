@@ -218,7 +218,7 @@ h1, h2, h3 { font-family: var(--font-heading), sans-serif; font-weight: 900; let
 .post-featured { width: min(1120px, 100%); margin: 24px auto 0; padding: 15px 15px 42px; transform: rotate(1.2deg); }
 .post-featured img { width: auto; max-width: 100%; height: auto; max-height: 720px; margin-inline: auto; object-fit: contain; }
 .post-featured figcaption { width: min(950px, 100%); margin-inline: auto; }
-.post-body { width: min(1120px, 100%); margin: 46px auto 80px; padding: clamp(38px, 7vw, 76px); font-family: var(--font-body); font-size: 1.15rem; line-height: 1.85; min-width: 0; }
+.post-body { width: min(1120px, 100%); margin: 46px auto 80px; padding: clamp(38px, 7vw, 76px); font-family: var(--font-body); font-size: clamp(1.18rem, 1.45vw, 1.28rem); line-height: 1.85; min-width: 0; }
 .post-body > p { margin: 0 0 1.4em; }
 .inline-retailer-link {
   font-weight: 800;
