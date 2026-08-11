@@ -88,6 +88,7 @@ export const posts: Post[] = [
     },
     author: { name: "Natalie Tromp", href: "/about#natalie-tromp" },
     inline_links: [
+      { text: "United Airlines", href: unitedUrl },
       { text: "United", href: unitedUrl },
       { text: "Pittsburgh", href: visitPittsburghUrl },
       { text: "Oopsy Daisy Doodles", href: oopsyDaisyDoodlesUrl },

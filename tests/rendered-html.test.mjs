@@ -157,7 +157,7 @@ test("publishes Archie's cross-country pickup story without product links", asyn
   assert.match(html, /to Pick Up Archie/);
   assert.match(html, /What&#x27;s in My Bag - Puppy Pickup Edition/);
   assert.match(html, /Airport Check-in Process When Flying/);
-  assert.match(html, /Airlines with a Dog/);
+  assert.match(html, />United Airlines<\/a>/);
   assert.equal((html.match(/href="https:\/\/www\.united\.com\/en\/us"/g) ?? []).length, 3);
   assert.equal((html.match(/href="https:\/\/www\.visitpittsburgh\.com\/\?/g) ?? []).length, 10);
   assert.equal((html.match(/href="https:\/\/www\.greenfieldpuppies\.com\/dog-breeders\/tina-schultheis\/"/g) ?? []).length, 2);
