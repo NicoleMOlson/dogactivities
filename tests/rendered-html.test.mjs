@@ -46,7 +46,7 @@ test("server-renders the dogactivities homepage and newsletter form", async () =
   assert.doesNotMatch(html, /The unhurried guide to a first trail day/);
   assert.doesNotMatch(html, /What actually earns a place in our day-trip bag/);
   assert.doesNotMatch(html, /A rainy afternoon that still counts as an adventure/);
-  assert.match(html, /More coming soon\.\.\./);
+  assert.doesNotMatch(html, /More coming soon\.\.\./);
   assert.equal((html.match(/<article class="post-card/g) ?? []).length, 1);
 });
 
