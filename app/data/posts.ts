@@ -23,6 +23,7 @@ const targetBagDispenserUrl = "https://www.target.com/p/hooray-house-waste-bag-h
 const unitedUrl = "https://www.united.com/en/us";
 const visitPittsburghUrl = "https://www.visitpittsburgh.com/?utm_source=google&utm_medium=cross-network&utm_campaign=Madden-google-performancemax&utm_content=fy26-forge-on_brand&gad_source=1&gad_campaignid=23820362090&gclid=Cj0KCQjw7eXTBhDBARIsAKF-w45M4lYmpb4nHy6NQJia8inUOIpqSMlm-XUVtGNwhad-UEUPSpI3dCUaAh2WEALw_wcB";
 const oopsyDaisyDoodlesUrl = "https://www.greenfieldpuppies.com/dog-breeders/tina-schultheis/";
+const unitedPetPolicyUrl = "https://www.united.com/en/us/fly/travel/traveling-with-pets.html";
 
 // Static sample records share the same shape intended for a future Supabase post repository.
 export const posts: Post[] = [
@@ -90,6 +91,7 @@ export const posts: Post[] = [
       { text: "United", href: unitedUrl },
       { text: "Pittsburgh", href: visitPittsburghUrl },
       { text: "Oopsy Daisy Doodles", href: oopsyDaisyDoodlesUrl },
+      { text: "Airline rules", href: unitedPetPolicyUrl },
     ],
   },
   {
