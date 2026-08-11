@@ -20,6 +20,7 @@ const targetGolfHatUrl = "https://www.target.com/p/hooray-house-golf-hat---green
 const targetGolfPoloUrl = "https://www.target.com/p/hooray-house-country-club-polo---green-s/-/A-95098317";
 const targetGolfToyUrl = "https://www.target.com/p/hooray-house-golf-clubs-hide-toy/-/A-95098326";
 const targetBagDispenserUrl = "https://www.target.com/p/hooray-house-waste-bag-holder-tennis-ball/-/A-95098357#lnk=sametab";
+const unitedUrl = "https://www.united.com/en/us";
 
 // Static sample records share the same shape intended for a future Supabase post repository.
 export const posts: Post[] = [
@@ -74,6 +75,9 @@ export const posts: Post[] = [
     highlighted_tag_slugs: ["puppy", "flying-with-dogs"],
     ambassadors: ["archie"],
     author: { name: "Natalie Tromp", href: "/about#natalie-tromp" },
+    inline_links: [
+      { text: "United", href: unitedUrl },
+    ],
   },
   {
     id: "post-005",

@@ -154,7 +154,9 @@ test("publishes Archie's cross-country pickup story without product links", asyn
   const html = await response.text();
   assert.match(html, /My Cross-country Trip from Chicago to Pittsburgh to Pick Up Archie/);
   assert.match(html, /What&#x27;s in My Bag - Puppy Pickup Edition/);
-  assert.match(html, /Airport Check-in Process When Flying United Airlines with a Dog/);
+  assert.match(html, /Airport Check-in Process When Flying/);
+  assert.match(html, /Airlines with a Dog/);
+  assert.equal((html.match(/href="https:\/\/www\.united\.com\/en\/us"/g) ?? []).length, 3);
   assert.match(html, /Rational\? Probably not\. Relatable\? Absolutely\./);
   assert.match(html, /Pass the sniff along/);
   assert.doesNotMatch(html, /B0F53SPX18|95203026|86858968|2376590/);
