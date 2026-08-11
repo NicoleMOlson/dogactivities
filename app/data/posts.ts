@@ -33,7 +33,7 @@ export const posts: Post[] = [
       { type: "paragraph", text: "There are certain days in life you know you'll remember forever, and flying to Pittsburgh to bring home Archie is one of those days for me." },
       { type: "paragraph", text: "After about a week of puppy prep, last-minute Target runs, Amazon deliveries, and making sure I had everything a tiny puppy could possibly need, it was finally time. I booked a quick day trip from Chicago to Pittsburgh, packed my essentials, and headed to the airport knowing I'd come home with my new best friend." },
       { type: "heading", text: "What's in My Bag - Puppy Pickup Edition" },
-      { type: "paragraph", text: "For the trip, I packed a few items that ended up being absolute lifesavers:" },
+      { type: "paragraph", text: "I tried to pack as light as possible, since I knew my hands would be full of a cuddly puppy most of the day. Here are lifesavers I packed to make my trip with a puppy a successful:" },
       { type: "list", items: [
         "Airline-approved puppy carrier",
         "A soft blanket",
